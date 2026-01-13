@@ -1,14 +1,15 @@
-import NextAuth from "next-auth";
-import Credentials from "next-auth/providers/credentials";
+import NextAuth, { NextAuthOptions } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const authOptions: NextAuthOptions = {
     providers: [
-        Credentials({
+        CredentialsProvider({
+            name: "Credentials",
             credentials: {
                 email: { label: "Email", type: "email" },
                 password: { label: "Password", type: "password" },
             },
-            authorize: async (credentials) => {
+            async authorize(credentials) {
                 // Dynamic imports to avoid build-time issues
                 const connectDB = (await import("@/lib/db")).default;
                 const User = (await import("@/models/User")).default;
@@ -29,35 +30,42 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                             password: hashedPassword,
                             role: "admin",
                         });
-                        return newUser;
+                        return { id: newUser._id.toString(), name: newUser.name, email: newUser.email, role: newUser.role };
                     }
                     return null;
                 }
 
-                const isMatch = await bcrypt.compare(credentials.password as string, user.password);
+                const isMatch = await bcrypt.compare(credentials.password, user.password);
                 if (!isMatch) return null;
 
-                return user;
+                return { id: user._id.toString(), name: user.name, email: user.email, role: user.role };
             },
         }),
     ],
     pages: {
         signIn: "/login",
     },
+    session: {
+        strategy: "jwt",
+    },
     callbacks: {
-        async session({ session, token }: any) {
+        async session({ session, token }) {
             if (token?.sub) {
-                session.user.id = token.sub;
-                session.user.role = token.role;
+                (session.user as any).id = token.sub;
+                (session.user as any).role = token.role;
             }
             return session;
         },
-        async jwt({ token, user }: any) {
+        async jwt({ token, user }) {
             if (user) {
-                token.role = user.role;
+                token.role = (user as any).role;
             }
             return token;
         },
     },
-    trustHost: true,
-});
+    secret: process.env.NEXTAUTH_SECRET,
+};
+
+const handler = NextAuth(authOptions);
+export { handler as GET, handler as POST };
+export default handler;
