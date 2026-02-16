@@ -2,13 +2,28 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, GraduationCap, X, Phone, Mail, Sparkles } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, GraduationCap, X, Phone, Mail, Sparkles, ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const pathname = usePathname();
+
+    // Detect if we're on a branch page
+    const isBranchPage = pathname?.startsWith('/branch/');
+    const branchSlug = isBranchPage ? pathname.split('/')[2] : null;
+
+    // Branch themes
+    const branchThemes: Record<string, { name: string; accent: string; color: string }> = {
+        'bright-horizon': { name: 'Bright Horizon School', accent: 'indigo', color: '#4f46e5' },
+        'cherry-blossom': { name: 'Cherry Blossom School', accent: 'emerald', color: '#10b981' },
+        'lotus-veda': { name: 'Lotus Veda Public School', accent: 'orange', color: '#f97316' }
+    };
+
+    const currentBranch = branchSlug ? branchThemes[branchSlug] : null;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,15 +33,40 @@ export function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const navLinks = [
+    // Type definition for navigation links
+    type NavLink = {
+        name: string;
+        href: string;
+        icon?: React.ElementType;
+        special?: boolean;
+    };
+
+    // Parent website navigation
+    const parentNavLinks: NavLink[] = [
         { name: "Home", href: "/" },
-        { name: "About", href: "/about" },
+        { name: "About Group", href: "/about" },
+        { name: "Our Campuses", href: "/campuses" },
         { name: "Academics", href: "/academics" },
         { name: "Admissions", href: "/admissions" },
-        { name: "Facilities", href: "/facilities" },
-        { name: "Gallery", href: "/gallery" },
+        { name: "Events", href: "/announcements" },
+        { name: "Careers", href: "/careers" },
         { name: "Contact", href: "/contact" },
     ];
+
+    // Branch-specific navigation
+    const branchNavLinks: NavLink[] = branchSlug ? [
+        { name: "Home", href: `/branch/${branchSlug}` },
+        { name: "About Campus", href: `/branch/${branchSlug}#about` },
+        { name: "Academics", href: `/branch/${branchSlug}#academics` },
+        { name: "Facilities", href: `/branch/${branchSlug}#facilities` },
+        { name: "Gallery", href: `/branch/${branchSlug}#gallery` },
+        { name: "Events", href: `/branch/${branchSlug}#events` },
+        { name: "Admissions", href: `/admissions` },
+        { name: "Contact", href: `/branch/${branchSlug}#contact` },
+        { name: "Back to Group", href: "/", icon: ArrowLeft, special: true },
+    ] : [];
+
+    const navLinks: NavLink[] = isBranchPage ? branchNavLinks : parentNavLinks;
 
     return (
         <>
@@ -87,24 +127,47 @@ export function Header() {
 
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center gap-1">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className={cn(
-                                    "relative px-5 py-2.5 text-sm font-bold uppercase tracking-wide transition-all rounded-full group",
-                                    scrolled
-                                        ? "text-slate-600 hover:text-primary hover:bg-primary/5"
-                                        : "text-white/90 hover:text-white hover:bg-white/10"
-                                )}
-                            >
-                                {link.name}
-                                <span className={cn(
-                                    "absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-6",
-                                    scrolled ? "bg-primary" : "bg-secondary"
-                                )} />
-                            </Link>
-                        ))}
+                        {navLinks.map((link) => {
+                            const LinkIcon = link.icon;
+                            const isSpecial = link.special;
+
+                            if (isSpecial) {
+                                return (
+                                    <Link
+                                        key={link.name}
+                                        href={link.href}
+                                        className={cn(
+                                            "inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl ml-4",
+                                            scrolled
+                                                ? "bg-gradient-to-r from-slate-700 to-slate-900 text-white hover:from-slate-800 hover:to-black"
+                                                : "bg-white/20 backdrop-blur-md text-white hover:bg-white/30 border border-white/30"
+                                        )}
+                                    >
+                                        {LinkIcon && <LinkIcon size={16} />}
+                                        {link.name}
+                                    </Link>
+                                );
+                            }
+
+                            return (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    className={cn(
+                                        "relative px-5 py-2.5 text-sm font-bold uppercase tracking-wide transition-all rounded-full group",
+                                        scrolled
+                                            ? "text-slate-600 hover:text-primary hover:bg-primary/5"
+                                            : "text-white/90 hover:text-white hover:bg-white/10"
+                                    )}
+                                >
+                                    {link.name}
+                                    <span className={cn(
+                                        "absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-6",
+                                        scrolled ? "bg-primary" : "bg-secondary"
+                                    )} />
+                                </Link>
+                            );
+                        })}
                     </nav>
 
                     {/* Actions */}
@@ -165,22 +228,38 @@ export function Header() {
 
                         {/* Navigation */}
                         <div className="flex-1 flex flex-col justify-center px-8 space-y-2">
-                            {navLinks.map((link, idx) => (
-                                <motion.div
-                                    key={link.name}
-                                    initial={{ opacity: 0, x: -30 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: idx * 0.08 }}
-                                >
-                                    <Link
-                                        href={link.href}
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className="block text-3xl font-bold text-white/80 hover:text-secondary py-3 transition-colors"
+                            {navLinks.map((link, idx) => {
+                                const LinkIcon = link.icon;
+                                const isSpecial = link.special;
+
+                                return (
+                                    <motion.div
+                                        key={link.name}
+                                        initial={{ opacity: 0, x: -30 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: idx * 0.08 }}
                                     >
-                                        {link.name}
-                                    </Link>
-                                </motion.div>
-                            ))}
+                                        {isSpecial ? (
+                                            <Link
+                                                href={link.href}
+                                                onClick={() => setIsMenuOpen(false)}
+                                                className="inline-flex items-center justify-center gap-3 bg-white/20 backdrop-blur-md border border-white/30 text-white font-black text-lg tracking-wide py-5 px-8 rounded-2xl shadow-lg hover:bg-white/30 transition-all mt-6 w-full"
+                                            >
+                                                {LinkIcon && <LinkIcon size={22} />}
+                                                {link.name}
+                                            </Link>
+                                        ) : (
+                                            <Link
+                                                href={link.href}
+                                                onClick={() => setIsMenuOpen(false)}
+                                                className="block text-3xl font-bold text-white/80 hover:text-secondary py-3 transition-colors"
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        )}
+                                    </motion.div>
+                                );
+                            })}
                         </div>
 
                         {/* CTA */}

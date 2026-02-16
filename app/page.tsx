@@ -4,14 +4,20 @@ import { getNotices } from "@/actions/notice";
 
 // Components
 import { NoticeBoard } from "@/components/sections/NoticeBoard";
-import { LeaderSection } from "@/components/sections/LeaderSection";
-import { WhyUs } from "@/components/sections/WhyUs";
-import { FacilitiesGrid } from "@/components/sections/FacilitiesGrid";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { FacilitiesGrid } from "@/components/sections/FacilitiesGrid";
 import { ChatBot } from "@/components/sections/ChatBot";
 import { HeroSlider } from "@/components/sections/HeroSlider";
-import { WelcomeSection } from "@/components/sections/WelcomeSection";
-import { CTASection } from "@/components/sections/CTASection";
+
+// New Home Components
+import { InstitutionAbout } from "@/components/sections/home/InstitutionAbout";
+import { AboutTheGroup } from "@/components/sections/home/AboutTheGroup";
+import { BranchPreviewCards } from "@/components/sections/home/BranchPreviewCards";
+import { ChairmanMessage } from "@/components/sections/home/ChairmanMessage";
+import { TrustSection } from "@/components/sections/home/TrustSection";
+import { AcademicExcellence } from "@/components/sections/home/AcademicExcellence";
+import { EventsHighlights } from "@/components/sections/home/EventsHighlights";
+import { QuickAdmissionCTA } from "@/components/sections/home/QuickAdmissionCTA";
 
 // Force Dynamic for DB calls
 export const dynamic = "force-dynamic";
@@ -31,30 +37,45 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Section with Updated Content */}
       <HeroSlider />
 
-      {/* Spacer for floating cards */}
-      <div className="hidden lg:block h-16 bg-white" />
+      {/* About the Institution */}
+      <InstitutionAbout />
 
-      {/* Welcome Section */}
-      <WelcomeSection />
+      {/* About the Group (Comprehensive with Founder Message) */}
+      <AboutTheGroup />
 
-      {/* Main Feature Sections */}
-      <WhyUs />
+      {/* Branch Overview Cards (3 Clickable Campus Cards) */}
+      <section id="our-campuses">
+        <BranchPreviewCards />
+      </section>
+
+      {/* Trust & Credibility Section */}
+      <TrustSection />
+
+      {/* Chairman / Director Message */}
+      <ChairmanMessage />
+
+      {/* Academic Excellence Stats Dashboard */}
+      <AcademicExcellence />
+
+      {/* Events Highlights Across Campuses */}
+      <EventsHighlights />
+
+      {/* Facilities Grid (Existing) */}
       <FacilitiesGrid />
-      <LeaderSection />
 
-      {/* Testimonials */}
+      {/* Testimonials (Existing) */}
       <Testimonials />
 
       {/* Notice Board (Dynamic) */}
       <NoticeBoard notices={notices || []} />
 
-      {/* Final CTA */}
-      <CTASection />
+      {/* Quick Admission CTA (Enhanced) */}
+      <QuickAdmissionCTA />
 
-      {/* Chatbot */}
+      {/* Chatbot (Existing) */}
       <ChatBot />
     </div>
   );

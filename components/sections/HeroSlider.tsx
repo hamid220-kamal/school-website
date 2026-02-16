@@ -15,29 +15,29 @@ export function HeroSlider() {
         {
             id: 1,
             image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop",
-            title: "BUILDING FUTURE",
-            highlight: "LEADERS",
-            subtitle: "Empowering students with knowledge, character, and skills for tomorrow's world."
+            title: "EMPOWERING THREE",
+            highlight: "WORLD-CLASS CAMPUSES",
+            subtitle: "Excellence Academy Network - Leading education across North, South, and East campuses."
         },
         {
             id: 2,
             image: "https://images.unsplash.com/photo-1544531696-6569265f026a?q=80&w=2000&auto=format&fit=crop",
-            title: "SHAPING BRIGHT",
-            highlight: "FUTURES",
-            subtitle: "A legacy of excellence in holistic education and personal growth."
+            title: "SHAPING FUTURE",
+            highlight: "GLOBAL LEADERS",
+            subtitle: "35+ years of transforming lives through holistic education and innovation."
         },
         {
             id: 3,
             image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop",
-            title: "INNOVATING",
-            highlight: "EDUCATION",
-            subtitle: "Where tradition meets technology to create world-class learners."
+            title: "ONE VISION",
+            highlight: "MULTIPLE PATHWAYS",
+            subtitle: "CBSE, International, and Technology-focused curricula tailored to your child's potential."
         }
     ];
 
     const stats = [
-        { icon: Award, value: "35+", label: "Years of Excellence" },
-        { icon: Users, value: "5000+", label: "Happy Students" },
+        { icon: Award, value: "3", label: "World-Class Campuses" },
+        { icon: Users, value: "4700+", label: "Students Enrolled" },
         { icon: Sparkles, value: "98%", label: "Success Rate" }
     ];
 
@@ -92,7 +92,7 @@ export function HeroSlider() {
                                         className="inline-flex items-center gap-2 px-6 py-2 rounded-full glass text-sm font-bold tracking-[0.15em] mb-8"
                                     >
                                         <Sparkles size={16} className="text-secondary" />
-                                        WELCOME TO EXCELLENCE ACADEMY
+                                        WELCOME TO EXCELLENCE ACADEMY NETWORK
                                     </motion.span>
 
                                     {/* Main Title */}
@@ -152,8 +152,8 @@ export function HeroSlider() {
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 1 + (idx * 0.1) }}
                                 className={`py-8 px-6 text-center text-white ${idx === 0 ? 'bg-primary' :
-                                        idx === 1 ? 'bg-gradient-secondary' :
-                                            'bg-slate-800'
+                                    idx === 1 ? 'bg-gradient-secondary' :
+                                        'bg-slate-800'
                                     } ${idx === 0 ? 'rounded-tl-3xl' : ''} ${idx === 2 ? 'rounded-tr-3xl' : ''}`}
                             >
                                 <stat.icon size={24} className="mx-auto mb-2 opacity-80" />

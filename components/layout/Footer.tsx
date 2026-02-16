@@ -59,8 +59,8 @@ export function Footer() {
                             </div>
                         </Link>
                         <p className="text-slate-400 leading-relaxed">
-                            Empowering the next generation of leaders with world-class education,
-                            rooted in values and driven by innovation since 1989.
+                            Empowering the next generation of leaders with world-class education
+                            across three state-of-the-art campuses, rooted in values and driven by innovation since 1989.
                         </p>
                         <div className="flex gap-3 pt-2">
                             {[
@@ -78,6 +78,25 @@ export function Footer() {
                                 </a>
                             ))}
                         </div>
+                    </div>
+
+                    {/* Our Campuses */}
+                    <div className="lg:col-span-2">
+                        <h3 className="font-bold text-lg mb-6 text-white">Our Campuses</h3>
+                        <ul className="space-y-3">
+                            {[
+                                { name: 'North Campus (CBSE)', href: '/branch/north' },
+                                { name: 'South Campus (International)', href: '/branch/south' },
+                                { name: 'East Campus (Technology)', href: '/branch/east' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link href={item.href} className="text-slate-400 hover:text-secondary hover:pl-2 transition-all duration-300 flex items-center gap-2 group">
+                                        <ChevronRight size={14} className="text-slate-600 group-hover:text-secondary transition-colors" />
+                                        {item.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
                     {/* Quick Links */}
