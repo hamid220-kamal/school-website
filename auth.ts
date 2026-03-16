@@ -18,22 +18,22 @@ export const authOptions: NextAuthOptions = {
                 await connectDB();
                 if (!credentials?.email || !credentials?.password) return null;
 
-                const user = await User.findOne({ email: credentials.email });
+                // Hardcoded Demo Credentials for Pitch
+                const demoUsers = [
+                    { email: "chairman@example.com", password: "Chairman@123", name: "Chairman of Schools", role: "chairman" },
+                    { email: "principal@example.com", password: "Principal@123", name: "School Principal", role: "principal" },
+                    { email: "teacher@example.com", password: "Teacher@123", name: "Senior Faculty", role: "teacher" },
+                    { email: "parent@example.com", password: "Parent@123", name: "Student Parent", role: "parent" },
+                ];
 
-                if (!user) {
-                    // For demo purposes, create a default admin if none exists
-                    if (credentials.email === "admin@school.com" && credentials.password === "admin123") {
-                        const hashedPassword = await bcrypt.hash("admin123", 10);
-                        const newUser = await User.create({
-                            name: "Admin User",
-                            email: "admin@school.com",
-                            password: hashedPassword,
-                            role: "admin",
-                        });
-                        return { id: newUser._id.toString(), name: newUser.name, email: newUser.email, role: newUser.role };
-                    }
-                    return null;
+                const matchedDemoUser = demoUsers.find(u => u.email === credentials.email && u.password === credentials.password);
+                if (matchedDemoUser) {
+                    return { id: matchedDemoUser.role, name: matchedDemoUser.name, email: matchedDemoUser.email, role: matchedDemoUser.role };
                 }
+
+                // Database check for real users
+                const user = await User.findOne({ email: credentials.email });
+                if (!user) return null;
 
                 const isMatch = await bcrypt.compare(credentials.password, user.password);
                 if (!isMatch) return null;

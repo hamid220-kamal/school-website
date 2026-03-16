@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, GraduationCap, X, Phone, Mail, Sparkles, ArrowLeft } from "lucide-react";
+import { Menu, GraduationCap, X, Phone, Mail, Sparkles, ArrowLeft, AlertTriangle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -48,6 +48,7 @@ export function Header() {
         { name: "Our Campuses", href: "/campuses" },
         { name: "Academics", href: "/academics" },
         { name: "Admissions", href: "/admissions" },
+        { name: "Pricing", href: "/pricing" },
         { name: "Events", href: "/announcements" },
         { name: "Careers", href: "/careers" },
         { name: "Contact", href: "/contact" },
@@ -68,14 +69,36 @@ export function Header() {
 
     const navLinks: NavLink[] = isBranchPage ? branchNavLinks : parentNavLinks;
 
+    // Simulate Emergency Notice for Demo
+    const emergencyNotice = "ATTENTION: SCHOOL TRANSITIONING TO ONLINE MODE DUE TO HEAVY RAINFALL. RE-OPENING ON MONDAY.";
+
     return (
         <>
+            {/* Global Emergency Banner */}
+            <AnimatePresence>
+                {emergencyNotice && (
+                    <motion.div 
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        className="bg-red-600 text-white py-3 px-4 relative z-[60] overflow-hidden"
+                    >
+                        <div className="container mx-auto flex items-center justify-center gap-4 text-center">
+                            <AlertTriangle size={20} className="animate-pulse shrink-0" />
+                            <p className="text-xs md:text-sm font-black tracking-widest uppercase">
+                                {emergencyNotice}
+                            </p>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             <header
                 className={cn(
                     "fixed top-0 w-full z-40 transition-all duration-500",
                     scrolled
                         ? "bg-white/95 backdrop-blur-xl shadow-premium py-3"
-                        : "bg-transparent py-5"
+                        : "bg-transparent py-5",
+                    emergencyNotice ? (scrolled ? "mt-0" : "mt-11") : "mt-0"
                 )}
             >
                 {/* Top Bar */}

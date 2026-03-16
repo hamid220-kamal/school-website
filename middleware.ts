@@ -7,7 +7,7 @@ export async function middleware(req: NextRequest) {
     const token = await getToken({ req, secret });
     const { pathname } = req.nextUrl;
 
-    if (pathname.startsWith("/admin")) {
+    if (pathname.startsWith("/dashboard")) {
         if (!token) {
             return NextResponse.redirect(new URL("/login", req.url));
         }
@@ -17,5 +17,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-    matcher: ["/admin/:path*"],
+    matcher: ["/dashboard/:path*"],
 };
