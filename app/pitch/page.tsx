@@ -16,44 +16,104 @@ const slides = [
     },
     {
         id: "vision",
-        title: "The Vision for 2026",
-        subtitle: "A digital ecosystem that matches your academic excellence",
+        title: "Amplifying Your Excellence",
+        subtitle: "A digital ecosystem that turns 'Hidden Features' into 'Conversion Assets'",
         type: "statement",
-        content: "A website is an expense. A digital solution is an investment. We aim to build a system that acts as your hardest-working employee: working 24/7, tracking leads, answering parents, and protecting your brand."
+        content: "You have the technology (Smart TVs) and the talent (GenZ Faculty). My mission is to build the digital megaphone that ensures every parent in this city knows why Bright Horizon is superior to any legacy grammar school."
     },
     {
         id: "problems",
-        title: "The Current Landscape",
-        subtitle: "Common friction points in multi-branch management",
+        title: "The 'Invisible Excellence' Crisis",
+        subtitle: "Why quality isn't translating into admissions",
         type: "grid",
         items: [
-            { icon: Zap, title: "Admission Leakage", text: "Inquiries fall through the cracks when handled manually via phone." },
-            { icon: AlertTriangle, title: "Communication Lags", text: "Delays in broadcasting weather closures or urgent news." },
-            { icon: Clock, title: "Staff Fatigue", text: "Front desk overwhelmed by repetitive queries (fees, timings)." },
-            { icon: Globe, title: "Fragmented Brand", text: "Inconsistent digital experience across different campuses." }
+            { icon: Zap, title: "The Tech Blind Spot", text: "You have Smart TVs in classrooms (Genius Grammar doesn't), but no one knows." },
+            { icon: Users, title: "Relatability Gap", text: "Your young, GenZ faculty understands kids better, but your digital image looks 'Old'." },
+            { icon: Target, title: "Local Competition", text: "Big legacy schools win on name alone, while your superior modern features stay hidden." },
+            { icon: AlertTriangle, title: "Admission Leakage", text: "Parents visit the school, but the lack of digital follow-up means they forget the USPs." }
+        ]
+    },
+    {
+        id: "competitive-edge",
+        title: "Bright Horizon vs. Legacy Schools",
+        subtitle: "The Advantage of being Young & Tech-First",
+        type: "grid",
+        items: [
+            { icon: ShieldCheck, title: "Smart Infrastructure", text: "Every classroom is a digital hub. We will showcase your TV-enabled classes via virtual previews." },
+            { icon: Globe, title: "GenZ Mentorship", text: "Leveraging your young faculty. Our site will host 'Faculty Stories' to show parents the energetic vibe." },
+            { icon: Zap, title: "Speed & Scale", text: "Being new means being fast. Our AI responds in seconds while bigger schools take days." },
+            { icon: BarChart3, title: "Modern Brand", text: "A premium website makes a 'New' school look like a 'Global' leader instantly." }
+        ]
+    },
+    {
+        id: "trust-gap",
+        title: "The Trust Gap",
+        subtitle: "How to stop parents from being 'scared' of a new school",
+        type: "grid",
+        items: [
+            { icon: ShieldCheck, title: "Instant Social Proof", text: "We replace 'We are new' with 'We are active.' Live activity feeds and dynamic galleries show a thriving school, not an empty building." },
+            { icon: Users, title: "Faculty Vetting", text: "Showcase your GenZ faculty's energy through professional profiles, turning their 'Youth' into your greatest 'Strength'." },
+            { icon: Target, title: "Visual Curriculum", text: "Map exactly how Smart TVs enhance learning. Show, don't just tell, why your classrooms are superior to legacy schools." },
+            { icon: Globe, title: "Institutional Safety", text: "Corporate-level data security shows parents you are as professional as a bank, building instant trust in your management." }
+        ]
+    },
+    {
+        id: "admin-friction",
+        title: "The Paperwork Paradox",
+        subtitle: "Solving the hidden costs of manual management",
+        type: "grid",
+        items: [
+            { icon: Zap, title: "Zero-Queue Inquiry", text: "Stop the 'Reception Rush'. Digital forms capture data instantly, so your staff can focus on 'Selling' the school, not 'Filling' forms." },
+            { icon: AlertTriangle, title: "Inquiry Re-marketing", text: "Most parents visit 3 schools. If you don't 'nudge' them digitally, you lose them. Our CRM automates the follow-up." },
+            { icon: Clock, title: "Unified Messaging", text: "End the 'He Said/She Said' confusion. The website acts as the single, legal source of truth for all school policies and notices." },
+            { icon: ShieldCheck, title: "Digital Legacy", text: "Start building your digital archives now. Every photo, result, and event is a block in the foundation of your 50-year legacy." }
+        ]
+    },
+    {
+        id: "efficiency-stats",
+        title: "The Principal's Time Recovery",
+        subtitle: "Automating 50% of routine administrative workload",
+        type: "grid",
+        items: [
+            { icon: Clock, title: "15 Hours Saved/Week", text: "AI handles routine inquiries about fees, timings, and uniform policies." },
+            { icon: Zap, title: "30-Second Broadcast", text: "Network-wide emergency updates in seconds, not hours of circulars." },
+            { icon: Bot, title: "Automated Screening", text: "CRM pre-qualifies parents so you only spend time on serious admissions." },
+            { icon: Target, title: "One-Click Reports", text: "Instant analytics. No more waiting for staff to manually compile data." }
         ]
     },
     {
         id: "solution-crm",
-        title: "Solution 1: Admission CRM & Analytics",
-        subtitle: "Data-Driven Growth for the Principal",
+        title: "Efficiency 1: Admission CRM",
+        subtitle: "Zero Manual Data Entry",
         type: "split",
-        content: "A secure, centralized dashboard where all admission leads gather. See real-time conversion rates across all branches. Stop guessing, start knowing.",
+        content: "Stop wasting time on spreadsheets. Every inquiry is automatically categorized, tracked, and ready for your review in one central interface.",
         visual: "analytics"
     },
     {
         id: "solution-emergency",
-        title: "Solution 2: Emergency Command",
+        title: "Efficiency 2: Rapid Command",
         subtitle: "Instant Institutional Control",
         type: "split",
-        content: "A secure login grants authorized staff the ability to toggle an Emergency Banner across the entire school network with a single click. Keep parents informed and safe.",
+        content: "A secure console to manage all 3 campuses. Toggle emergency notices network-wide with a single click—saving you from hours of coordination during crises.",
         visual: "console"
     },
     {
         id: "solution-chatbot",
-        title: "Solution 3: Interactive AI Assistant",
-        subtitle: "Try asking a question right now.",
+        title: "Efficiency 3: The 24/7 Front Desk",
+        subtitle: "Eliminating Repetitive Phone Calls",
         type: "interactive-chatbot"
+    },
+    {
+        id: "transformation-map",
+        title: "The Transformation Strategy",
+        subtitle: "How our features solve your core institutional problems",
+        type: "grid",
+        items: [
+            { icon: Users, title: "Problem: Admission Leakage", text: "Inquiries lost in manual registers. -> Solution: Automated CRM captures 100% of leads and nudges for follow-up." },
+            { icon: Clock, title: "Problem: Staff Overload", text: "Receptionist answering the same questions. -> Solution: AI Chatbot handles 70% of routine fee/timing queries instantly." },
+            { icon: Zap, title: "Problem: Ghost Excellence", text: "Smart TVs hidden from parents. -> Solution: Premium 'Smart-Class' showcase proves your tech-superiority." },
+            { icon: Target, title: "Problem: Legacy Competition", text: "Giant old schools winning on 'History'. -> Solution: A state-of-the-art brand that makes you the 'Future of Education'." }
+        ]
     },
     {
         id: "pricing-intro",
@@ -68,7 +128,7 @@ const slides = [
         subtitle: "The Digital Entrance - Fixing the 'Digital Ghost' Problem",
         type: "pricing-detail",
         features: ["Single Campus Coverage", "6 Core Pages", "Dynamic Notice Board", "Mobile Responsive"],
-        solution: "Ensures parents can find accurate, beautiful information about your school online, instantly building trust."
+        solution: "A digital entry point that saves the front desk from answering basic 'Where are you?' queries."
     },
     {
         id: "pricing-2",
@@ -76,7 +136,7 @@ const slides = [
         subtitle: "The Unified Institution - Fixing 'Fragmented Branches'",
         type: "pricing-detail",
         features: ["Up to 3 Campuses", "Interactive Campus Selector", "Centralized Lead Generation Form", "Advanced Notice Board Categories"],
-        solution: "Brings all your branches under one powerful, unified brand identity while routing all admission leads centrally."
+        solution: "Unifies your vision across all campuses. All inquiries are funneled into one stream, saving hours of cross-branch phone calls."
     },
     {
         id: "pricing-3",
@@ -84,7 +144,7 @@ const slides = [
         subtitle: "The AI Pioneer - Fixing 'Staff Overhead & Blind Spots'",
         type: "pricing-detail",
         features: ["Secure Authenticated Gateway", "Digital Admission CRM", "Principal's Analytics Dashboard", "Emergency Command Console", "AI Chatbot Integration"],
-        solution: "Automates routine work, secures your private data, and provides the Principal with actionable insights to drive actual growth."
+        solution: "Maximum automation. The system works while you sleep, pre-Qualifying every student and giving you the power to manage 3 schools from one screen."
     },
     {
         id: "chairman-meeting",
@@ -98,6 +158,18 @@ const slides = [
         title: "The Hamid Kamal Edge",
         subtitle: "AI Developer & Full Stack Engineer",
         type: "about"
+    },
+    {
+        id: "credentials",
+        title: "Verified Credentials",
+        subtitle: "Industry-Recognized expertise from Global Tech Leaders",
+        type: "grid",
+        items: [
+            { icon: ShieldCheck, title: "Oracle & Google Certified", text: "Certified in OCI Generative AI Professional and Google Cloud Computing Foundations." },
+            { icon: Zap, title: "IBM Design Thinking", text: "Certified IBM Enterprise Design Thinking Practitioner, ensuring professional software workflows." },
+            { icon: Target, title: "TCS Cybersecurity", text: "Certified in Cybersecurity Fundamentals by TCS iON, guaranteeing institutional data safety." },
+            { icon: Globe, title: "Proven Industry Experience", text: "Completed Software Engineering simulations with Electronic Arts and Lloyds Banking Group." }
+        ]
     },
     {
         id: "qa",
@@ -128,7 +200,7 @@ export default function PitchPresentation() {
     const [chatMessages, setChatMessages] = useState<{role: 'bot'|'user', text: string}[]>([
         { role: 'bot', text: "Hello! I am the automated Bright Horizon assistant. Ask me about admissions or fees!" }
     ]);
-    const chatEndRef = useRef<HTMLDivElement>(null);
+    const chatContainerRef = useRef<HTMLDivElement>(null);
 
     // Navigation Controls
     const nextSlide = useCallback(() => {
@@ -153,7 +225,9 @@ export default function PitchPresentation() {
     }, [nextSlide, prevSlide]);
 
     useEffect(() => {
-        chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        if (chatContainerRef.current) {
+            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
     }, [chatMessages]);
 
     const toggleFullscreen = () => {
@@ -169,6 +243,15 @@ export default function PitchPresentation() {
             }
         }
     };
+
+    // Prevent body scroll and jumping
+    useEffect(() => {
+        const originalStyle = window.getComputedStyle(document.body).overflow;
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.body.style.overflow = originalStyle;
+        };
+    }, []);
 
     const handleChatSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -228,42 +311,43 @@ export default function PitchPresentation() {
                         animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
                         exit={{ opacity: 0, scale: 1.05, y: -20, filter: "blur(10px)" }}
                         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                        className="w-full max-w-7xl"
+                        className="w-full max-w-7xl mx-auto px-4 md:px-0"
                     >
+                        <div className="max-h-[75vh] overflow-y-auto no-scrollbar py-10">
                         {/* Slide Type: HERO */}
                         {slide.type === "hero" && (
-                            <div className="text-center space-y-8">
+                            <div className="text-center space-y-6 md:space-y-8">
                                 <motion.div 
                                     initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }} transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
-                                    className="w-28 h-28 bg-gradient-to-br from-indigo-500 to-primary rounded-[2rem] mx-auto flex items-center justify-center shadow-[0_0_80px_rgba(79,70,229,0.5)] mb-12 border border-white/20"
+                                    className="w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-indigo-500 to-primary rounded-[2rem] mx-auto flex items-center justify-center shadow-[0_0_80px_rgba(79,70,229,0.5)] mb-8 md:mb-12 border border-white/20"
                                 >
-                                    <Globe size={56} className="text-white" />
+                                    <Globe size={40} className="md:size-[56px] text-white" />
                                 </motion.div>
-                                <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40 leading-tight">
+                                <h1 className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40 leading-tight">
                                     {slide.title}
                                 </h1>
-                                <p className="text-2xl md:text-4xl text-secondary font-medium tracking-tight max-w-4xl mx-auto opacity-90">
+                                <p className="text-lg md:text-3xl lg:text-4xl text-secondary font-medium tracking-tight max-w-4xl mx-auto opacity-90">
                                     {slide.subtitle}
                                 </p>
                                 <motion.div 
                                     initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1 }}
-                                    className="pt-24 text-white/50 text-sm font-bold tracking-[0.3em] uppercase flex items-center justify-center gap-4"
+                                    className="pt-12 md:pt-24 text-white/50 text-[10px] md:text-sm font-bold tracking-[0.3em] uppercase flex items-center justify-center gap-4"
                                 >
-                                    <span className="w-12 h-[1px] bg-white/20"></span>
+                                    <span className="w-8 md:w-12 h-[1px] bg-white/20"></span>
                                     Presented by Hamid Kamal
-                                    <span className="w-12 h-[1px] bg-white/20"></span>
+                                    <span className="w-8 md:w-12 h-[1px] bg-white/20"></span>
                                 </motion.div>
                             </div>
                         )}
 
                         {/* Slide Type: STATEMENT */}
                         {slide.type === "statement" && (
-                            <div className="text-center max-w-5xl mx-auto">
-                                <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">{slide.title}</h2>
-                                <p className="text-2xl text-secondary mb-16 font-medium">{slide.subtitle}</p>
-                                <div className="bg-white/5 border border-white/10 p-12 rounded-[3rem] shadow-2xl backdrop-blur-sm relative overflow-hidden">
+                            <div className="text-center max-w-5xl mx-auto px-4">
+                                <h2 className="text-3xl md:text-5xl lg:text-7xl font-black mb-4 md:mb-6 tracking-tight">{slide.title}</h2>
+                                <p className="text-lg md:text-2xl text-secondary mb-8 md:mb-16 font-medium">{slide.subtitle}</p>
+                                <div className="bg-white/5 border border-white/10 p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] shadow-2xl backdrop-blur-sm relative overflow-hidden">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary opacity-50"></div>
-                                    <p className="text-3xl md:text-4xl font-medium leading-relaxed text-white/90">
+                                    <p className="text-xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-white/90">
                                         "{slide.content}"
                                     </p>
                                 </div>
@@ -395,7 +479,7 @@ export default function PitchPresentation() {
                                                 <span className="text-xs text-secondary font-medium tracking-wider">Online and Ready</span>
                                             </div>
                                         </div>
-                                        <div className="flex-1 p-6 overflow-y-auto bg-slate-50 space-y-4">
+                                        <div ref={chatContainerRef} className="flex-1 p-6 overflow-y-auto bg-slate-50 space-y-4">
                                             {chatMessages.map((msg, i) => (
                                                 <motion.div 
                                                     key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
@@ -407,7 +491,6 @@ export default function PitchPresentation() {
                                                     {msg.text}
                                                 </motion.div>
                                             ))}
-                                            <div ref={chatEndRef} />
                                         </div>
                                         <form onSubmit={handleChatSubmit} className="p-4 bg-white border-t border-slate-100 flex gap-2">
                                             <input 
@@ -566,23 +649,24 @@ export default function PitchPresentation() {
                             <div className="text-center max-w-4xl mx-auto flex flex-col justify-center h-full pt-10">
                                 <motion.div 
                                     initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 100 }}
-                                    className="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto flex items-center justify-center mb-10 shadow-glow"
+                                    className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto flex items-center justify-center mb-6 md:mb-10 shadow-glow"
                                 >
-                                    <Globe size={48} className="text-white" />
+                                    <Globe size={32} className="md:size-[48px] text-white" />
                                 </motion.div>
-                                <h2 className="text-7xl md:text-9xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">{slide.title}</h2>
-                                <p className="text-3xl font-medium text-secondary mb-16">{slide.subtitle}</p>
+                                <h2 className="text-4xl md:text-7xl lg:text-9xl font-black mb-4 md:mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">{slide.title}</h2>
+                                <p className="text-xl md:text-3xl font-medium text-secondary mb-8 md:mb-16">{slide.subtitle}</p>
                                 
-                                <div className="inline-flex items-center gap-8 text-white/40 font-bold tracking-widest text-sm uppercase">
+                                <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-white/40 font-bold tracking-widest text-[8px] md:text-sm uppercase">
                                     <span>Hamid Kamal</span>
-                                    <span className="w-2 h-2 rounded-full bg-white/20"></span>
+                                    <span className="hidden md:block w-2 h-2 rounded-full bg-white/20"></span>
                                     <span>AI Developer</span>
-                                    <span className="w-2 h-2 rounded-full bg-white/20"></span>
+                                    <span className="hidden md:block w-2 h-2 rounded-full bg-white/20"></span>
                                     <span>hamid-ai-dev.vercel.app</span>
                                 </div>
                             </div>
                         )}
 
+                        </div>
                     </motion.div>
                 </AnimatePresence>
             </div>
