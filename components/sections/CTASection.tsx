@@ -38,7 +38,7 @@ export function CTASection() {
                     {/* Heading */}
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-black font-heading mb-6 leading-tight">
                         Begin Your Child's<br />
-                        <span className="text-gradient-secondary">Journey to Excellence</span>
+                        <span className="text-gradient-secondary">Journey to Bright Horizon</span>
                     </h2>
 
                     {/* Subtitle */}

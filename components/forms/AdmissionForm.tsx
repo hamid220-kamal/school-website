@@ -71,7 +71,7 @@ export function AdmissionForm() {
                 </div>
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">Application Submitted!</h2>
                 <p className="text-lg text-slate-600 mb-8">
-                    Thank you for applying to Excellence Academy. We have sent a confirmation email to the registered address.
+                    Thank you for applying to Bright Horizon. We have sent a confirmation email to the registered address.
                 </p>
                 <button onClick={() => window.location.reload()} className="text-primary font-bold hover:underline">
                     Start New Application

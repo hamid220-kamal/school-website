@@ -52,7 +52,7 @@ export default function Academics() {
                             CBSE CURRICULUM
                         </span>
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-heading text-white mb-6">
-                            Academic <span className="text-gradient-secondary">Excellence</span>
+                            Academic <span className="text-gradient-secondary">Bright Horizon</span>
                         </h1>
                         <p className="text-white/80 max-w-2xl mx-auto text-lg md:text-xl">
                             Fostering intellectual curiosity and critical thinking through a comprehensive and innovative curriculum.

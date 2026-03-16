@@ -67,7 +67,7 @@ export function WhyUs() {
                             <span className="text-gradient">Since 1989</span>
                         </h2>
                         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                            We don't just teach; we inspire. At Excellence Academy, we create an environment
+                            We don't just teach; we inspire. At Bright Horizon, we create an environment
                             where curiosity thrives and dreams take flight.
                         </p>
                     </motion.div>

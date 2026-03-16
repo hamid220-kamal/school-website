@@ -123,7 +123,7 @@ export default function CherryBlossomSchool() {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
                         {[
-                            { number: "18+", label: "Years of Excellence" },
+                            { number: "18+", label: "Years of Bright Horizon" },
                             { number: "1500+", label: "Students" },
                             { number: "100+", label: "International Faculty" },
                             { number: "96%", label: "Cambridge A*/A" }

@@ -196,12 +196,10 @@ export default function CareersPage() {
                             JOIN OUR TEAM
                         </span>
                         <h1 className="text-5xl md:text-7xl font-black font-heading mb-6 leading-tight">
-                            Build Your Career in
-                            <br />
-                            <span className="text-gradient-secondary">Education Excellence</span>
+                            <span className="text-gradient-secondary">Education</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-                            Join Excellence Academy Network and make a lasting impact on the future generation.
+                            Join Bright Horizon Network and make a lasting impact on the future generation.
                         </p>
                         <a
                             href="#current-openings"
@@ -228,7 +226,7 @@ export default function CareersPage() {
                             WHY WORK WITH US
                         </span>
                         <h2 className="text-4xl md:text-5xl font-black font-heading text-slate-900 mb-6">
-                            Why Choose <span className="text-gradient">Excellence Academy?</span>
+                            Why Choose <span className="text-gradient">Bright Horizon?</span>
                         </h2>
                         <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
                             We believe that great educators create great students. Join our network of 200+ passionate
@@ -559,7 +557,7 @@ export default function CareersPage() {
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                         <div className="flex items-center gap-3">
                             <Mail size={24} />
-                            <span className="font-bold text-lg">careers@excellenceacademy.edu</span>
+                            <span className="font-bold text-lg">hr@brighthorizon.edu</span>
                         </div>
                         <div className="flex items-center gap-3">
                             <Phone size={24} />

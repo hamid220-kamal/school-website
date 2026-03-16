@@ -14,7 +14,7 @@ export default async function Announcements() {
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6">Notice Board</h1>
                     <p className="text-slate-600 text-lg">
-                        Stay updated with the latest announcements, circulars, and news from Excellence Academy.
+                        Stay updated with the latest announcements, circulars, and news from Bright Horizon.
                     </p>
                 </div>
 

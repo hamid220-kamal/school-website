@@ -9,11 +9,11 @@ import { ChatBot } from "@/components/sections/ChatBot";
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
 
 export const metadata: Metadata = {
-  title: "Excellence Academy Network | 3 World-Class Campuses",
+  title: "Bright Horizon Network | 3 World-Class Campuses",
   description: "Leading educational institution with three campuses offering CBSE, International, and Technology-focused curricula. 35+ years of academic excellence and holistic student development.",
-  keywords: ["excellence academy", "cbse school", "international school", "technology education", "best schools", "multi-campus education", "north campus", "south campus", "east campus"],
+  keywords: ["bright horizon", "cbse school", "international school", "technology education", "best schools", "multi-campus education", "north campus", "south campus", "east campus"],
   openGraph: {
-    title: "Excellence Academy Network | 3 World-Class Campuses",
+    title: "Bright Horizon Network | 3 World-Class Campuses",
     description: "35+ years of academic excellence across three state-of-the-art campuses",
     type: "website",
   },

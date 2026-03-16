@@ -8,7 +8,7 @@ export function InstitutionAbout() {
     const values = [
         {
             icon: Award,
-            title: "Excellence",
+            title: "Bright Horizon",
             description: "Striving for the highest standards in every aspect of education"
         },
         {

@@ -17,7 +17,7 @@ export function HeroSlider() {
             image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop",
             title: "EMPOWERING THREE",
             highlight: "WORLD-CLASS CAMPUSES",
-            subtitle: "Excellence Academy Network - Leading education across North, South, and East campuses."
+            subtitle: "Bright Horizon Network - Leading education across our North, International, and Public school campuses."
         },
         {
             id: 2,
@@ -92,7 +92,7 @@ export function HeroSlider() {
                                         className="inline-flex items-center gap-2 px-6 py-2 rounded-full glass text-sm font-bold tracking-[0.15em] mb-8"
                                     >
                                         <Sparkles size={16} className="text-secondary" />
-                                        WELCOME TO EXCELLENCE ACADEMY NETWORK
+                                        WELCOME TO BRIGHT HORIZON NETWORK
                                     </motion.span>
 
                                     {/* Main Title */}

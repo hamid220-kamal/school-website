@@ -203,7 +203,7 @@ export default function PitchPresentation() {
             {/* Top Toolbar */}
             <div className="absolute top-0 w-full p-6 flex justify-between items-center z-50">
                 <Link href="/" className="text-white/50 hover:text-white transition-colors text-sm font-bold tracking-widest pl-4 flex items-center gap-2">
-                    <Globe size={16} /> EXCELLENCE ACADEMY PITCH
+                    <Globe size={16} /> BRIGHT HORIZON PITCH
                 </Link>
                 <div className="flex items-center gap-6 pr-4">
                     <span className="text-white/40 text-sm font-bold tracking-widest bg-white/5 px-4 py-1.5 rounded-full border border-white/10">

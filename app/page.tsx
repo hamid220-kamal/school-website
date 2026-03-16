@@ -27,15 +27,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Emergency / Announcement Banner */}
-      <div className="bg-red-500 text-white overflow-hidden py-2 relative z-50">
-        <div className="container mx-auto px-4 flex items-center justify-center gap-2 animate-pulse">
-          <AlertCircle size={16} />
-          <span className="text-xs md:text-sm font-bold tracking-wide">
-            URGENT: School will remain closed on 15th Jan due to heavy rains. Online classes will proceed as scheduled.
-          </span>
-        </div>
-      </div>
+
 
       {/* Hero Section with Updated Content */}
       <HeroSlider />
@@ -57,7 +49,7 @@ export default async function Home() {
       {/* Chairman / Director Message */}
       <ChairmanMessage />
 
-      {/* Academic Excellence Stats Dashboard */}
+      {/* Academic Bright Horizon Stats Dashboard */}
       <AcademicExcellence />
 
       {/* Events Highlights Across Campuses */}

@@ -4,9 +4,9 @@ import Link from "next/link";
 import { ArrowRight, MapPin, Users, Award, Calendar } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Our Campuses | Excellence Academy Network - 3 World-Class Schools",
+    title: "Our Campuses | Bright Horizon Network - 3 World-Class Schools",
     description: "Explore our three premier institutions: Bright Horizon School (CBSE), Cherry Blossom School (International), and Lotus Veda Public School (Technology). Each campus offers unique excellence.",
-    keywords: ["our campuses", "bright horizon school", "cherry blossom school", "lotus veda public school", "cbse school", "international school", "technology school"],
+    keywords: ["our campuses", "bright horizon school", "cherry blossom school", "lotus veda public school", "cbse school", "international school", "technology school", "academic excellence"],
 };
 
 export default function CampusesPage() {
@@ -111,7 +111,7 @@ export default function CampusesPage() {
                 <div className="container mx-auto px-4 relative z-10 text-center text-white">
                     <span className="inline-flex items-center gap-2 glass text-white px-6 py-3 rounded-full text-sm font-bold tracking-wider mb-6">
                         <Award size={16} className="text-secondary" />
-                        EXCELLENCE ACADEMY NETWORK
+                        BRIGHT HORIZON NETWORK
                     </span>
                     <h1 className="text-5xl md:text-7xl font-black font-heading mb-6 leading-tight">
                         Our <span className="text-gradient-secondary">Campuses</span>

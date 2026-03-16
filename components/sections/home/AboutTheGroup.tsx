@@ -6,7 +6,7 @@ import { Award, Globe, Users, TrendingUp, BookOpen, Target, Heart, Lightbulb, Sh
 
 export function AboutTheGroup() {
     const milestones = [
-        { year: "1989", event: "Foundation of Excellence Academy", icon: Target },
+        { year: "1989", event: "Foundation of Bright Horizon", icon: Target },
         { year: "2005", event: "International Campus Launched", icon: Globe },
         { year: "2015", event: "Technology-Focused Campus Opened", icon: Lightbulb },
         { year: "2024", event: "4700+ Students Across 3 Campuses", icon: Users }
@@ -14,7 +14,7 @@ export function AboutTheGroup() {
 
     const groupStats = [
         { icon: Users, value: "4700+", label: "Students Across All Campuses" },
-        { icon: Award, value: "35+", label: "Years of Excellence" },
+        { icon: Award, value: "35+", label: "Years of Bright Horizon" },
         { icon: BookOpen, value: "250+", label: "Expert Faculty Members" },
         { icon: TrendingUp, value: "98%", label: "Overall Success Rate" }
     ];
@@ -22,7 +22,7 @@ export function AboutTheGroup() {
     const coreValues = [
         {
             icon: Award,
-            title: "Excellence in Education",
+            title: "Bright Horizon in Education",
             description: "Setting the highest standards in academic achievement and character development"
         },
         {
@@ -64,7 +64,7 @@ export function AboutTheGroup() {
                 >
                     <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold tracking-wider mb-6">
                         <Award size={16} className="text-secondary" />
-                        ABOUT THE EXCELLENCE ACADEMY GROUP
+                        ABOUT THE BRIGHT HORIZON GROUP
                     </span>
                     <h2 className="text-4xl md:text-6xl font-black font-heading text-slate-900 mb-6 leading-tight">
                         A Legacy of
@@ -72,7 +72,7 @@ export function AboutTheGroup() {
                         <span className="text-gradient">Educational Excellence</span>
                     </h2>
                     <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                        For over three decades, the Excellence Academy Group has been at the forefront of
+                        For over three decades, the Bright Horizon Group has been at the forefront of
                         transforming lives through quality education, expanding from a single campus to a
                         network of three world-class institutions.
                     </p>

@@ -10,7 +10,7 @@ export default function AdminSettingsPage() {
             <form className="space-y-6">
                 <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">School Name</label>
-                    <input type="text" className="w-full px-4 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary outline-none" defaultValue="Excellence Academy" />
+                    <input type="text" className="w-full px-4 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary outline-none" defaultValue="Bright Horizon" />
                 </div>
 
                 <div>

@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "About Excellence Academy Network | Our Vision, Mission & Leadership",
-    description: "Learn about Excellence Academy Network's vision, mission, core values, leadership team, achievements, and recognition. 35+ years of educational excellence across 3 world-class campuses.",
+    title: "About Bright Horizon Network | Our Vision, Mission & Leadership",
+    description: "Learn about Bright Horizon Network's vision, mission, core values, leadership team, achievements, and recognition. 35+ years of educational excellence across 3 world-class campuses.",
     keywords: ["about excellence academy", "vision mission", "educational leadership", "institutional achievements", "board affiliations", "award-winning school"],
 };
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0">
                     <Image
                         src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop"
-                        alt="About Excellence Academy"
+                        alt="About Bright Horizon"
                         fill
                         className="object-cover"
                         priority
@@ -31,7 +31,7 @@ export default function AboutPage() {
                     <h1 className="text-5xl md:text-7xl font-black font-heading mb-6 leading-tight">
                         About
                         <br />
-                        <span className="text-gradient-secondary">Excellence Academy Network</span>
+                        <span className="text-gradient-secondary">Bright Horizon Network</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
                         Empowering the next generation through world-class education, innovation, and values since 1989.
@@ -107,7 +107,7 @@ export default function AboutPage() {
                         {[
                             {
                                 icon: Award,
-                                title: "Excellence",
+                                title: "Bright Horizon",
                                 description: "Setting the highest standards in academic achievement and character development"
                             },
                             {
@@ -237,7 +237,7 @@ export default function AboutPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                         {[
-                            { year: "1989", event: "Foundation of Excellence Academy", icon: Target },
+                            { year: "1989", event: "Foundation of Bright Horizon", icon: Target },
                             { year: "1995", event: "First 100% Board Result", icon: Award },
                             { year: "2005", event: "International Campus Launched", icon: Globe },
                             { year: "2010", event: "ISO 9001:2008 Certification", icon: Medal },
@@ -344,13 +344,13 @@ export default function AboutPage() {
                             {
                                 publication: "Times of India",
                                 date: "March 2024",
-                                headline: "Excellence Academy Ranks Among Top 10 Schools in Maharashtra",
+                                headline: "Bright Horizon Ranks Among Top 10 Schools in Maharashtra",
                                 image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=600&auto=format&fit=crop"
                             },
                             {
                                 publication: "Education Today",
                                 date: "January 2024",
-                                headline: "Pioneering AI & Robotics Education at Excellence Tech Academy",
+                                headline: "Pioneering AI & Robotics Education at Bright Horizon Tech Academy",
                                 image: "https://images.unsplash.com/photo-1485217988980-11786ced9454?q=80&w=600&auto=format&fit=crop"
                             },
                             {
@@ -362,7 +362,7 @@ export default function AboutPage() {
                             {
                                 publication: "Indian Express",
                                 date: "August 2023",
-                                headline: "Excellence Academy's Holistic Approach to Student Development",
+                                headline: "Bright Horizon's Holistic Approach to Student Development",
                                 image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=600&auto=format&fit=crop"
                             }
                         ].map((article, idx) => (

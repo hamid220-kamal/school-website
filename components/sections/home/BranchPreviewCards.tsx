@@ -22,8 +22,8 @@ export function BranchPreviewCards() {
     const branches: Branch[] = [
         {
             id: "north",
-            name: "Excellence Academy",
-            tagline: "CBSE Excellence & Innovation",
+            name: "Bright Horizon",
+            tagline: "CBSE Bright Horizon & Innovation",
             location: "North Campus, Sector 21",
             href: "/branch/north",
             image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1200&auto=format&fit=crop",
@@ -34,7 +34,7 @@ export function BranchPreviewCards() {
         },
         {
             id: "south",
-            name: "Excellence International",
+            name: "Bright Horizon International",
             tagline: "Global Curriculum & Culture",
             location: "South Campus, Knowledge Park",
             href: "/branch/south",
@@ -46,7 +46,7 @@ export function BranchPreviewCards() {
         },
         {
             id: "east",
-            name: "Excellence Tech Academy",
+            name: "Bright Horizon Tech Academy",
             tagline: "Science, Technology & AI",
             location: "East Campus, Tech Valley",
             href: "/branch/east",

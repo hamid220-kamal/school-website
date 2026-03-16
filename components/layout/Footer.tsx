@@ -49,13 +49,13 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
                     {/* Brand Section */}
                     <div className="lg:col-span-4 space-y-6">
-                        <Link href="/" className="flex items-center gap-4">
+                        <Link href="/" className="flex items-center gap-4 group">
                             <div className="bg-gradient-primary p-3 rounded-2xl text-white shadow-glow">
                                 <GraduationCap size={32} />
                             </div>
                             <div className="leading-none">
-                                <h2 className="text-2xl font-black font-heading tracking-tight">EXCELLENCE</h2>
-                                <p className="text-xs tracking-[0.3em] text-secondary font-medium">ACADEMY</p>
+                                <h2 className="text-2xl font-black font-heading tracking-tighter uppercase">Bright Horizon</h2>
+                                <p className="text-[10px] tracking-[0.3em] text-secondary font-medium uppercase">Global Institution</p>
                             </div>
                         </Link>
                         <p className="text-slate-400 leading-relaxed">
@@ -85,9 +85,9 @@ export function Footer() {
                         <h3 className="font-bold text-lg mb-6 text-white">Our Campuses</h3>
                         <ul className="space-y-3">
                             {[
-                                { name: 'North Campus (CBSE)', href: '/branch/north' },
-                                { name: 'South Campus (International)', href: '/branch/south' },
-                                { name: 'East Campus (Technology)', href: '/branch/east' }
+                                { name: 'Bright Horizon (North)', href: '/branch/bright-horizon' },
+                                { name: 'Cherry Blossom (International)', href: '/branch/cherry-blossom' },
+                                { name: 'Lotus Veda (Public School)', href: '/branch/lotus-veda' }
                             ].map((item) => (
                                 <li key={item.name}>
                                     <Link href={item.href} className="text-slate-400 hover:text-secondary hover:pl-2 transition-all duration-300 flex items-center gap-2 group">
@@ -163,7 +163,7 @@ export function Footer() {
                                 <div className="p-3 rounded-xl bg-white/5 group-hover:bg-primary/20 transition-colors text-primary">
                                     <Mail size={20} />
                                 </div>
-                                <span className="text-slate-400 group-hover:text-white transition-colors">admissions@excellence.edu</span>
+                                <span className="text-slate-400 group-hover:text-white transition-colors">admissions@brighthorizon.edu</span>
                             </li>
                         </ul>
                     </div>
@@ -171,7 +171,7 @@ export function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-                    <p>© {new Date().getFullYear()} Excellence Academy. Crafted with ❤️ for education.</p>
+                    <p>© {new Date().getFullYear()} Bright Horizon. Crafted with ❤️ for education.</p>
                     <div className="flex gap-6">
                         <Link href="#" className="hover:text-secondary transition-colors">Privacy Policy</Link>
                         <Link href="#" className="hover:text-secondary transition-colors">Terms & Conditions</Link>

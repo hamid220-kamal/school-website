@@ -111,7 +111,7 @@ export function Header() {
                             <Phone size={12} /> +91 98765 43210
                         </span>
                         <span className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer">
-                            <Mail size={12} /> info@excellence.edu
+                            <Mail size={12} /> info@brighthorizon.edu
                         </span>
                     </div>
                     <div className="hidden md:flex items-center gap-2 text-secondary font-bold">
@@ -132,20 +132,18 @@ export function Header() {
                             <GraduationCap size={scrolled ? 28 : 32} />
                             <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>
-                        <div className="flex flex-col">
-                            <h1 className={cn(
-                                "font-black font-heading leading-none tracking-tight transition-all duration-500",
-                                scrolled ? "text-slate-900 text-xl" : "text-white text-2xl"
-                            )}>
-                                EXCELLENCE
-                            </h1>
-                            <span className={cn(
-                                "font-medium tracking-[0.3em] text-xs transition-all duration-500",
-                                scrolled ? "text-primary" : "text-secondary"
-                            )}>
-                                ACADEMY
-                            </span>
-                        </div>
+                                <h1 className={cn(
+                                    "font-black font-heading leading-none tracking-tighter transition-all duration-500 uppercase",
+                                    scrolled ? "text-slate-900 text-xl" : "text-white text-2xl"
+                                )}>
+                                    Bright Horizon
+                                </h1>
+                                <span className={cn(
+                                    "font-medium tracking-[0.3em] text-[10px] transition-all duration-500 uppercase",
+                                    scrolled ? "text-primary" : "text-secondary"
+                                )}>
+                                    Global Institution
+                                </span>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -245,7 +243,7 @@ export function Header() {
                                 <div className="p-3 bg-gradient-primary rounded-xl text-white">
                                     <GraduationCap size={28} />
                                 </div>
-                                <span className="text-white font-black text-xl tracking-tight">EXCELLENCE</span>
+                                <span className="text-white font-black text-xl tracking-tighter uppercase">Bright Horizon</span>
                             </div>
                         </div>
 

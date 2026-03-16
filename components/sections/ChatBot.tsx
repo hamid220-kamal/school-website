@@ -20,7 +20,7 @@ type QAPair = {
 
 const INITIAL_MESSAGE: Message = {
     id: 0,
-    text: "Hello! I'm the Excellence Academy Assistant. Ask me about admissions, fees, timings, or facilities.",
+    text: "Hello! I'm the Bright Horizon Assistant. Ask me about admissions, fees, timings, or facilities.",
     sender: "bot",
 };
 
@@ -30,7 +30,7 @@ const FALLBACK_QA: QAPair[] = [
     { _id: "2", question: "fees", answer: "The annual fee structure varies by grade. Primary is approx ₹50,000 and Secondary is ₹70,000. Scholarships are available for meritorious students.", keywords: ["fee", "cost", "price", "payment"] },
     { _id: "3", question: "timings", answer: "School timings are 8:00 AM to 2:00 PM (Summer) and 8:30 AM to 2:30 PM (Winter). Office hours are 9:00 AM to 3:00 PM.", keywords: ["time", "timing", "schedule", "hours"] },
     { _id: "4", question: "facilities", answer: "We have state-of-the-art Science Labs, a Digital Library, a Swimming Pool, and a vast Sports Complex including Football, Basketball, and Cricket grounds.", keywords: ["facility", "lab", "sport", "library", "pool"] },
-    { _id: "5", question: "contact", answer: "You can reach us at +91 98765 43210 or admissions@excellence.edu. Visit our Contact page for more location details.", keywords: ["contact", "phone", "email", "call"] },
+    { _id: "5", question: "contact", answer: "You can reach us at +91 98765 43210 or admissions@brighthorizon.edu. Visit our Contact page for more location details.", keywords: ["contact", "phone", "email", "call"] },
     { _id: "6", question: "principal", answer: "Our Principal is Dr. N. Venkateswara Rao, a visionary leader with over 35 years of experience in education.", keywords: ["principal", "head", "director"] },
 ];
 
@@ -69,7 +69,7 @@ export function ChatBot() {
 
         // Greetings check
         if (["hello", "hi", "hey", "good morning", "good afternoon"].some(g => lowerInput.includes(g))) {
-            return "Hello! Welcome to Excellence Academy. How can I assist you today?";
+            return "Hello! Welcome to Bright Horizon School. How can I assist you today?";
         }
 
         // Search through Q&A pairs
@@ -84,7 +84,7 @@ export function ChatBot() {
             }
         }
 
-        return "I'm not sure about that. Please contact the office at +91 98765 43210 or email info@excellence.edu for more details.";
+        return "I'm not sure about that. Please contact the office at +91 98765 43210 or email info@brighthorizon.edu for more details.";
     };
 
     const handleSend = () => {

@@ -96,7 +96,7 @@ export function WelcomeSection() {
 
                         <h2 className="text-4xl md:text-5xl font-black font-heading text-slate-900 mb-6 leading-tight">
                             Welcome to<br />
-                            <span className="text-gradient">Excellence Academy</span>
+                            <span className="text-gradient">Bright Horizon</span>
                         </h2>
 
                         <div className="w-20 h-1.5 bg-gradient-secondary rounded-full mb-8" />

@@ -53,7 +53,7 @@ export function AcademicExcellence() {
                     <h2 className="text-4xl md:text-6xl font-black font-heading text-white mb-6 leading-tight">
                         Proven Track Record of
                         <br />
-                        <span className="text-gradient-secondary">Academic Excellence</span>
+                        <span className="text-gradient-secondary">Academic Bright Horizon</span>
                     </h2>
                     <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
                         Our commitment to excellence is reflected in our outstanding achievements

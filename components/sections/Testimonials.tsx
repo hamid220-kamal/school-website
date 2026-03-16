@@ -32,7 +32,7 @@ export function Testimonials({ testimonials = [] }: TestimonialsProps) {
             _id: "1",
             name: "Dr. Rajesh Kumar",
             role: "Parent of Grade 10 Student",
-            content: "The holistic development approach at Excellence Academy is truly commendable. My son has not only excelled academically but has also grown into a confident young man. The faculty's dedication is unparalleled.",
+            content: "The holistic development approach at Bright Horizon is truly commendable. My son has not only excelled academically but has also grown into a confident young man. The faculty's dedication is unparalleled.",
             rating: 5,
             image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
         },
@@ -40,7 +40,7 @@ export function Testimonials({ testimonials = [] }: TestimonialsProps) {
             _id: "2",
             name: "Mrs. Sarah Jenkins",
             role: "Alumni (Batch of 2015)",
-            content: "My years at Excellence Academy defined my career. The teachers were more than mentors; they were guides for life. I'm forever grateful for the foundation they provided.",
+            content: "My years at Bright Horizon defined my career. The teachers were more than mentors; they were guides for life. I'm forever grateful for the foundation they provided.",
             rating: 5,
             image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
         },
@@ -56,7 +56,7 @@ export function Testimonials({ testimonials = [] }: TestimonialsProps) {
             _id: "4",
             name: "Ms. Priya Sharma",
             role: "Parent of Grade 7 Student",
-            content: "What sets Excellence Academy apart is their focus on individual attention. Every child is nurtured according to their unique strengths and potential.",
+            content: "What sets Bright Horizon apart is their focus on individual attention. Every child is nurtured according to their unique strengths and potential.",
             rating: 5,
             image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
         }
@@ -87,7 +87,7 @@ export function Testimonials({ testimonials = [] }: TestimonialsProps) {
                         <span className="text-gradient">Alumni Say</span>
                     </h2>
                     <p className="text-slate-600 text-lg">
-                        Hear from our community about their experiences at Excellence Academy.
+                        Hear from our community about their experiences at Bright Horizon.
                     </p>
                 </motion.div>
 

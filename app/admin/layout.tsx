@@ -55,7 +55,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                         <div className="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center font-bold text-white shrink-0">
                             E
                         </div>
-                        {isSidebarOpen && <span className="font-heading font-bold text-lg animate-fade-in">Excellence<span className="text-secondary">Admin</span></span>}
+                        {isSidebarOpen && <span className="font-heading font-bold text-lg animate-fade-in">Bright Horizon<span className="text-secondary">Admin</span></span>}
                     </div>
                 </div>
 

@@ -15,7 +15,7 @@ export default function ContactPage() {
     });
 
     const centralOffice = {
-        name: "Excellence Academy Network - Head Office",
+        name: "Bright Horizon Network - Head Office",
         address: "Knowledge Hub, Sector 15, Mumbai, Maharashtra - 400001",
         phone: "+91-22-12345678",
         email: "info@excellenceacademy.edu",
@@ -102,7 +102,7 @@ export default function ContactPage() {
                         <h1 className="text-5xl md:text-7xl font-black font-heading mb-6 leading-tight">
                             Contact
                             <br />
-                            <span className="text-gradient-secondary">Excellence Academy</span>
+                            <span className="text-gradient-secondary">Bright Horizon</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
                             We're here to answer your questions and help you find the perfect educational path for your child.

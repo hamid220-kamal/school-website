@@ -8,19 +8,19 @@ export function TrustSection() {
         {
             icon: Award,
             title: "CBSE Affiliated",
-            subtitle: "North Campus",
+            subtitle: "Bright Horizon (North)",
             color: "indigo"
         },
         {
             icon: Award,
             title: "Cambridge International",
-            subtitle: "South Campus",
+            subtitle: "Cherry Blossom (International)",
             color: "emerald"
         },
         {
             icon: Award,
             title: "State Board Recognized",
-            subtitle: "All Campuses",
+            subtitle: "Lotus Veda (Public School)",
             color: "orange"
         }
     ];

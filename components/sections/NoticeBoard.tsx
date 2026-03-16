@@ -38,7 +38,7 @@ export function NoticeBoard({ notices = [] }: { notices?: Notice[] }) {
                         </h2>
 
                         <p className="text-slate-600 mb-8 leading-relaxed">
-                            Stay updated with the latest news, events, and circulars from Excellence Academy.
+                            Stay updated with the latest news, events, and circulars from Bright Horizon.
                         </p>
 
                         <Link

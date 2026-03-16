@@ -117,9 +117,9 @@ export default function Admissions() {
                             🔥 ADMISSIONS OPEN 2026-27 - ALL CAMPUSES
                         </span>
                         <h1 className="text-5xl md:text-7xl font-black font-heading text-white mb-6">
-                            Join Excellence
+                            Join Bright Horizon
                             <br />
-                            <span className="text-gradient-secondary">Academy Network</span>
+                            <span className="text-gradient-secondary">Global Institution</span>
                         </h1>
                         <p className="text-white/90 max-w-3xl mx-auto text-xl md:text-2xl mb-10 leading-relaxed">
                             Secure your child's future at one of our three premier institutions.
@@ -189,7 +189,7 @@ export default function Admissions() {
                             Welcome to Our <span className="text-gradient">Admission Process</span>
                         </h2>
                         <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                            Excellence Academy Network welcomes students from all backgrounds who are eager to learn and grow.
+                            Bright Horizon Network welcomes students from all backgrounds who are eager to learn and grow.
                             Our centralized admission system makes it easy to apply to any of our three world-class campuses.
                         </p>
                     </motion.div>
@@ -354,7 +354,7 @@ export default function Admissions() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link
-                                href="/downloads/excellence-academy-brochure-2026-27.pdf"
+                                href="/downloads/bright-horizon-brochure-2026-27.pdf"
                                 className="inline-flex items-center gap-3 bg-gradient-primary text-white px-8 py-4 rounded-full font-bold shadow-glow hover:shadow-xl transition-all"
                             >
                                 <Download size={20} />
@@ -410,7 +410,7 @@ export default function Admissions() {
                         </div>
                         <div className="flex items-center gap-3">
                             <FileText size={20} className="text-primary" />
-                            <span className="font-bold">admissions@excellenceacademy.edu</span>
+                            <span className="font-bold">admissions@brighthorizon.edu</span>
                         </div>
                         <div className="flex items-center gap-3">
                             <Clock size={20} className="text-primary" />

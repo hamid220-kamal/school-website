@@ -98,7 +98,7 @@ export default function BrightHorizonSchool() {
                             Bright Horizon School
                         </h1>
                         <p className="text-2xl md:text-3xl text-white/95 mb-4 font-bold">
-                            Where Excellence Meets Tradition
+                            Where Bright Horizon Meets Tradition
                         </p>
                         <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
                             Established in 1989, we have been nurturing young minds for over 35 years with academic excellence and holistic development.
@@ -128,7 +128,7 @@ export default function BrightHorizonSchool() {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
                         {[
-                            { number: "35+", label: "Years of Excellence" },
+                            { number: "35+", label: "Years of Bright Horizon" },
                             { number: "2000+", label: "Students" },
                             { number: "150+", label: "Dedicated Faculty" },
                             { number: "98%", label: "Board Results" }
@@ -215,7 +215,7 @@ export default function BrightHorizonSchool() {
                                 OUR HISTORY
                             </span>
                             <h2 className="text-4xl md:text-5xl font-black font-heading text-slate-900 mb-6">
-                                A Legacy of <span className="text-gradient">Excellence Since 1989</span>
+                                A Legacy of <span className="text-gradient">Bright Horizon Since 1989</span>
                             </h2>
                         </div>
                         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -353,7 +353,7 @@ export default function BrightHorizonSchool() {
                                 MANAGEMENT TEAM
                             </span>
                             <h2 className="text-4xl md:text-5xl font-black font-heading text-slate-900 mb-6">
-                                Leadership <span className="text-gradient">Excellence</span>
+                                Leadership <span className="text-gradient">Bright Horizon</span>
                             </h2>
                         </div>
                         <div className="grid md:grid-cols-3 gap-8">
@@ -431,7 +431,7 @@ export default function BrightHorizonSchool() {
                         {[
                             { icon: Award, title: "98% Board Results", desc: "Consistently top scores in CBSE examinations" },
                             { icon: Users, title: "1:15 Teacher Ratio", desc: "Personalized attention for every student" },
-                            { icon: Trophy, title: "50+ Awards Won", desc: "Excellence in academics, sports & arts" },
+                            { icon: Trophy, title: "50+ Awards Won", desc: "Bright Horizon in academics, sports & arts" },
                             { icon: BookOpen, title: "CBSE Curriculum", desc: "Comprehensive NCERT-based education" },
                             { icon: Globe, title: "Global Exposure", desc: "International exchange programs" },
                             { icon: Microscope, title: "STEM Focus", desc: "Cutting-edge science & technology labs" }
