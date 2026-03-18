@@ -48,8 +48,6 @@ export function Header() {
         { name: "Our Campuses", href: "/campuses" },
         { name: "Academics", href: "/academics" },
         { name: "Admissions", href: "/admissions" },
-        { name: "Events", href: "/announcements" },
-        { name: "Careers", href: "/careers" },
         { name: "Contact", href: "/contact" },
     ];
 
