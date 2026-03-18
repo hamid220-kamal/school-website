@@ -94,13 +94,13 @@ export function Header() {
                     "fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-40 transition-all duration-700 rounded-[2rem]",
                     scrolled
                         ? "bg-white/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 py-3"
-                        : "bg-white/5 backdrop-blur-md border border-white/10 py-4",
+                        : "bg-black/20 backdrop-blur-xl border border-white/10 py-4",
                     emergencyNotice ? (scrolled ? "top-8" : "top-12") : "top-4"
                 )}
             >
                 {/* Top Bar - Hidden for cleaner look on premium schools */}
                 {!scrolled && (
-                    <div className="container mx-auto px-8 flex justify-between text-[10px] font-bold tracking-[0.2em] text-white/50 mb-3 transition-all duration-500">
+                    <div className="container mx-auto px-8 flex justify-between text-[10px] font-bold tracking-[0.2em] text-white/80 mb-3 transition-all duration-500">
                         <div className="flex gap-8">
                             <span className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer uppercase">
                                 <Phone size={10} /> +91 98765 43210
@@ -175,7 +175,7 @@ export function Header() {
                                         "relative px-4 py-2 text-[11px] font-black uppercase tracking-widest transition-all rounded-full group",
                                         scrolled
                                             ? "text-slate-500 hover:text-primary"
-                                            : "text-white/70 hover:text-white"
+                                            : "text-white hover:text-secondary"
                                     )}
                                 >
                                     {link.name}
