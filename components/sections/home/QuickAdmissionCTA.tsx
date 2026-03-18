@@ -27,17 +27,17 @@ export function QuickAdmissionCTA() {
                 <div className="absolute bottom-10 right-10 w-80 h-80 bg-secondary/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
 
                 <div className="container mx-auto px-4 relative z-10">
-                    <div className="max-w-5xl mx-auto text-center">
+                    <div className="max-w-6xl mx-auto text-center">
                         {/* Badge */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="mb-8"
+                            className="mb-10"
                         >
-                            <span className="inline-flex items-center gap-2 glass text-white/90 px-8 py-4 rounded-full text-base md:text-lg font-black tracking-wider animate-pulse">
-                                <Sparkles size={20} className="text-secondary" />
-                                🔥 ADMISSIONS OPEN 2026-27 ACROSS ALL CAMPUSES
+                            <span className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-3 rounded-full text-[10px] font-black tracking-[0.4em] uppercase animate-pulse">
+                                <Sparkles size={16} className="text-secondary" />
+                                Admissions Cycle 2026-27 Open
                             </span>
                         </motion.div>
 
@@ -46,11 +46,11 @@ export function QuickAdmissionCTA() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-7xl font-black font-heading text-white mb-8 leading-tight"
+                            className="text-5xl md:text-9xl font-black font-heading text-white mb-12 leading-[0.85] tracking-tighter"
                         >
-                            Secure Your Child's
+                            Architecting the
                             <br />
-                            <span className="text-gradient-secondary">Future Today</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-white">Next Generation</span>
                         </motion.h2>
 
                         <motion.p
@@ -58,11 +58,10 @@ export function QuickAdmissionCTA() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-xl md:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
+                            className="text-xl md:text-3xl text-white/50 mb-16 max-w-4xl mx-auto leading-tight font-medium tracking-tight"
                         >
-                            Join 4700+ successful students across our three world-class campuses.
-                            <br />
-                            <strong className="text-secondary">Limited Seats - Apply Now!</strong>
+                            Join the tri-campus network of excellence where technology meets tenacity. 
+                            <span className="text-white block mt-4 font-black uppercase text-sm tracking-widest">Limited Seats Available.</span>
                         </motion.p>
 
                         {/* CTA Buttons */}
@@ -71,36 +70,36 @@ export function QuickAdmissionCTA() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.4 }}
-                            className="flex flex-col items-center gap-6 mb-12"
+                            className="flex flex-col items-center gap-8 mb-16"
                         >
                             {/* Primary CTA - Apply Now */}
                             <Link
                                 href="/admissions"
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
-                                className="group bg-white text-primary px-12 py-6 font-black tracking-wide text-lg rounded-full shadow-2xl hover:shadow-glow-secondary hover:bg-secondary hover:text-white transition-all inline-flex items-center gap-3 btn-premium transform hover:scale-105"
+                                className="group bg-white text-slate-900 px-16 py-8 font-black tracking-[0.2em] text-xs rounded-2xl shadow-2xl hover:bg-secondary hover:text-white transition-all inline-flex items-center gap-4 uppercase transform hover:scale-105"
                             >
-                                <Calendar size={24} />
-                                APPLY NOW - 2026-27
-                                <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                                <Calendar size={20} />
+                                Start Application
+                                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
 
                             {/* Secondary CTAs */}
-                            <div className="flex flex-col sm:flex-row gap-4">
+                            <div className="flex flex-col sm:flex-row gap-6">
                                 <Link
                                     href="/admissions"
-                                    className="group glass hover:bg-white/20 text-white px-8 py-4 font-bold tracking-wide text-sm rounded-full transition-all inline-flex items-center gap-3"
+                                    className="group bg-white/5 backdrop-blur-md border border-white/10 text-white px-10 py-5 font-black tracking-widest text-[10px] rounded-2xl transition-all inline-flex items-center gap-3 uppercase hover:bg-white/10"
                                 >
-                                    <Download size={20} />
-                                    DOWNLOAD PROSPECTUS
+                                    <Download size={16} />
+                                    Prospectus 2026
                                 </Link>
 
                                 <Link
                                     href="/contact"
-                                    className="group glass hover:bg-white/20 text-white px-8 py-4 font-bold tracking-wide text-sm rounded-full transition-all inline-flex items-center gap-3"
+                                    className="group bg-white/5 backdrop-blur-md border border-white/10 text-white px-10 py-5 font-black tracking-widest text-[10px] rounded-2xl transition-all inline-flex items-center gap-3 uppercase hover:bg-white/10"
                                 >
-                                    <Phone size={20} />
-                                    ENQUIRY FORM
+                                    <Phone size={16} />
+                                    Direct Enquiry
                                 </Link>
                             </div>
                         </motion.div>
@@ -111,12 +110,10 @@ export function QuickAdmissionCTA() {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.6 }}
-                            className="mt-12 inline-flex items-center gap-2 glass text-white/80 px-6 py-3 rounded-full text-sm"
+                            className="inline-flex items-center gap-3 text-white/40 text-[10px] font-black tracking-[0.2em] uppercase"
                         >
-                            <Calendar size={16} className="text-secondary" />
-                            <span>
-                                <strong className="text-white">Application Deadline:</strong> May 31, 2026
-                            </span>
+                            <Calendar size={14} className="text-secondary" />
+                            <span>Global Deadline: May 31, 2026</span>
                         </motion.div>
                     </div>
                 </div>

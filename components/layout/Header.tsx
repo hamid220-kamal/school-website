@@ -48,7 +48,6 @@ export function Header() {
         { name: "Our Campuses", href: "/campuses" },
         { name: "Academics", href: "/academics" },
         { name: "Admissions", href: "/admissions" },
-        { name: "Pricing", href: "/pricing" },
         { name: "Events", href: "/announcements" },
         { name: "Careers", href: "/careers" },
         { name: "Contact", href: "/contact" },
@@ -94,60 +93,58 @@ export function Header() {
 
             <header
                 className={cn(
-                    "fixed top-0 w-full z-40 transition-all duration-500",
+                    "fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-40 transition-all duration-700 rounded-[2rem]",
                     scrolled
-                        ? "bg-white/95 backdrop-blur-xl shadow-premium py-3"
-                        : "bg-transparent py-5",
-                    emergencyNotice ? (scrolled ? "mt-0" : "mt-11") : "mt-0"
+                        ? "bg-white/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 py-3"
+                        : "bg-white/5 backdrop-blur-md border border-white/10 py-4",
+                    emergencyNotice ? (scrolled ? "top-16" : "top-20") : "top-4"
                 )}
             >
-                {/* Top Bar */}
-                <div className={cn(
-                    "container mx-auto px-4 flex justify-between text-xs font-semibold tracking-wider transition-all duration-500 overflow-hidden",
-                    scrolled ? "h-0 opacity-0 mb-0" : "h-auto opacity-100 text-white/80 mb-4"
-                )}>
-                    <div className="flex gap-6">
-                        <span className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer">
-                            <Phone size={12} /> +91 98765 43210
-                        </span>
-                        <span className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer">
-                            <Mail size={12} /> info@brighthorizon.edu
-                        </span>
+                {/* Top Bar - Hidden for cleaner look on premium schools */}
+                {!scrolled && (
+                    <div className="container mx-auto px-8 flex justify-between text-[10px] font-bold tracking-[0.2em] text-white/50 mb-3 transition-all duration-500">
+                        <div className="flex gap-8">
+                            <span className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer uppercase">
+                                <Phone size={10} /> +91 98765 43210
+                            </span>
+                            <span className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer uppercase">
+                                <Mail size={10} /> info@brighthorizon.edu
+                            </span>
+                        </div>
+                        <div className="hidden lg:flex items-center gap-2 text-secondary/80">
+                            <Sparkles size={12} className="animate-pulse" />
+                            ADMISSIONS OPEN FOR 2026-27
+                        </div>
                     </div>
-                    <div className="hidden md:flex items-center gap-2 text-secondary font-bold">
-                        <Sparkles size={14} />
-                        ADMISSIONS OPEN FOR 2026-27
-                    </div>
-                </div>
+                )}
 
                 <div className="container mx-auto px-4 flex items-center justify-between">
-                    {/* Logo */}
-                    <Link href="/" className="flex items-center gap-4 group">
+                    <Link href="/" className="flex items-center gap-3 group px-4">
                         <div className={cn(
-                            "relative p-3 rounded-2xl transition-all duration-500",
+                            "relative p-2.5 rounded-2xl transition-all duration-700",
                             scrolled
-                                ? "bg-gradient-primary text-white shadow-glow"
-                                : "bg-white/10 backdrop-blur-md text-white border border-white/20"
+                                ? "bg-primary text-white shadow-[0_8px_30px_rgb(79,70,229,0.3)]"
+                                : "bg-white/20 text-white border border-white/20"
                         )}>
-                            <GraduationCap size={scrolled ? 28 : 32} />
-                            <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <GraduationCap size={scrolled ? 24 : 28} />
                         </div>
-                                <h1 className={cn(
-                                    "font-black font-heading leading-none tracking-tighter transition-all duration-500 uppercase",
-                                    scrolled ? "text-slate-900 text-xl" : "text-white text-2xl"
-                                )}>
-                                    Bright Horizon
-                                </h1>
-                                <span className={cn(
-                                    "font-medium tracking-[0.3em] text-[10px] transition-all duration-500 uppercase",
-                                    scrolled ? "text-primary" : "text-secondary"
-                                )}>
-                                    Global Institution
-                                </span>
+                        <div className="flex flex-col">
+                            <h1 className={cn(
+                                "font-black font-heading leading-none tracking-tighter transition-all duration-500 uppercase",
+                                scrolled ? "text-slate-900 text-lg" : "text-white text-xl"
+                            )}>
+                                Bright Horizon
+                            </h1>
+                            <span className={cn(
+                                "font-bold tracking-[0.4em] text-[8px] transition-all duration-500 uppercase mt-0.5",
+                                scrolled ? "text-primary/70" : "text-secondary/70"
+                            )}>
+                                Global Institution
+                            </span>
+                        </div>
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center gap-1">
+                    <nav className="hidden lg:flex items-center gap-2">
                         {navLinks.map((link) => {
                             const LinkIcon = link.icon;
                             const isSpecial = link.special;
@@ -158,13 +155,13 @@ export function Header() {
                                         key={link.name}
                                         href={link.href}
                                         className={cn(
-                                            "inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl ml-4",
+                                            "inline-flex items-center gap-2 px-6 py-2 rounded-full font-bold text-[10px] tracking-widest transition-all duration-500 shadow-lg hover:scale-105 ml-4",
                                             scrolled
-                                                ? "bg-gradient-to-r from-slate-700 to-slate-900 text-white hover:from-slate-800 hover:to-black"
-                                                : "bg-white/20 backdrop-blur-md text-white hover:bg-white/30 border border-white/30"
+                                                ? "bg-slate-900 text-white"
+                                                : "bg-white/10 backdrop-blur-md text-white border border-white/20"
                                         )}
                                     >
-                                        {LinkIcon && <LinkIcon size={16} />}
+                                        {LinkIcon && <LinkIcon size={14} />}
                                         {link.name}
                                     </Link>
                                 );
@@ -175,15 +172,15 @@ export function Header() {
                                     key={link.name}
                                     href={link.href}
                                     className={cn(
-                                        "relative px-5 py-2.5 text-sm font-bold uppercase tracking-wide transition-all rounded-full group",
+                                        "relative px-4 py-2 text-[11px] font-black uppercase tracking-widest transition-all rounded-full group",
                                         scrolled
-                                            ? "text-slate-600 hover:text-primary hover:bg-primary/5"
-                                            : "text-white/90 hover:text-white hover:bg-white/10"
+                                            ? "text-slate-500 hover:text-primary"
+                                            : "text-white/70 hover:text-white"
                                     )}
                                 >
                                     {link.name}
                                     <span className={cn(
-                                        "absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-6",
+                                        "absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full transition-all duration-500 group-hover:w-4",
                                         scrolled ? "bg-primary" : "bg-secondary"
                                     )} />
                                 </Link>

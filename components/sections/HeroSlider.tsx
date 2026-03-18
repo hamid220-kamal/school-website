@@ -15,23 +15,26 @@ export function HeroSlider() {
         {
             id: 1,
             image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop",
-            title: "EMPOWERING THREE",
-            highlight: "WORLD-CLASS CAMPUSES",
-            subtitle: "Bright Horizon Network - Leading education across our North, International, and Public school campuses."
+            title: "NEXT-GEN",
+            highlight: "SMART LEARNING",
+            subtitle: "Every classroom is a digital hub. Experience India's first Smart TV integrated curriculum at Bright Horizon.",
+            tag: "INFRASTRUCTURE MAVERICK"
         },
         {
             id: 2,
             image: "https://images.unsplash.com/photo-1544531696-6569265f026a?q=80&w=2000&auto=format&fit=crop",
-            title: "SHAPING FUTURE",
-            highlight: "GLOBAL LEADERS",
-            subtitle: "35+ years of transforming lives through holistic education and innovation."
+            title: "GENZ FACULTY",
+            highlight: "MENTORING FUTURE",
+            subtitle: "Guided by the city's youngest, most energetic faculty who speak the language of the modern student.",
+            tag: "DYNAMIC MENTORSHIP"
         },
         {
             id: 3,
             image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop",
             title: "ONE VISION",
-            highlight: "MULTIPLE PATHWAYS",
-            subtitle: "CBSE, International, and Technology-focused curricula tailored to your child's potential."
+            highlight: "GLOBAL STANDARDS",
+            subtitle: "A unified network of excellence across three campuses, designed for the leaders of 2040.",
+            tag: "INSTITUTIONAL POWER"
         }
     ];
 
@@ -86,29 +89,37 @@ export function HeroSlider() {
                                 >
                                     {/* Badge */}
                                     <motion.span
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        transition={{ duration: 0.5 }}
-                                        className="inline-flex items-center gap-2 px-6 py-2 rounded-full glass text-sm font-bold tracking-[0.15em] mb-8"
+                                        initial={{ opacity: 0, y: -20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8 }}
+                                        className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-black tracking-[0.3em] mb-10 overflow-hidden relative group"
                                     >
-                                        <Sparkles size={16} className="text-secondary" />
-                                        WELCOME TO BRIGHT HORIZON NETWORK
+                                        <Sparkles size={14} className="text-secondary animate-pulse" />
+                                        <span className="relative z-10">{slide.tag}</span>
+                                        <motion.div 
+                                            initial={{ x: "-100%" }} animate={{ x: "200%" }} transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+                                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent w-1/2 skew-x-12"
+                                        />
                                     </motion.span>
 
                                     {/* Main Title */}
-                                    <h2 className="text-5xl sm:text-6xl md:text-8xl font-black font-heading tracking-tight leading-none mb-2">
-                                        {slide.title}
+                                    <h2 className="text-5xl sm:text-7xl md:text-9xl font-black font-heading tracking-tighter leading-[0.85] mb-4">
+                                        <motion.span initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
+                                            {slide.title}
+                                        </motion.span>
                                     </h2>
-                                    <h2 className="text-5xl sm:text-6xl md:text-8xl font-black font-heading tracking-tight leading-none mb-8">
-                                        <span className="text-gradient-secondary">{slide.highlight}</span>
+                                    <h2 className="text-5xl sm:text-7xl md:text-9xl font-black font-heading tracking-tighter leading-[0.85] mb-12">
+                                        <motion.span initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.2 }} className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-white">
+                                            {slide.highlight}
+                                        </motion.span>
                                     </h2>
                                 </motion.div>
 
                                 <motion.p
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8, delay: 0.2 }}
-                                    className="text-lg md:text-2xl font-light max-w-2xl text-white/80 mb-12"
+                                    transition={{ duration: 0.8, delay: 0.4 }}
+                                    className="text-lg md:text-2xl font-medium max-w-3xl text-white/60 mb-14 leading-relaxed tracking-tight"
                                 >
                                     {slide.subtitle}
                                 </motion.p>
@@ -141,24 +152,25 @@ export function HeroSlider() {
                 ))}
             </Swiper>
 
-            {/* Bottom Stats Bar */}
-            <div className="absolute bottom-0 left-0 right-0 z-30">
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-3 gap-4 md:gap-0">
+            {/* Bottom Stats Bar - Premium Overlap Style */}
+            <div className="absolute bottom-0 left-0 right-0 z-30 translate-y-1/2 hover:translate-y-0 transition-transform duration-700">
+                <div className="container mx-auto px-10">
+                    <div className="grid grid-cols-3 gap-1">
                         {stats.map((stat, idx) => (
                             <motion.div
                                 key={idx}
-                                initial={{ y: 50, opacity: 0 }}
+                                initial={{ y: 100, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 1 + (idx * 0.1) }}
-                                className={`py-8 px-6 text-center text-white ${idx === 0 ? 'bg-primary' :
-                                    idx === 1 ? 'bg-gradient-secondary' :
-                                        'bg-slate-800'
-                                    } ${idx === 0 ? 'rounded-tl-3xl' : ''} ${idx === 2 ? 'rounded-tr-3xl' : ''}`}
+                                transition={{ delay: 1.2 + (idx * 0.1) }}
+                                className={`py-12 px-8 text-center text-white backdrop-blur-xl border-t border-x border-white/10 ${
+                                    idx === 0 ? 'bg-primary/90' :
+                                    idx === 1 ? 'bg-secondary/90' :
+                                    'bg-slate-900/90'
+                                } first:rounded-tl-[3rem] last:rounded-tr-[3rem] shadow-2xl group cursor-help`}
                             >
-                                <stat.icon size={24} className="mx-auto mb-2 opacity-80" />
-                                <div className="text-3xl md:text-4xl font-black">{stat.value}</div>
-                                <div className="text-xs md:text-sm font-medium tracking-wider opacity-80 mt-1">{stat.label}</div>
+                                <stat.icon size={20} className="mx-auto mb-4 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all" />
+                                <div className="text-4xl md:text-6xl font-black tracking-tighter mb-1">{stat.value}</div>
+                                <div className="text-[10px] font-black tracking-[0.3em] uppercase opacity-70">{stat.label}</div>
                             </motion.div>
                         ))}
                     </div>

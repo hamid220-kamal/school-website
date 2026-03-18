@@ -26,52 +26,54 @@ export function TrustSection() {
     ];
 
     const certifications = [
-        "ISO 9001:2015 Certified",
-        "NAAC A+ Grade Accreditation",
-        "Green School Certification",
-        "Safety First Institution Award"
+        "ISO 9001:2015 Institutional Excellence",
+        "Oracle Certified Cloud Infrastructure",
+        "Google Cloud AI Foundation Partner",
+        "IBM Enterprise Design Thinking Standards",
+        "TCS Cybersecurity Certified Environment",
+        "Safety First Data Protection Award"
     ];
 
     const facilities = [
         {
-            icon: Wifi,
-            title: "Smart Classrooms",
-            description: "Digital learning with interactive displays"
+            icon: Shield,
+            title: "Cybersecurity First",
+            description: "Advanced data encryption for all student records & privacy."
         },
         {
-            icon: Bus,
-            title: "Safe Transport",
-            description: "GPS-enabled buses with trained staff"
+            icon: Wifi,
+            title: "Smart TV Ecosystem",
+            description: "250+ Interactive 4K displays across all learning hubs."
         },
         {
             icon: Camera,
-            title: "24/7 Security",
-            description: "CCTV surveillance & security personnel"
+            title: "AI Surveillance",
+            description: "Intelligent monitoring for proactive student safety."
+        },
+        {
+            icon: Bus,
+            title: "Smart Transit",
+            description: "Real-time GPS tracking and instant parent alerts."
         },
         {
             icon: Utensils,
-            title: "Hygienic Cafeteria",
-            description: "Nutritious meals in clean environment"
+            title: "Premium Nutrition",
+            description: "Chef-curated, hygienic meals for optimal health."
         },
         {
             icon: BookOpen,
-            title: "Modern Library",
-            description: "50,000+ books & digital resources"
+            title: "Cloud Library",
+            description: "Access to 5M+ digital papers & global resources."
         },
         {
             icon: Users,
-            title: "Trained Faculty",
-            description: "100% qualified & experienced teachers"
-        },
-        {
-            icon: Shield,
-            title: "Medical Facilities",
-            description: "On-campus clinic with qualified nurses"
+            title: "GenZ Faculty",
+            description: "Young, tech-fluent mentors driving the future."
         },
         {
             icon: Zap,
-            title: "Sports Complex",
-            description: "State-of-the-art indoor & outdoor facilities"
+            title: "Future Sports",
+            description: "Robotics labs & state-of-the-art physical arenas."
         }
     ];
 
@@ -97,19 +99,19 @@ export function TrustSection() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-24"
                 >
-                    <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold tracking-wider mb-6">
-                        <Shield size={16} className="text-secondary" />
-                        TRUST & CREDIBILITY
+                    <span className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-500 px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.3em] mb-8 shadow-sm">
+                        <Shield size={14} className="text-primary" />
+                        INSTITUTIONAL INTEGRITY
                     </span>
-                    <h2 className="text-4xl md:text-6xl font-black font-heading text-slate-900 mb-6 leading-tight">
-                        Why Parents
+                    <h2 className="text-5xl md:text-9xl font-black font-heading text-slate-900 mb-8 leading-[0.85] tracking-tighter">
+                        A Bastion of
                         <br />
-                        <span className="text-gradient">Trust Us</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-indigo-600 to-secondary">Absolute Trust</span>
                     </h2>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                        Recognized affiliations, world-class infrastructure, and unwavering commitment to student safety and excellence.
+                    <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Recognized by global tech leaders and governing bodies, we set the gold standard for student safety and academic privacy.
                     </p>
                 </motion.div>
 

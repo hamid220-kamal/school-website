@@ -74,20 +74,19 @@ export function BranchPreviewCards() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-24"
                 >
-                    <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold tracking-wider mb-6">
-                        <Sparkles size={16} className="text-secondary" />
-                        OUR CAMPUSES
+                    <span className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-500 px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.3em] mb-8 shadow-sm">
+                        <MapPin size={14} className="text-secondary" />
+                        GLOBAL NETWORK
                     </span>
-                    <h2 className="text-4xl md:text-6xl font-black font-heading text-slate-900 mb-6 leading-tight">
-                        Three Campuses,
+                    <h2 className="text-5xl md:text-8xl font-black font-heading text-slate-900 mb-8 leading-[0.9] tracking-tighter">
+                        One Vision,
                         <br />
-                        <span className="text-gradient">One Vision</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Three Powerhouses</span>
                     </h2>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                        Discover our world-class campuses, each offering unique specializations
-                        while maintaining our commitment to excellence in education.
+                    <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Explore our world-class campuses, each architected for specific educational pathways. 
                     </p>
                 </motion.div>
 
@@ -120,45 +119,50 @@ export function BranchPreviewCards() {
                                 </div>
 
                                 {/* Content */}
-                                <div className="relative h-full flex flex-col justify-between p-8">
+                                <div className="relative h-full flex flex-col justify-between p-10">
                                     {/* Top Badge */}
                                     <div className="flex items-center justify-between">
-                                        <span className="glass text-white/90 px-4 py-2 rounded-full text-xs font-bold tracking-wider">
-                                            EST. {branch.established}
-                                        </span>
-                                        <div className={`p-3 rounded-full bg-gradient-to-br ${branch.gradient} text-white shadow-lg`}>
-                                            <Users size={20} />
+                                        <div className="flex flex-col">
+                                            <span className="text-[10px] font-black tracking-[0.3em] text-white/40 mb-1">FOUNDED</span>
+                                            <span className="text-white font-bold text-sm tracking-widest">{branch.established}</span>
                                         </div>
+                                        <motion.div 
+                                            whileHover={{ rotate: 360 }} transition={{ duration: 1 }}
+                                            className={`w-14 h-14 rounded-2xl flex items-center justify-center bg-gradient-to-br ${branch.gradient} text-white shadow-2xl border border-white/20`}
+                                        >
+                                            <Sparkles size={24} />
+                                        </motion.div>
                                     </div>
 
                                     {/* Bottom Content */}
-                                    <div className="space-y-4">
+                                    <div className="space-y-6">
                                         <div>
-                                            <h3 className="text-3xl font-black font-heading text-white mb-2 group-hover:text-secondary transition-colors">
+                                            <h3 className="text-4xl font-black font-heading text-white mb-2 group-hover:tracking-tighter transition-all duration-500 leading-none">
                                                 {branch.name}
                                             </h3>
-                                            <p className="text-lg font-bold text-white/80 tracking-wide uppercase text-sm">
+                                            <p className="text-[10px] font-black text-secondary tracking-[0.4em] uppercase">
                                                 {branch.tagline}
                                             </p>
                                         </div>
 
-                                        {/* Stats */}
-                                        <div className="flex items-center gap-6 text-white/70 text-sm">
-                                            <span className="flex items-center gap-2">
-                                                <MapPin size={16} className="text-secondary" />
-                                                {branch.location}
-                                            </span>
-                                            <span className="flex items-center gap-2">
-                                                <Users size={16} className="text-secondary" />
-                                                {branch.students} Students
-                                            </span>
+                                        {/* Stats Container */}
+                                        <div className="flex flex-wrap gap-4 pt-4 border-t border-white/10">
+                                            <div className="flex flex-col">
+                                                <span className="text-[8px] font-black text-white/40 tracking-widest mb-1 uppercase">Students</span>
+                                                <span className="text-white font-bold text-xs">{branch.students}</span>
+                                            </div>
+                                            <div className="w-px h-6 bg-white/10 mx-2" />
+                                            <div className="flex flex-col">
+                                                <span className="text-[8px] font-black text-white/40 tracking-widest mb-1 uppercase">Location</span>
+                                                <span className="text-white font-bold text-xs">{branch.location.split(',')[0]}</span>
+                                            </div>
                                         </div>
 
-                                        {/* CTA Button */}
-                                        <div className="pt-4">
-                                            <div className="inline-flex items-center gap-3 bg-white text-slate-900 px-6 py-3 rounded-full font-bold text-sm group-hover:bg-secondary group-hover:text-white transition-all shadow-lg">
-                                                Explore Campus
-                                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                        {/* Premium CTA */}
+                                        <div className="pt-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                                            <div className="inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-2xl font-black text-xs tracking-widest uppercase shadow-2xl">
+                                                VISIT CAMPUS
+                                                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                                             </div>
                                         </div>
                                     </div>

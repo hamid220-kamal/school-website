@@ -21,24 +21,24 @@ export function AboutTheGroup() {
 
     const coreValues = [
         {
-            icon: Award,
-            title: "Bright Horizon in Education",
-            description: "Setting the highest standards in academic achievement and character development"
+            icon: Target,
+            title: "Precision Excellence",
+            description: "Setting the highest standards in academic achievement and character development."
         },
         {
             icon: Globe,
-            title: "Global Perspective",
-            description: "Preparing students to thrive in an interconnected, multicultural world"
+            title: "Global Reach",
+            description: "Preparing students to thrive in an interconnected, multicultural world."
         },
         {
-            icon: Heart,
-            title: "Holistic Development",
-            description: "Nurturing mind, body, and spirit for well-rounded individuals"
+            icon: Lightbulb,
+            title: "Smart Innovation",
+            description: "Nurturing 21st-century thinkers with cutting-edge Smart TV integrated learning."
         },
         {
             icon: Shield,
-            title: "Values & Ethics",
-            description: "Building strong moral foundations and responsible citizenship"
+            title: "Moral Integrity",
+            description: "Building strong moral foundations and responsible citizenship for a better future."
         }
     ];
 
@@ -60,21 +60,19 @@ export function AboutTheGroup() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-20"
+                    className="text-center mb-24"
                 >
-                    <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold tracking-wider mb-6">
-                        <Award size={16} className="text-secondary" />
-                        ABOUT THE BRIGHT HORIZON GROUP
+                    <span className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-500 px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.3em] mb-8 shadow-sm">
+                        <Award size={14} className="text-primary" />
+                        INSTITUTIONAL LEGACY
                     </span>
-                    <h2 className="text-4xl md:text-6xl font-black font-heading text-slate-900 mb-6 leading-tight">
-                        A Legacy of
+                    <h2 className="text-5xl md:text-8xl font-black font-heading text-slate-900 mb-8 leading-[0.9] tracking-tighter">
+                        Crafting the
                         <br />
-                        <span className="text-gradient">Educational Excellence</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Future of Minds</span>
                     </h2>
-                    <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                        For over three decades, the Bright Horizon Group has been at the forefront of
-                        transforming lives through quality education, expanding from a single campus to a
-                        network of three world-class institutions.
+                    <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Since 1989, Bright Horizon has redefined education. We aren't just a school; we are a tri-campus powerhouse of innovation.
                     </p>
                 </motion.div>
 
@@ -130,39 +128,36 @@ export function AboutTheGroup() {
                 </motion.div>
 
                 {/* Mission & Vision */}
-                <div className="mb-24 max-w-6xl mx-auto">
+                <div className="mb-32 max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* Mission */}
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="p-8 rounded-3xl bg-gradient-primary text-white shadow-glow relative overflow-hidden"
+                            className="p-12 rounded-[3.5rem] bg-slate-900 text-white shadow-2xl relative overflow-hidden group border border-white/5"
                         >
-                            <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-[60px]" />
-                            <Target size={48} className="mb-6 relative z-10" />
-                            <h3 className="text-2xl font-black mb-4 relative z-10">Our Mission</h3>
-                            <p className="text-white/90 leading-relaxed relative z-10">
-                                To provide world-class education that empowers students with knowledge, skills, and values
-                                to excel academically and contribute meaningfully to society while fostering innovation,
-                                creativity, and global citizenship.
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                            <Target size={48} className="mb-8 text-primary group-hover:scale-110 transition-transform duration-500" />
+                            <h3 className="text-3xl font-black mb-6 tracking-tight">The Mission</h3>
+                            <p className="text-slate-400 leading-relaxed text-lg font-medium">
+                                To engineer world-class educational ecosystems that empower students with the digital fluency and moral gravity needed to lead in the 21st century.
                             </p>
                         </motion.div>
 
                         {/* Vision */}
                         <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="p-8 rounded-3xl bg-gradient-secondary text-white shadow-glow-secondary relative overflow-hidden"
+                            transition={{ delay: 0.2 }}
+                            className="p-12 rounded-[3.5rem] bg-white text-slate-900 shadow-2xl relative overflow-hidden group border border-slate-100"
                         >
-                            <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-[60px]" />
-                            <Lightbulb size={48} className="mb-6 relative z-10" />
-                            <h3 className="text-2xl font-black mb-4 relative z-10">Our Vision</h3>
-                            <p className="text-white/90 leading-relaxed relative z-10">
-                                To be recognized as India's leading educational institution network, known for academic
-                                excellence, innovative teaching methodologies, and producing confident, compassionate leaders
-                                who shape the future of our nation and the world.
+                            <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                            <Lightbulb size={48} className="mb-8 text-secondary group-hover:scale-110 transition-transform duration-500" />
+                            <h3 className="text-3xl font-black mb-6 tracking-tight">The Vision</h3>
+                            <p className="text-slate-500 leading-relaxed text-lg font-medium">
+                                To establish Bright Horizon as the global benchmark for institutional excellence, where technology and humanity converge to create future leaders.
                             </p>
                         </motion.div>
                     </div>
