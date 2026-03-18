@@ -95,7 +95,7 @@ export function Header() {
                     scrolled
                         ? "bg-white/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 py-3"
                         : "bg-white/5 backdrop-blur-md border border-white/10 py-4",
-                    emergencyNotice ? (scrolled ? "top-16" : "top-20") : "top-4"
+                    emergencyNotice ? (scrolled ? "top-8" : "top-12") : "top-4"
                 )}
             >
                 {/* Top Bar - Hidden for cleaner look on premium schools */}
