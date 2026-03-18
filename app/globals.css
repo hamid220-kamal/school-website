@@ -69,18 +69,16 @@
 }
 
 :root {
-  /* Premium Indigo/Violet Palette - Modern & Sophisticated */
-
-  /* Deep Indigo - Trust & Innovation */
-  --primary: #4f46e5;
-  --primary-dark: #3730a3;
-  --primary-light: #818cf8;
+  /* Logo Blue - Trust & Professionalism */
+  --primary: #1D70D6;
+  --primary-dark: #1557A6;
+  --primary-light: #4A9FFF;
   --primary-foreground: #ffffff;
 
-  /* Vibrant Coral/Orange - Energy & Warmth */
-  --secondary: #f97316;
-  --secondary-dark: #ea580c;
-  --secondary-light: #fb923c;
+  /* Logo Orange/Yellow - Energy & Sun */
+  --secondary: #FBAF17;
+  --secondary-dark: #D48C00;
+  --secondary-light: #FFCF6D;
   --secondary-foreground: #ffffff;
 
   /* Accent - Emerald for success states */
@@ -97,9 +95,9 @@
   --border: #e2e8f0;
   --radius: 1rem;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
-  --gradient-secondary: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fbbf24 100%);
+  /* Gradients based on new palette */
+  --gradient-primary: linear-gradient(135deg, #1D70D6 0%, #1557A6 100%);
+  --gradient-secondary: linear-gradient(135deg, #FBAF17 0%, #F98C00 100%);
   --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 }

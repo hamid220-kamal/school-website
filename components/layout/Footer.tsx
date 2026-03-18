@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Facebook, Twitter, Instagram, Youtube, Phone, Mail, MapPin, ChevronRight, GraduationCap, ArrowRight, Send } from "lucide-react";
+import { Logo } from "./Logo";
 import { useState } from "react";
 
 export function Footer() {
@@ -49,14 +50,8 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
                     {/* Brand Section */}
                     <div className="lg:col-span-4 space-y-6">
-                        <Link href="/" className="flex items-center gap-4 group">
-                            <div className="bg-gradient-primary p-3 rounded-2xl text-white shadow-glow">
-                                <GraduationCap size={32} />
-                            </div>
-                            <div className="leading-none">
-                                <h2 className="text-2xl font-black font-heading tracking-tighter uppercase">Bright Horizon</h2>
-                                <p className="text-[10px] tracking-[0.3em] text-secondary font-medium uppercase">Global Institution</p>
-                            </div>
+                        <Link href="/">
+                            <Logo scrolled={false} />
                         </Link>
                         <p className="text-slate-400 leading-relaxed">
                             Empowering the next generation of leaders with world-class education

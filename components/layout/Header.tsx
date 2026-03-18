@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, GraduationCap, X, Phone, Mail, Sparkles, ArrowLeft, AlertTriangle } from "lucide-react";
+import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -118,29 +119,8 @@ export function Header() {
 
                 <div className="container mx-auto px-8 flex items-center justify-between">
                     <div className="flex-1 flex items-center justify-start">
-                        <Link href="/" className="flex items-center gap-3 group">
-                            <div className={cn(
-                                "relative p-2.5 rounded-2xl transition-all duration-700",
-                                scrolled
-                                    ? "bg-primary text-white shadow-[0_8px_30px_rgb(79,70,229,0.3)]"
-                                    : "bg-white/20 text-white border border-white/20"
-                            )}>
-                                <GraduationCap size={scrolled ? 24 : 28} />
-                            </div>
-                            <div className="flex flex-col">
-                                <h1 className={cn(
-                                    "font-black font-heading leading-none tracking-tighter transition-all duration-500 uppercase",
-                                    scrolled ? "text-slate-900 text-lg" : "text-white text-xl"
-                                )}>
-                                    Bright Horizon
-                                </h1>
-                                <span className={cn(
-                                    "font-bold tracking-[0.4em] text-[8px] transition-all duration-500 uppercase mt-0.5",
-                                    scrolled ? "text-primary/70" : "text-secondary/70"
-                                )}>
-                                    Global Institution
-                                </span>
-                            </div>
+                        <Link href="/">
+                            <Logo scrolled={scrolled} />
                         </Link>
                     </div>
 
@@ -236,12 +216,9 @@ export function Header() {
 
                         {/* Logo */}
                         <div className="p-8">
-                            <div className="flex items-center gap-3">
-                                <div className="p-3 bg-gradient-primary rounded-xl text-white">
-                                    <GraduationCap size={28} />
-                                </div>
-                                <span className="text-white font-black text-xl tracking-tighter uppercase">Bright Horizon</span>
-                            </div>
+                            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                                <Logo scrolled={false} />
+                            </Link>
                         </div>
 
                         {/* Navigation */}
