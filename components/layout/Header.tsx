@@ -116,33 +116,35 @@ export function Header() {
                     </div>
                 )}
 
-                <div className="container mx-auto px-4 flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-3 group px-4">
-                        <div className={cn(
-                            "relative p-2.5 rounded-2xl transition-all duration-700",
-                            scrolled
-                                ? "bg-primary text-white shadow-[0_8px_30px_rgb(79,70,229,0.3)]"
-                                : "bg-white/20 text-white border border-white/20"
-                        )}>
-                            <GraduationCap size={scrolled ? 24 : 28} />
-                        </div>
-                        <div className="flex flex-col">
-                            <h1 className={cn(
-                                "font-black font-heading leading-none tracking-tighter transition-all duration-500 uppercase",
-                                scrolled ? "text-slate-900 text-lg" : "text-white text-xl"
+                <div className="container mx-auto px-8 flex items-center justify-between">
+                    <div className="flex-1 flex items-center justify-start">
+                        <Link href="/" className="flex items-center gap-3 group">
+                            <div className={cn(
+                                "relative p-2.5 rounded-2xl transition-all duration-700",
+                                scrolled
+                                    ? "bg-primary text-white shadow-[0_8px_30px_rgb(79,70,229,0.3)]"
+                                    : "bg-white/20 text-white border border-white/20"
                             )}>
-                                Bright Horizon
-                            </h1>
-                            <span className={cn(
-                                "font-bold tracking-[0.4em] text-[8px] transition-all duration-500 uppercase mt-0.5",
-                                scrolled ? "text-primary/70" : "text-secondary/70"
-                            )}>
-                                Global Institution
-                            </span>
-                        </div>
-                    </Link>
+                                <GraduationCap size={scrolled ? 24 : 28} />
+                            </div>
+                            <div className="flex flex-col">
+                                <h1 className={cn(
+                                    "font-black font-heading leading-none tracking-tighter transition-all duration-500 uppercase",
+                                    scrolled ? "text-slate-900 text-lg" : "text-white text-xl"
+                                )}>
+                                    Bright Horizon
+                                </h1>
+                                <span className={cn(
+                                    "font-bold tracking-[0.4em] text-[8px] transition-all duration-500 uppercase mt-0.5",
+                                    scrolled ? "text-primary/70" : "text-secondary/70"
+                                )}>
+                                    Global Institution
+                                </span>
+                            </div>
+                        </Link>
+                    </div>
 
-                    <nav className="hidden lg:flex items-center gap-2">
+                    <nav className="hidden lg:flex items-center gap-6">
                         {navLinks.map((link) => {
                             const LinkIcon = link.icon;
                             const isSpecial = link.special;
@@ -187,7 +189,7 @@ export function Header() {
                     </nav>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex-1 flex items-center justify-end gap-4">
                         <Link
                             href="/admissions"
                             className={cn(
