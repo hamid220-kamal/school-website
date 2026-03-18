@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronRight, Play, Sparkles, Award, Users } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 
@@ -151,6 +152,34 @@ export function HeroSlider() {
                     </SwiperSlide>
                 ))}
             </Swiper>
+
+            {/* Live Operations Overlay - Professional Digital Solution Feel */}
+            <div className="absolute top-32 right-10 z-30 hidden xl:block">
+                <motion.div 
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1.5 }}
+                    className="glass-dark p-6 rounded-3xl border border-white/10 shadow-2xl space-y-4 min-w-[240px]"
+                >
+                    <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-2">
+                        <span className="text-[10px] font-black tracking-widest text-secondary uppercase">Institutional Intelligence</span>
+                        <div className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                    </div>
+                    
+                    <div className="space-y-4">
+                        {[
+                            { label: "Smart Classes Active", value: "248/250", color: "text-emerald-400" },
+                            { label: "Attendance Status", value: "98.4%", color: "text-indigo-400" },
+                            { label: "Admissions Pipeline", value: "112 Live", color: "text-secondary" }
+                        ].map((item, i) => (
+                            <div key={i} className="flex flex-col gap-1">
+                                <span className="text-[9px] font-bold text-white/40 uppercase tracking-wider">{item.label}</span>
+                                <span className={cn("text-lg font-black tracking-tighter", item.color)}>{item.value}</span>
+                            </div>
+                        ))}
+                    </div>
+                </motion.div>
+            </div>
 
             {/* Bottom Stats Bar - Premium Overlap Style */}
             <div className="absolute bottom-0 left-0 right-0 z-30 translate-y-1/2 hover:translate-y-0 transition-transform duration-700">

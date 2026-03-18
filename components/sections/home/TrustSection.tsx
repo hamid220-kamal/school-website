@@ -78,9 +78,9 @@ export function TrustSection() {
     ];
 
     const colorClasses = {
-        indigo: "from-indigo-500 to-purple-600",
+        indigo: "from-primary to-primary-dark",
         emerald: "from-emerald-500 to-teal-600",
-        orange: "from-orange-500 to-red-600"
+        orange: "from-secondary to-secondary-dark"
     };
 
     return (
