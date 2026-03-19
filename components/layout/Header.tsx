@@ -92,94 +92,78 @@ export function Header() {
 
             <header
                 className={cn(
-                    "fixed left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-700 rounded-[2rem] hidden lg:block",
+                    "fixed left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-700 rounded-3xl hidden lg:block overflow-hidden",
                     scrolled
-                        ? "bg-white/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 py-3 top-4"
-                        : "bg-black/20 backdrop-blur-xl border border-white/10 py-4 top-4",
-                    emergencyNotice ? (scrolled ? "top-8" : "top-12") : "top-4"
+                        ? "bg-white/90 backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.15)] border border-white/60 py-2 top-4"
+                        : "bg-black/30 backdrop-blur-xl border border-white/10 py-5 top-6",
+                    emergencyNotice ? (scrolled ? "top-8" : "top-14") : "top-6"
                 )}
             >
-                {/* Top Bar - Refined for professional look */}
-                {!scrolled && (
-                    <div className="container mx-auto px-8 flex justify-between text-[10px] font-bold tracking-[0.2em] text-white/80 mb-3 transition-all duration-500">
-                        <div className="flex gap-8">
-                            <span className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer uppercase">
-                                <Phone size={10} /> +91 98765 43210
-                            </span>
-                            <span className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer uppercase">
-                                <Mail size={10} /> info@brighthorizon.edu
-                            </span>
-                        </div>
-                        <div className="flex items-center gap-4">
-                            <div className="flex items-center gap-2 text-secondary/80">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                ADMISSIONS OPEN 2026-27
-                            </div>
-                        </div>
-                    </div>
-                )}
+                {/* Visual Accent - Top Gradient Line */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
-                <div className="container mx-auto px-8 flex items-center justify-between">
-                    <div className="flex-1 flex items-center justify-start">
-                        <Link href="/">
+                <div className="container mx-auto px-10 flex items-center justify-between gap-8">
+                    {/* Brand Section */}
+                    <div className="flex-shrink-0">
+                        <Link href="/" className="hover:opacity-90 transition-opacity">
                             <Logo scrolled={scrolled} />
                         </Link>
                     </div>
 
-                    <nav className="hidden lg:flex items-center gap-6">
+                    {/* Navigation - Centered & Refined */}
+                    <nav className="flex items-center bg-white/5 backdrop-blur-md rounded-2xl px-2 py-1 border border-white/5">
                         {navLinks.map((link) => {
                             const isSpecial = link.special;
 
-                            if (isSpecial) {
-                                return (
-                                    <Link
-                                        key={link.name}
-                                        href={link.href}
-                                        className={cn(
-                                            "inline-flex items-center gap-2 px-6 py-2 rounded-full font-bold text-[10px] tracking-widest transition-all duration-500 shadow-lg hover:scale-105 ml-4",
-                                            scrolled
-                                                ? "bg-primary text-white"
-                                                : "bg-white/10 backdrop-blur-md text-white border border-white/20"
-                                        )}
-                                    >
-                                        {link.icon && <link.icon size={14} />}
-                                        {link.name}
-                                    </Link>
-                                );
-                            }
+                            if (isSpecial) return null; // Handle special separately or skip for center
 
                             return (
                                 <Link
                                     key={link.name}
                                     href={link.href}
                                     className={cn(
-                                        "relative px-4 py-2 text-[11px] font-black uppercase tracking-widest transition-all rounded-full group",
+                                        "relative px-5 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 rounded-xl group overflow-hidden",
                                         scrolled
-                                            ? "text-slate-500 hover:text-primary"
+                                            ? "text-slate-600 hover:text-primary"
                                             : "text-white hover:text-secondary"
                                     )}
                                 >
-                                    {link.name}
+                                    <span className="relative z-10">{link.name}</span>
+                                    {/* Hover Background Effect */}
                                     <span className={cn(
-                                        "absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full transition-all duration-500 group-hover:w-4",
-                                        scrolled ? "bg-primary" : "bg-secondary"
+                                        "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                                        scrolled ? "bg-slate-100" : "bg-white/10"
                                     )} />
                                 </Link>
                             );
                         })}
                     </nav>
 
-                    <div className="flex-1 flex items-center justify-end gap-4">
+                    {/* Actions & Status */}
+                    <div className="flex items-center gap-6">
+                        {/* Status Pulse */}
+                        {!scrolled && (
+                            <div className="hidden xl:flex items-center gap-2 group cursor-help">
+                                <div className="relative">
+                                    <span className="block w-2 h-2 rounded-full bg-emerald-500" />
+                                    <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-75" />
+                                </div>
+                                <span className="text-[9px] font-bold text-white/50 uppercase tracking-widest group-hover:text-white/80 transition-colors">
+                                    Admissions Active
+                                </span>
+                            </div>
+                        )}
+
                         <Link
                             href="/admissions"
                             className={cn(
-                                "hidden md:inline-flex items-center gap-2 px-8 py-3 rounded-full font-bold text-xs tracking-widest transition-all btn-premium shadow-glow",
+                                "inline-flex items-center justify-center px-8 py-3 rounded-2xl font-black text-[10px] tracking-[0.2em] transition-all transform hover:scale-105 active:scale-95 shadow-xl",
                                 scrolled
-                                    ? "bg-primary text-white"
-                                    : "bg-secondary text-white"
+                                    ? "bg-primary text-white shadow-primary/20"
+                                    : "bg-white text-slate-900 shadow-white/10"
                             )}
                         >
-                            APPLY NOW
+                            ENROLL NOW
                         </Link>
                     </div>
                 </div>
