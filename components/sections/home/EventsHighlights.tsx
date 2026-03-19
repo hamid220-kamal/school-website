@@ -83,131 +83,114 @@ export function EventsHighlights() {
     };
 
     return (
-        <section className="py-32 bg-white relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-[0.02]"
-                style={{
-                    backgroundImage: `radial-gradient(circle at 2px 2px, #4f46e5 1px, transparent 0)`,
-                    backgroundSize: '40px 40px'
-                }}
-            />
-
-            <div className="container mx-auto px-4 relative z-10">
+        <section className="py-32 bg-slate-950 relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+            
+            <div className="container mx-auto px-4 relative z-10 mb-24">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-20"
                 >
-                    <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold tracking-wider mb-6">
-                        <Sparkles size={16} className="text-secondary" />
-                        UPCOMING EVENTS
-                    </span>
-                    <h2 className="text-4xl md:text-6xl font-black font-heading text-slate-900 mb-6 leading-tight">
-                        Campus Events &
+                    <div className="flex items-center justify-center gap-3 mb-8">
+                        <span className="h-[1px] w-8 bg-secondary/50" />
+                        <span className="text-[10px] font-black tracking-[0.4em] text-secondary uppercase">Institutional Pulse</span>
+                        <span className="h-[1px] w-8 bg-secondary/50" />
+                    </div>
+                    <h2 className="text-5xl md:text-8xl font-black font-heading text-white mb-8 tracking-tighter leading-[0.85]">
+                        Life &
                         <br />
-                        <span className="text-gradient">Activities</span>
+                        <span className="text-gradient-secondary">Milestones</span>
                     </h2>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                        Stay connected with the latest happenings across all our three campuses.
+                    <p className="text-lg text-white/40 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Witness the convergence of technology, culture, and achievement across our global campus network.
                     </p>
                 </motion.div>
 
-                {/* Events Carousel */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    <Swiper
-                        modules={[Autoplay, Navigation, Pagination]}
-                        spaceBetween={30}
-                        slidesPerView={1}
-                        autoplay={{ delay: 4000, disableOnInteraction: false }}
-                        navigation
-                        pagination={{ clickable: true }}
-                        loop={true}
-                        breakpoints={{
-                            640: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 }
-                        }}
-                        className="pb-16"
-                    >
-                        {events.map((event) => (
-                            <SwiperSlide key={event.id}>
-                                <div className="group h-full">
-                                    <div className="relative h-[450px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 card-hover bg-white">
-                                        {/* Event Image */}
-                                        <div className="relative h-64 overflow-hidden">
-                                            <Image
-                                                src={event.image}
-                                                alt={event.title}
-                                                fill
-                                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-
-                                            {/* Campus Badge */}
-                                            <div className="absolute top-4 left-4">
-                                                <span className={`inline-flex items-center gap-2 ${campusColors[event.campusColor as keyof typeof campusColors]} text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg`}>
-                                                    {event.campus}
-                                                </span>
+                {/* Video Highlight Marquee - "The Wall" */}
+                <div className="relative w-screen -ml-[50vw] left-1/2 overflow-hidden py-10 mb-20">
+                    <div className="flex gap-6 animate-infinite-scroll">
+                        {[...Array(2)].map((_, i) => (
+                            <div key={i} className="flex gap-6 shrink-0">
+                                {[
+                                    "https://images.unsplash.com/photo-1540575467063-178a50c2df87",
+                                    "https://images.unsplash.com/photo-1511578314322-379afb476865",
+                                    "https://images.unsplash.com/photo-1461896836934-ffe607ba8211",
+                                    "https://images.unsplash.com/photo-1515187029135-18ee286d815b",
+                                    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30"
+                                ].map((img, idx) => (
+                                    <div key={idx} className="relative w-[400px] h-[260px] rounded-[2rem] overflow-hidden group border border-white/5">
+                                        <Image
+                                            src={`${img}?q=80&w=800&auto=format&fit=crop`}
+                                            alt="School Life"
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-700 grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+                                        <div className="absolute bottom-6 left-6 flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white">
+                                                <Sparkles size={16} />
                                             </div>
-
-                                            {/* Category Badge */}
-                                            <div className="absolute top-4 right-4">
-                                                <span className="glass text-white/90 px-4 py-2 rounded-full text-xs font-bold">
-                                                    {event.category}
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        {/* Event Details */}
-                                        <div className="p-6 space-y-4">
-                                            <h3 className="text-xl font-black font-heading text-slate-900 leading-tight group-hover:text-primary transition-colors">
-                                                {event.title}
-                                            </h3>
-
-                                            <div className="space-y-2">
-                                                <div className="flex items-center gap-2 text-slate-600 text-sm">
-                                                    <Calendar size={16} className="text-primary" />
-                                                    <span>{event.date}</span>
-                                                </div>
-                                                <div className="flex items-center gap-2 text-slate-600 text-sm">
-                                                    <MapPin size={16} className="text-secondary" />
-                                                    <span>{event.location}</span>
-                                                </div>
-                                            </div>
-
-                                            <div className="pt-2">
-                                                <button className="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all">
-                                                    Learn More
-                                                    <ArrowRight size={16} />
-                                                </button>
-                                            </div>
+                                            <span className="text-[10px] font-black text-white uppercase tracking-widest">Global Standards</span>
                                         </div>
                                     </div>
-                                </div>
-                            </SwiperSlide>
+                                ))}
+                            </div>
                         ))}
-                    </Swiper>
-                </motion.div>
+                    </div>
+                </div>
 
-                {/* View All CTA */}
+                {/* Active Intelligence Feed (Events) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                    {events.map((event, idx) => (
+                        <motion.div
+                            key={event.id}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="group"
+                        >
+                            <div className="bg-white/[0.02] backdrop-blur-3xl border border-white/5 p-8 rounded-[2.5rem] hover:bg-white/[0.05] transition-all duration-500 h-full flex flex-col">
+                                <div className="flex items-center justify-between mb-8">
+                                    <span className="text-[10px] font-black text-secondary tracking-widest uppercase">{event.category}</span>
+                                    <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                                </div>
+                                <h3 className="text-2xl font-black text-white mb-6 leading-tight group-hover:text-secondary transition-colors">
+                                    {event.title}
+                                </h3>
+                                <div className="mt-auto pt-6 border-t border-white/5 space-y-3">
+                                    <div className="flex items-center gap-3 text-white/40">
+                                        <Calendar size={14} className="text-secondary" />
+                                        <span className="text-[10px] font-bold uppercase tracking-wider">{event.date}</span>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-white/40">
+                                        <MapPin size={14} className="text-secondary" />
+                                        <span className="text-[10px] font-bold uppercase tracking-wider">{event.location} • {event.campus}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* Perspective View CTA */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mt-8"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    className="text-center mt-20"
                 >
                     <Link
                         href="/announcements"
-                        className="inline-flex items-center gap-3 bg-gradient-primary text-white px-8 py-4 rounded-full font-bold text-sm shadow-glow hover:shadow-lg transition-all btn-premium"
+                        className="group relative inline-flex items-center gap-6 text-white/40 hover:text-white transition-all font-black text-xs tracking-[0.3em] uppercase"
                     >
-                        View All Events
-                        <ArrowRight size={18} />
+                        <span>Explore full archive</span>
+                        <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-secondary group-hover:text-slate-950 group-hover:border-secondary transition-all">
+                            <ArrowRight size={18} />
+                        </div>
                     </Link>
                 </motion.div>
             </div>

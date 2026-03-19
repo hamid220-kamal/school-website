@@ -6,120 +6,121 @@ import { Quote } from "lucide-react";
 
 export function ChairmanMessage() {
     return (
-        <section className="py-32 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
-            {/* Background Decorations */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/5 rounded-full blur-[100px]" />
+        <section className="py-32 bg-slate-950 relative overflow-hidden">
+            {/* Cinematic Background Accents */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.05),transparent)] pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(251,191,36,0.05),transparent)] pointer-events-none" />
+            
+            {/* Large Institutional Seal Watermark */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] pointer-events-none">
+                <div className="w-[800px] h-[800px] border-[40px] border-white rounded-full flex items-center justify-center">
+                    <span className="text-8xl font-black tracking-[1em] text-white rotate-12">HORIZON</span>
+                </div>
+            </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-bold tracking-wider mb-4">
-                        LEADERSHIP MESSAGE
-                    </span>
-                </motion.div>
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid lg:grid-cols-12 gap-16 items-center">
+                        {/* Portrait Section */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1 }}
+                            className="lg:col-span-5 relative"
+                        >
+                            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] border border-white/10 group">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+                                    alt="Chairman"
+                                    width={600}
+                                    height={800}
+                                    className="w-full h-auto object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000"
+                                    priority
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
+                            </div>
 
-                {/* Main Content Card */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="max-w-6xl mx-auto"
-                >
-                    <div className="glass-card p-8 md:p-12 rounded-3xl shadow-premium relative overflow-hidden">
-                        {/* Background Quote Icon */}
-                        <div className="absolute top-8 right-8 opacity-5">
-                            <Quote size={200} className="text-primary" />
-                        </div>
-
-                        <div className="grid md:grid-cols-5 gap-12 items-center relative z-10">
-                            {/* Left - Photo */}
+                            {/* Floating Metadata Card */}
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                                className="md:col-span-2"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.8 }}
+                                className="absolute -bottom-8 -right-8 bg-white/5 backdrop-blur-2xl border border-white/10 p-10 rounded-[2.5rem] shadow-2xl z-20 max-w-[280px]"
                             >
-                                <div className="relative">
-                                    {/* Photo Frame */}
-                                    <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                                        <Image
-                                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop"
-                                            alt="Dr. Rajesh Kumar - Chairman"
-                                            width={400}
-                                            height={500}
-                                            className="w-full h-auto object-cover"
-                                            priority
-                                        />
-                                        {/* Gradient Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
-                                    </div>
-
-                                    {/* Decorative Border */}
-                                    <div className="absolute -inset-4 bg-gradient-primary rounded-3xl -z-10 opacity-20 blur-xl" />
+                                <div className="flex flex-col gap-2">
+                                    <span className="text-[10px] font-black text-secondary tracking-[0.4em] uppercase mb-2 leading-none">Global Visionary</span>
+                                    <h4 className="text-xl font-black text-white leading-tight">Dr. Rajesh Kumar</h4>
+                                    <div className="h-[2px] w-8 bg-secondary mt-2" />
                                 </div>
                             </motion.div>
 
-                            {/* Right - Message */}
+                            {/* Decorative Background Frame */}
+                            <div className="absolute top-10 -left-10 w-full h-full border border-white/5 rounded-[3rem] -z-10" />
+                        </motion.div>
+
+                        {/* Message Section */}
+                        <div className="lg:col-span-7">
                             <motion.div
-                                initial={{ opacity: 0, x: 30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.4 }}
-                                className="md:col-span-3"
+                                transition={{ duration: 0.8 }}
+                                className="space-y-12"
                             >
-                                {/* Quote Icon */}
-                                <div className="mb-6">
-                                    <Quote size={40} className="text-primary opacity-30" />
+                                <div className="flex items-center gap-3">
+                                    <span className="h-[1px] w-12 bg-secondary" />
+                                    <span className="text-[10px] font-black tracking-[0.4em] text-secondary uppercase">The Chairman's Vision</span>
                                 </div>
 
-                                {/* Message */}
-                                <blockquote className="space-y-6">
-                                    <p className="text-xl md:text-2xl text-slate-700 leading-relaxed font-light italic">
-                                        "Education is not just about academic excellence; it's about nurturing minds,
-                                        building character, and inspiring the next generation of leaders who will shape
-                                        our world."
-                                    </p>
-
-                                    <p className="text-lg text-slate-600 leading-relaxed">
-                                        Over the past 35 years, we have remained committed to this vision. Our three
-                                        campuses stand as beacons of innovation, tradition, and excellence, each
-                                        contributing uniquely to our mission of holistic education.
-                                    </p>
-
-                                    <p className="text-lg text-slate-600 leading-relaxed">
-                                        I invite you to be part of our legacy—where every student is valued, every
-                                        dream is nurtured, and every achievement is celebrated.
+                                <blockquote className="relative">
+                                    <div className="absolute -top-10 -left-10 opacity-10">
+                                        <Quote size={120} className="text-white fill-white" />
+                                    </div>
+                                    <p className="text-4xl md:text-5xl font-black font-heading text-white leading-tight tracking-tighter mb-10 relative z-10 italic">
+                                        "Education is not just about academic excellence; it's about nurturing minds, building character, and inspiring the next generation of leaders."
                                     </p>
                                 </blockquote>
 
-                                {/* Signature Section */}
-                                <div className="mt-10 pt-8 border-t border-slate-200">
-                                    <div className="flex items-center gap-6">
-                                        <div className="h-16 w-1 bg-gradient-primary rounded-full" />
-                                        <div>
-                                            <h3 className="text-2xl font-black font-heading text-slate-900">
-                                                Dr. Rajesh Kumar
-                                            </h3>
-                                            <p className="text-primary font-bold tracking-wide text-sm">
-                                                CHAIRMAN & FOUNDER
-                                            </p>
-                                            <p className="text-slate-500 text-sm mt-1">
-                                                Ph.D. in Education Leadership | 35+ Years Experience
-                                            </p>
+                                <div className="space-y-6 max-w-2xl">
+                                    <p className="text-lg text-white/50 leading-relaxed font-medium">
+                                        For over three decades, we have remained committed to this vision. Our three campuses stand as beacons of innovation, tradition, and excellence, each contributing uniquely to our mission of holistic education.
+                                    </p>
+                                    <p className="text-lg text-white/50 leading-relaxed font-medium">
+                                        I invite you to be part of our legacy—where every student is valued, every dream is nurtured, and every achievement is celebrated.
+                                    </p>
+                                </div>
+
+                                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center gap-10">
+                                    <div className="flex flex-col">
+                                        <span className="text-[9px] font-black text-white/30 tracking-[0.3em] uppercase mb-1">FOUNDER & CEO</span>
+                                        <div className="flex items-center gap-4">
+                                            <div className="w-[200px] h-[60px] relative mt-2 opacity-60 hover:opacity-100 transition-opacity">
+                                                {/* Representing a digital signature */}
+                                                <div className="absolute inset-0 border-b border-white/10 flex items-end pb-2">
+                                                    <span className="text-3xl font-serif text-white/60 italic tracking-tighter">R. Kumar</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="hidden md:block w-[1px] h-12 bg-white/10" />
+
+                                    <div className="flex flex-col">
+                                        <span className="text-[9px] font-black text-white/30 tracking-[0.3em] uppercase mb-2">Qualifications</span>
+                                        <div className="flex flex-wrap gap-2">
+                                            {["Ph.D. Ed Leadership", "Ex-IIT Faculty", "35+ Years"].map((tag, i) => (
+                                                <span key={i} className="text-[9px] font-bold text-white/60 bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                                                    {tag}
+                                                </span>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
                             </motion.div>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

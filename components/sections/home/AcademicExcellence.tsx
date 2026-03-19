@@ -23,20 +23,15 @@ export function AcademicExcellence() {
     ];
 
     return (
-        <section className="py-32 bg-gradient-hero relative overflow-hidden">
-            {/* Background Pattern */}
+        <section className="py-32 bg-slate-950 relative overflow-hidden">
+            {/* Background Pattern - Technical/Data Feel */}
             <div
-                className="absolute inset-0 opacity-10"
+                className="absolute inset-0 opacity-5"
                 style={{
-                    backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                                     linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-                    backgroundSize: '50px 50px'
+                    backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+                    backgroundSize: '40px 40px'
                 }}
             />
-
-            {/* Floating Orbs */}
-            <div className="absolute top-20 left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-            <div className="absolute bottom-20 right-20 w-80 h-80 bg-secondary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header */}
@@ -44,47 +39,45 @@ export function AcademicExcellence() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-20"
+                    className="text-center mb-24"
                 >
-                    <span className="inline-flex items-center gap-2 glass text-white/90 px-6 py-3 rounded-full text-sm font-bold tracking-wider mb-6">
-                        <Award size={16} className="text-secondary" />
-                        ACHIEVEMENTS & EXCELLENCE
-                    </span>
-                    <h2 className="text-4xl md:text-6xl font-black font-heading text-white mb-6 leading-tight">
-                        Proven Track Record of
+                    <div className="flex items-center justify-center gap-3 mb-6">
+                        <span className="h-[1px] w-12 bg-gradient-to-r from-transparent to-secondary" />
+                        <span className="text-[10px] font-black tracking-[0.4em] text-secondary uppercase">Institutional Intelligence</span>
+                        <span className="h-[1px] w-12 bg-gradient-to-l from-transparent to-secondary" />
+                    </div>
+                    <h2 className="text-5xl md:text-8xl font-black font-heading text-white mb-8 tracking-tighter leading-none">
+                        Our Impact in
                         <br />
-                        <span className="text-gradient-secondary">Academic Bright Horizon</span>
+                        <span className="text-gradient-secondary">Numbers</span>
                     </h2>
-                    <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-                        Our commitment to excellence is reflected in our outstanding achievements
-                        across all three campuses.
+                    <p className="text-lg text-white/40 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Real-time performance metrics across our global network of three campuses, benchmarked against international standards.
                     </p>
                 </motion.div>
 
-                {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {/* Dashboard Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                     {stats.map((stat, idx) => (
-                        <StatCard key={idx} stat={stat} index={idx} />
+                        <StatDashboardCard key={idx} stat={stat} index={idx} />
                     ))}
                 </div>
 
-                {/* Bottom CTA */}
+                {/* Verified Badge */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mt-16"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    className="flex items-center justify-center gap-2 mt-20 opacity-40 hover:opacity-100 transition-opacity"
                 >
-                    <p className="text-white/60 text-sm tracking-wider mb-6">
-                        Data based on combined performance across all three campuses (2023-24)
-                    </p>
+                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-[9px] font-bold text-white uppercase tracking-widest">Data Verified for Academic Session 2026-27</span>
                 </motion.div>
             </div>
         </section>
     );
 }
 
-function StatCard({ stat, index }: { stat: Stat; index: number }) {
+function StatDashboardCard({ stat, index }: { stat: Stat; index: number }) {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
@@ -108,12 +101,10 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
 
     useEffect(() => {
         if (!isVisible) return;
-
-        const duration = 2000;
+        const duration = 2500;
         const steps = 60;
         const increment = stat.value / steps;
         let current = 0;
-
         const timer = setInterval(() => {
             current += increment;
             if (current >= stat.value) {
@@ -123,53 +114,61 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
                 setCount(Math.floor(current));
             }
         }, duration / steps);
-
         return () => clearInterval(timer);
     }, [isVisible, stat.value]);
-
-    const colorClasses = {
-        emerald: "from-emerald-500 to-teal-600 text-emerald-400",
-        amber: "from-amber-500 to-orange-600 text-amber-400",
-        indigo: "from-indigo-500 to-purple-600 text-indigo-400",
-        cyan: "from-cyan-500 to-blue-600 text-cyan-400",
-        purple: "from-purple-500 to-pink-600 text-purple-400",
-        rose: "from-rose-500 to-pink-600 text-rose-400"
-    };
-
-    const colors = colorClasses[stat.color as keyof typeof colorClasses];
 
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.6 }}
+            transition={{ delay: index * 0.1 }}
             className="group"
         >
-            <div className="glass-dark p-8 rounded-3xl hover:bg-white/5 transition-all duration-500 h-full relative overflow-hidden">
-                {/* Icon with Gradient Background */}
-                <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${colors.split(' ')[0]} ${colors.split(' ')[1]} mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                    <stat.icon size={32} className="text-white" />
+            <div className="bg-white/[0.02] backdrop-blur-3xl border border-white/5 p-10 rounded-[2.5rem] hover:bg-white/[0.05] transition-all duration-500 relative overflow-hidden h-full">
+                {/* Visual Progress Ring Backdrop */}
+                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-48 h-48 rounded-full border border-white/[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-1000" />
+                
+                <div className="flex flex-col h-full relative z-10">
+                    <div className="flex items-start justify-between mb-10">
+                        <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent border border-white/5">
+                            <stat.icon size={28} className="text-secondary" />
+                        </div>
+                        <div className="flex flex-col items-end">
+                            <span className="text-[9px] font-black text-secondary tracking-widest uppercase">Verified Stat</span>
+                            <div className="h-[2px] w-4 bg-secondary mt-1" />
+                        </div>
+                    </div>
+
+                    <div className="mt-auto">
+                        <div className="flex items-baseline gap-1 mb-2">
+                            <span className="text-6xl md:text-7xl font-black text-white tracking-tighter">
+                                {count.toLocaleString()}
+                            </span>
+                            <span className="text-2xl font-black text-secondary">
+                                {stat.suffix}
+                            </span>
+                        </div>
+                        
+                        <h3 className="text-white/40 text-xs font-black uppercase tracking-[0.2em] mb-4">
+                            {stat.label}
+                        </h3>
+
+                        {/* Visual Skill-Line/Progress */}
+                        <div className="w-full h-[1px] bg-white/5 overflow-hidden">
+                            <motion.div 
+                                initial={{ x: "-100%" }}
+                                animate={isVisible ? { x: 0 } : { x: "-100%" }}
+                                transition={{ duration: 2, ease: "easeOut" }}
+                                className="w-full h-full bg-gradient-to-r from-transparent via-secondary to-transparent"
+                            />
+                        </div>
+                    </div>
                 </div>
 
-                {/* Animated Number */}
-                <div className="mb-3">
-                    <span className="text-5xl md:text-6xl font-black text-white tracking-tight">
-                        {count.toLocaleString()}
-                    </span>
-                    <span className={`text-4xl md:text-5xl font-black ${colors.split(' ')[2]}`}>
-                        {stat.suffix}
-                    </span>
-                </div>
-
-                {/* Label */}
-                <p className="text-white/70 font-medium tracking-wide leading-relaxed">
-                    {stat.label}
-                </p>
-
-                {/* Decorative Line */}
-                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${colors.split(' ')[0]} ${colors.split(' ')[1]} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
+                {/* Glowing Corner Background */}
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-[60px] group-hover:bg-primary/10 transition-all duration-700" />
             </div>
         </motion.div>
     );

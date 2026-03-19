@@ -59,12 +59,14 @@ export function BranchPreviewCards() {
     ];
 
     return (
-        <section className="py-24 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
-            {/* Background Decoration */}
-            <div className="absolute inset-0 opacity-[0.03]"
+        <section className="py-32 bg-slate-950 relative overflow-hidden">
+            {/* Elite Background Accents */}
+            <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 opacity-[0.02]"
                 style={{
-                    backgroundImage: `radial-gradient(circle at 2px 2px, #4f46e5 1px, transparent 0)`,
-                    backgroundSize: '40px 40px'
+                    backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                                     linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+                    backgroundSize: '60px 60px'
                 }}
             />
 
@@ -76,100 +78,100 @@ export function BranchPreviewCards() {
                     viewport={{ once: true }}
                     className="text-center mb-24"
                 >
-                    <span className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-500 px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.3em] mb-8 shadow-sm">
-                        <MapPin size={14} className="text-secondary" />
-                        GLOBAL NETWORK
-                    </span>
-                    <h2 className="text-5xl md:text-8xl font-black font-heading text-slate-900 mb-8 leading-[0.9] tracking-tighter">
-                        One Vision,
+                    <div className="flex items-center justify-center gap-3 mb-8">
+                        <span className="h-[1px] w-8 bg-secondary/50" />
+                        <span className="text-[10px] font-black tracking-[0.4em] text-secondary uppercase">Institutional Network</span>
+                        <span className="h-[1px] w-8 bg-secondary/50" />
+                    </div>
+                    <h2 className="text-5xl md:text-8xl font-black font-heading text-white mb-8 tracking-tighter leading-[0.85]">
+                        State-of-the-Art
                         <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Three Powerhouses</span>
+                        <span className="text-secondary">Campuses</span>
                     </h2>
-                    <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
-                        Explore our world-class campuses, each architected for specific educational pathways. 
+                    <p className="text-lg text-white/40 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Three specialized environments engineered for future-readiness, academic mastery, and global leadership.
                     </p>
                 </motion.div>
 
                 {/* Branch Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {branches.map((branch, idx) => (
                         <motion.div
                             key={branch.id}
-                            initial={{ opacity: 0, y: 50 }}
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: idx * 0.15, duration: 0.6 }}
+                            transition={{ delay: idx * 0.1, duration: 0.8 }}
                         >
                             <Link
                                 href={branch.href}
-                                className="group block relative h-[480px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-glow transition-all duration-500 card-hover"
+                                className="group block relative h-[560px] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_45px_100px_rgba(0,0,0,0.4)]"
                             >
-                                {/* Background Image */}
+                                {/* Background Image with Parallax-like Zoom */}
                                 <div className="absolute inset-0">
                                     <Image
                                         src={branch.image}
                                         alt={branch.name}
                                         fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        className="object-cover transition-transform duration-1000 scale-105 group-hover:scale-110 group-hover:rotate-1"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     />
-                                    {/* Gradient Overlays */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
-                                    <div className={`absolute inset-0 bg-gradient-to-br ${branch.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-500`} />
+                                    {/* Cinematic Overlays */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                                    <div className={`absolute inset-0 bg-gradient-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-700`} />
                                 </div>
-
-                                {/* Content */}
-                                <div className="relative h-full flex flex-col justify-between p-10">
-                                    {/* Top Badge */}
-                                    <div className="flex items-center justify-between">
+ 
+                                {/* Content Overlay */}
+                                <div className="relative h-full flex flex-col justify-between p-12">
+                                    {/* Top Metadata */}
+                                    <div className="flex items-start justify-between">
                                         <div className="flex flex-col">
-                                            <span className="text-[10px] font-black tracking-[0.3em] text-white/40 mb-1">FOUNDED</span>
-                                            <span className="text-white font-bold text-sm tracking-widest">{branch.established}</span>
+                                            <span className="text-[8px] font-black tracking-[0.3em] text-white/50 mb-1">NETWORK EST.</span>
+                                            <span className="text-white font-black text-sm tracking-widest">{branch.established}</span>
                                         </div>
-                                        <motion.div 
-                                            whileHover={{ rotate: 360 }} transition={{ duration: 1 }}
-                                            className={`w-14 h-14 rounded-2xl flex items-center justify-center bg-gradient-to-br ${branch.gradient} text-white shadow-2xl border border-white/20`}
-                                        >
-                                            <Sparkles size={24} />
-                                        </motion.div>
+                                        <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 text-secondary">
+                                            <Sparkles size={20} className="animate-pulse" />
+                                        </div>
                                     </div>
 
-                                    {/* Bottom Content */}
+                                    {/* Footer Info */}
                                     <div className="space-y-6">
                                         <div>
-                                            <h3 className="text-4xl font-black font-heading text-white mb-2 group-hover:tracking-tighter transition-all duration-500 leading-none">
+                                            <h3 className="text-4xl font-black font-heading text-white mb-3 leading-none group-hover:text-secondary transition-colors duration-500">
                                                 {branch.name}
                                             </h3>
-                                            <p className="text-[10px] font-black text-secondary tracking-[0.4em] uppercase">
+                                            <p className="text-[10px] font-black text-white/40 tracking-[0.3em] uppercase max-w-[80%]">
                                                 {branch.tagline}
                                             </p>
                                         </div>
 
-                                        {/* Stats Container */}
-                                        <div className="flex flex-wrap gap-4 pt-4 border-t border-white/10">
+                                        {/* Quick Metrics */}
+                                        <div className="flex items-center gap-6 pt-6 border-t border-white/10">
                                             <div className="flex flex-col">
-                                                <span className="text-[8px] font-black text-white/40 tracking-widest mb-1 uppercase">Students</span>
-                                                <span className="text-white font-bold text-xs">{branch.students}</span>
+                                                <span className="text-[7px] font-black text-white/30 tracking-[0.2em] mb-1 uppercase text-left">Community</span>
+                                                <span className="text-white font-black text-[10px] uppercase text-left">{branch.students} Scholars</span>
                                             </div>
-                                            <div className="w-px h-6 bg-white/10 mx-2" />
+                                            <div className="w-[1px] h-6 bg-white/10" />
                                             <div className="flex flex-col">
-                                                <span className="text-[8px] font-black text-white/40 tracking-widest mb-1 uppercase">Location</span>
-                                                <span className="text-white font-bold text-xs">{branch.location.split(',')[0]}</span>
+                                                <span className="text-[7px] font-black text-white/30 tracking-[0.2em] mb-1 uppercase text-left">Sector</span>
+                                                <span className="text-white font-black text-[10px] uppercase text-left">{branch.location.split(',')[1]}</span>
                                             </div>
                                         </div>
 
-                                        {/* Premium CTA */}
-                                        <div className="pt-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                                            <div className="inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-2xl font-black text-xs tracking-widest uppercase shadow-2xl">
-                                                VISIT CAMPUS
-                                                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                                        {/* Action Hint */}
+                                        <div className="pt-6 flex items-center justify-between pointer-events-none group-hover:pt-8 transition-all duration-500">
+                                            <span className="text-[9px] font-black text-white/80 uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">
+                                                Enter Campus
+                                            </span>
+                                            <div className="w-12 h-12 rounded-full bg-white text-slate-900 flex items-center justify-center scale-75 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 shadow-2xl">
+                                                <ArrowRight size={18} />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* Animated Border */}
-                                <div className={`absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-white/30 transition-all duration-500`} />
+                                {/* Premium Border Accent */}
+                                <div className="absolute inset-0 rounded-[2.5rem] border border-white/5 pointer-events-none group-hover:border-white/20 transition-colors duration-500" />
                             </Link>
                         </motion.div>
                     ))}
