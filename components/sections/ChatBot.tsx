@@ -110,7 +110,7 @@ export function ChatBot() {
                         initial={{ opacity: 0, y: 20, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.9 }}
-                        className="fixed bottom-24 right-4 md:right-8 w-[90vw] md:w-96 bg-white rounded-2xl shadow-2xl border border-slate-100 z-50 flex flex-col overflow-hidden"
+                        className="fixed bottom-48 md:bottom-28 right-4 md:right-8 w-[90vw] md:w-96 bg-white rounded-2xl shadow-2xl border border-slate-100 z-50 flex flex-col overflow-hidden"
                         style={{ height: '500px', maxHeight: '80vh' }}
                     >
                         {/* Header */}
@@ -196,7 +196,7 @@ export function ChatBot() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="fixed bottom-6 right-4 md:right-8 w-16 h-16 bg-primary text-white rounded-full shadow-xl shadow-primary/30 flex items-center justify-center z-50 transition-shadow overflow-hidden group"
+                className="fixed bottom-28 md:bottom-8 right-6 md:right-8 w-16 h-16 bg-primary text-white rounded-full shadow-2xl shadow-primary/30 flex items-center justify-center z-50 transition-all overflow-hidden group"
             >
                 <div className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
                 {isOpen ? <X size={32} /> : <MessageCircle size={32} />}
