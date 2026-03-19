@@ -54,7 +54,7 @@ export function HeroSlider() {
                 <div className="absolute inset-0 bg-slate-900/60 z-10" /> {/* Dimmer overlay for text readability */}
                 <iframe
                     src={`https://www.youtube.com/embed/L7m92dMxUHM?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&playlist=L7m92dMxUHM&controls=0&modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1`}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-full min-w-full min-h-full pointer-events-none scale-125 lg:scale-110"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400%] h-full md:w-[200%] md:h-[150%] lg:w-[110%] lg:h-[110%] pointer-events-none object-cover"
                     allow="autoplay; encrypted-media"
                     title="Background Video"
                 />
