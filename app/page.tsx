@@ -10,7 +10,6 @@ import { ChatBot } from "@/components/sections/ChatBot";
 import { HeroSlider } from "@/components/sections/HeroSlider";
 
 // New Home Components
-import { InstitutionAbout } from "@/components/sections/home/InstitutionAbout";
 import { AboutTheGroup } from "@/components/sections/home/AboutTheGroup";
 import { BranchPreviewCards } from "@/components/sections/home/BranchPreviewCards";
 import { ChairmanMessage } from "@/components/sections/home/ChairmanMessage";
@@ -31,9 +30,6 @@ export default async function Home() {
 
       {/* Hero Section with Updated Content */}
       <HeroSlider />
-
-      {/* About the Institution */}
-      <InstitutionAbout />
 
       {/* About the Group (Comprehensive with Founder Message) */}
       <AboutTheGroup />
