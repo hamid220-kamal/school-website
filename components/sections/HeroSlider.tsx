@@ -83,74 +83,8 @@ export function HeroSlider() {
             {/* Background Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-slate-900/40 via-transparent to-slate-900 z-10" />
 
-            {/* Simplified Single Hero Content */}
-            <div className="relative z-20 h-full container mx-auto px-4 flex flex-col justify-center items-center text-center text-white">
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="max-w-5xl"
-                >
-                    {/* Badge */}
-                    <motion.span
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-black tracking-[0.3em] mb-10 overflow-hidden relative group"
-                    >
-                        <Sparkles size={14} className="text-secondary animate-pulse" />
-                        <span className="relative z-10 uppercase tracking-widest">Global Educational Excellence</span>
-                        <motion.div 
-                            initial={{ x: "-100%" }} animate={{ x: "200%" }} transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent w-1/2 skew-x-12"
-                        />
-                    </motion.span>
-
-                    {/* Main Title */}
-                    <h1 className="text-5xl sm:text-7xl md:text-9xl font-black font-heading tracking-tighter leading-[0.85] mb-4">
-                        <motion.span initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
-                            ONE MISSION
-                        </motion.span>
-                    </h1>
-                    <h1 className="text-5xl sm:text-7xl md:text-9xl font-black font-heading tracking-tighter leading-[0.85] mb-12">
-                        <motion.span initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.2 }} className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-white">
-                            GLOBAL STANDARDS
-                        </motion.span>
-                    </h1>
-                </motion.div>
-
-                <motion.p
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-lg md:text-2xl font-medium max-w-3xl text-white/80 mb-14 leading-relaxed tracking-tight"
-                >
-                    Empowering the leaders of 2040 with India's first Smart TV integrated curriculum and a unified network of world-class campuses.
-                </motion.p>
-
-                {/* CTA Buttons */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="flex flex-col sm:flex-row gap-4"
-                >
-                    <Link
-                        href="/admissions"
-                        className="group bg-gradient-secondary text-white px-10 py-4 font-bold tracking-widest text-sm rounded-full shadow-glow-secondary hover:shadow-glow transition-all inline-flex items-center gap-3 btn-premium"
-                    >
-                        ADMISSIONS OPEN 2026-27
-                        <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    <Link
-                        href="/about"
-                        className="group glass hover:bg-white/20 text-white px-10 py-4 font-bold tracking-widest text-sm rounded-full transition-all inline-flex items-center gap-3"
-                    >
-                        <Play size={18} className="fill-current" />
-                        VIRTUAL TOUR
-                    </Link>
-                </motion.div>
-            </div>
+            {/* Clean Hero - Content Removed for Cinematic Experience */}
+            <div className="relative z-20 h-full container mx-auto px-4 flex flex-col justify-center items-center text-center text-white" />
 
             {/* Live Operations Overlay - Professional Digital Solution Feel */}
             <div className="absolute top-32 right-10 z-30 hidden xl:block">
