@@ -43,214 +43,162 @@ export function AboutTheGroup() {
     ];
 
     return (
-        <section className="py-32 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
-            {/* Background Decorations */}
-            <div className="absolute inset-0 opacity-[0.02]"
-                style={{
-                    backgroundImage: `radial-gradient(circle at 2px 2px, #4f46e5 1px, transparent 0)`,
-                    backgroundSize: '40px 40px'
-                }}
-            />
-            <div className="absolute top-20 right-20 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
-            <div className="absolute bottom-20 left-20 w-80 h-80 bg-secondary/5 rounded-full blur-[100px]" />
-
+        <section className="py-32 bg-slate-950 relative overflow-hidden">
+            {/* Cinematic Background Accents */}
+            <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.05),transparent)] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_70%,rgba(251,191,36,0.05),transparent)] pointer-events-none" />
+            
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-24"
+                    className="text-center mb-32"
                 >
-                    <span className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-500 px-6 py-2.5 rounded-full text-[10px] font-black tracking-[0.3em] mb-8 shadow-sm">
-                        <Award size={14} className="text-primary" />
-                        INSTITUTIONAL LEGACY
-                    </span>
-                    <h2 className="text-5xl md:text-8xl font-black font-heading text-slate-900 mb-8 leading-[0.9] tracking-tighter">
-                        Crafting the
+                    <div className="flex items-center justify-center gap-3 mb-8">
+                        <span className="h-[1px] w-8 bg-secondary/50" />
+                        <span className="text-[10px] font-black tracking-[0.4em] text-secondary uppercase">The Educational Powerhouse</span>
+                        <span className="h-[1px] w-8 bg-secondary/50" />
+                    </div>
+                    <h2 className="text-5xl md:text-[8rem] font-black font-heading text-white mb-12 leading-[0.8] tracking-tighter">
+                        Institutional
                         <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Future of Minds</span>
+                        <span className="text-gradient-secondary">Odyssey</span>
                     </h2>
-                    <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
-                        Since 1989, Bright Horizon has redefined education. We aren't just a school; we are a tri-campus powerhouse of innovation.
+                    <p className="text-xl text-white/30 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Since 1989, we have rewritten the educational narrative. A tri-campus legacy defined by relentless innovation and academic mastery.
                     </p>
                 </motion.div>
 
-                {/* Founder's Vision */}
+                {/* Founder's Vision - Cinematic Legacy */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-24"
+                    className="mb-32"
                 >
-                    <div className="max-w-5xl mx-auto glass-card p-8 md:p-12 rounded-3xl shadow-premium">
-                        <div className="grid md:grid-cols-2 gap-12 items-center">
-                            {/* Founder Image */}
-                            <div className="relative">
-                                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                    <div className="max-w-6xl mx-auto bg-white/[0.01] backdrop-blur-3xl border border-white/5 p-12 lg:p-24 rounded-[4rem] shadow-2xl relative overflow-hidden group">
+                        {/* Background Watermark */}
+                        <div className="absolute top-10 right-10 text-[10rem] font-black text-white/[0.02] leading-none pointer-events-none select-none">
+                            1989
+                        </div>
+                        
+                        <div className="grid lg:grid-cols-12 gap-20 items-center relative z-10">
+                            {/* Founder Image & Stat */}
+                            <div className="lg:col-span-5 relative group">
+                                <div className="relative rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] border border-white/10 aspect-[4/5]">
                                     <Image
                                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop"
                                         alt="Founder - Mr. Arun Sharma"
-                                        width={500}
-                                        height={600}
-                                        className="w-full h-auto object-cover"
+                                        fill
+                                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 brightness-75 group-hover:brightness-100"
                                     />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
                                 </div>
-                                <div className="absolute -bottom-6 -right-6 bg-gradient-primary text-white p-6 rounded-2xl shadow-glow">
-                                    <div className="text-4xl font-black">1989</div>
-                                    <div className="text-sm font-medium">Founded</div>
+                                <div className="absolute -bottom-10 -right-10 bg-secondary px-10 py-8 rounded-[2.5rem] shadow-glow-secondary z-20 text-slate-950">
+                                    <div className="flex flex-col items-center">
+                                        <span className="text-5xl font-black leading-none mb-1">35+</span>
+                                        <span className="text-[8px] font-black tracking-[0.3em] uppercase">Year Legacy</span>
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* Founder's Message */}
-                            <div>
-                                <h3 className="text-3xl font-black font-heading text-slate-900 mb-4">
-                                    Founder's Vision
-                                </h3>
-                                <div className="w-16 h-1.5 bg-gradient-secondary rounded-full mb-6" />
-                                <p className="text-lg text-slate-700 leading-relaxed mb-4 italic">
-                                    "Education is the most powerful tool to shape the future. Our vision was to create
-                                    not just schools, but centers of excellence that nurture young minds, build character,
-                                    and prepare global citizens."
+                            {/* Founder's Message Content */}
+                            <div className="lg:col-span-7">
+                                <div className="flex items-center gap-4 mb-8">
+                                    <div className="w-12 h-[2px] bg-secondary" />
+                                    <h3 className="text-3xl font-black text-white tracking-tighter italic">"Visionaries see the invisible."</h3>
+                                </div>
+                                <p className="text-2xl text-white/50 leading-relaxed mb-10 font-medium">
+                                    "Our goal was never just to build schools. It was to build <strong>centers of institutional gravity</strong>—places where the next generation of global leaders discover their absolute potential."
                                 </p>
-                                <p className="text-slate-600 leading-relaxed mb-6">
-                                    What started as a small dream in 1989 has grown into a network of three premier
-                                    institutions, each specializing in different educational pathways while maintaining
-                                    our core commitment to excellence, innovation, and holistic development.
-                                </p>
-                                <div className="pt-4 border-t border-slate-200">
-                                    <p className="font-bold text-slate-900 text-lg">Mr. Arun Sharma</p>
-                                    <p className="text-primary font-medium">Founder & Managing Director</p>
+                                <div className="space-y-6 mb-12">
+                                    <p className="text-white/30 leading-relaxed">
+                                        What began as a singular dream has evolved into a powerhouse tri-campus network. Each institution is a dedicated hub of specialized excellence, unified by a singular commitment to elite standards.
+                                    </p>
+                                </div>
+                                <div className="pt-10 border-t border-white/5 flex items-center justify-between">
+                                    <div>
+                                        <p className="text-2xl font-black text-white tracking-widest uppercase">Mr. Arun Sharma</p>
+                                        <p className="text-[10px] font-black text-secondary tracking-[0.4em] uppercase mt-2">Founder & Managing Director</p>
+                                    </div>
+                                    <div className="opacity-20 hover:opacity-100 transition-opacity cursor-default hidden md:block">
+                                        <Image src="/signature.png" alt="Signature" width={120} height={60} className="invert" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </motion.div>
 
-                {/* Mission & Vision */}
-                <div className="mb-32 max-w-6xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {/* Mission */}
+                {/* Core Commands - Mission & Vision */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto mb-32">
+                    {[
+                        { icon: Target, title: "The Institutional Mission", color: "text-primary", desc: "To engineer elite educational ecosystems where digital mastery and traditional discipline converge to create future global leaders.", bg: "bg-white/[0.02]" },
+                        { icon: Lightbulb, title: "The Global Vision", color: "text-secondary", desc: "To establish Bright Horizon as the worldwide benchmark for institutional excellence, setting the gold standard for G-6 to G-12 academic mastery.", bg: "bg-white/[0.02]" }
+                    ].map((item, idx) => (
                         <motion.div
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            key={idx}
+                            initial={{ opacity: 0, x: idx === 0 ? -30 : 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="p-12 rounded-[3.5rem] bg-slate-900 text-white shadow-2xl relative overflow-hidden group border border-white/5"
+                            className={`${item.bg} border border-white/5 p-16 rounded-[4rem] group hover:bg-white/[0.04] transition-all duration-700`}
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                            <Target size={48} className="mb-8 text-primary group-hover:scale-110 transition-transform duration-500" />
-                            <h3 className="text-3xl font-black mb-6 tracking-tight">The Mission</h3>
-                            <p className="text-slate-400 leading-relaxed text-lg font-medium">
-                                To engineer world-class educational ecosystems that empower students with the digital fluency and moral gravity needed to lead in the 21st century.
-                            </p>
+                            <div className="w-20 h-20 rounded-[1.8rem] bg-white/5 flex items-center justify-center mb-10 group-hover:scale-110 group-hover:bg-secondary group-hover:text-slate-950 transition-all duration-500">
+                                <item.icon size={32} />
+                            </div>
+                            <h3 className="text-3xl font-black text-white mb-6 tracking-tighter">{item.title}</h3>
+                            <p className="text-white/30 text-xl leading-relaxed font-medium">{item.desc}</p>
                         </motion.div>
+                    ))}
+                </div>
 
-                        {/* Vision */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="p-12 rounded-[3.5rem] bg-white text-slate-900 shadow-2xl relative overflow-hidden group border border-slate-100"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                            <Lightbulb size={48} className="mb-8 text-secondary group-hover:scale-110 transition-transform duration-500" />
-                            <h3 className="text-3xl font-black mb-6 tracking-tight">The Vision</h3>
-                            <p className="text-slate-500 leading-relaxed text-lg font-medium">
-                                To establish Bright Horizon as the global benchmark for institutional excellence, where technology and humanity converge to create future leaders.
-                            </p>
-                        </motion.div>
+                {/* Tactical Stats Marquee */}
+                <div className="w-screen -ml-[50vw] left-1/2 relative overflow-hidden py-16 border-y border-white/5 bg-white/[0.01] mb-32">
+                    <div className="flex justify-around items-center px-12">
+                        {groupStats.map((stat, idx) => (
+                            <div key={idx} className="flex flex-col items-center">
+                                <span className="text-5xl font-black text-white mb-2 tracking-tighter">{stat.value}</span>
+                                <span className="text-[9px] font-black text-white/30 uppercase tracking-[0.4em] text-center">{stat.label}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* Group Statistics */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-24"
-                >
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {groupStats.map((stat, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="text-center p-6 rounded-2xl bg-white border-2 border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all"
-                            >
-                                <stat.icon size={32} className="mx-auto mb-4 text-primary" />
-                                <div className="text-4xl font-black text-slate-900 mb-2">{stat.value}</div>
-                                <div className="text-sm text-slate-600 font-medium leading-tight">{stat.label}</div>
-                            </motion.div>
-                        ))}
+                {/* Milestone Protocol - Timeline Section */}
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex items-center justify-between mb-20">
+                        <h3 className="text-4xl font-black text-white tracking-tighter">Institutional <span className="text-secondary">Milestones</span></h3>
+                        <div className="flex items-center gap-3">
+                            <TrendingUp size={16} className="text-secondary" />
+                            <span className="text-[9px] font-black text-white/30 tracking-[0.4em] uppercase px-4 py-2 bg-white/5 rounded-full">Evolution Log v3.0</span>
+                        </div>
                     </div>
-                </motion.div>
 
-                {/* Journey Timeline */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-24"
-                >
-                    <h3 className="text-3xl font-black font-heading text-center text-slate-900 mb-12">
-                        Our <span className="text-gradient">Journey</span>
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                         {milestones.map((milestone, idx) => (
                             <motion.div
                                 key={idx}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: idx * 0.15 }}
-                                className="relative"
-                            >
-                                <div className="p-6 rounded-2xl bg-white border-2 border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all h-full">
-                                    <div className="inline-flex p-3 rounded-xl bg-primary/10 mb-4">
-                                        <milestone.icon size={24} className="text-primary" />
-                                    </div>
-                                    <div className="text-2xl font-black text-primary mb-2">{milestone.year}</div>
-                                    <p className="text-slate-700 font-medium leading-relaxed">{milestone.event}</p>
-                                </div>
-                                {idx < milestones.length - 1 && (
-                                    <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-primary to-transparent" />
-                                )}
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
-
-                {/* Core Values */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    <h3 className="text-3xl font-black font-heading text-center text-slate-900 mb-12">
-                        Our <span className="text-gradient">Core Values</span>
-                    </h3>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {coreValues.map((value, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="p-6 rounded-2xl bg-gradient-to-br from-white to-slate-50 border border-slate-100 hover:shadow-xl transition-all group"
+                                className="bg-white/[0.01] border border-white/5 p-10 rounded-[3rem] hover:bg-white/[0.03] transition-all group h-full flex flex-col items-start"
                             >
-                                <div className="inline-flex p-4 rounded-2xl bg-gradient-primary text-white mb-4 group-hover:scale-110 transition-transform">
-                                    <value.icon size={28} />
+                                <div className="text-5xl font-black text-white/10 group-hover:text-secondary transition-colors leading-none mb-10 tracking-tighter">
+                                    {milestone.year}
                                 </div>
-                                <h4 className="text-lg font-bold text-slate-900 mb-2">{value.title}</h4>
-                                <p className="text-sm text-slate-600 leading-relaxed">{value.description}</p>
+                                <div className="p-4 rounded-2xl bg-white/5 text-secondary mb-8 group-hover:scale-110 transition-transform">
+                                    <milestone.icon size={22} />
+                                </div>
+                                <p className="text-sm font-black text-white/40 uppercase tracking-widest mt-auto leading-relaxed group-hover:text-white transition-colors">
+                                    {milestone.event}
+                                </p>
                             </motion.div>
                         ))}
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

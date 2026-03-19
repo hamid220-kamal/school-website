@@ -65,105 +65,124 @@ export function Testimonials({ testimonials = [] }: TestimonialsProps) {
     const reviews = testimonials.length > 0 ? testimonials : fallbackReviews;
 
     return (
-        <section className="py-32 bg-slate-50 relative overflow-hidden">
-            {/* Background Decorations */}
-            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
-            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[120px]" />
+        <section className="py-32 bg-slate-950 text-white relative overflow-hidden">
+            {/* Cinematic Background Accents */}
+            <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.05),transparent)] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_80%,rgba(251,191,36,0.05),transparent)] pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10">
-                {/* Header */}
+                {/* Tactical Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center max-w-3xl mx-auto mb-16"
+                    className="text-center max-w-4xl mx-auto mb-24"
                 >
-                    <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-bold tracking-wider mb-6">
-                        <Quote size={16} />
-                        VOICES OF TRUST
-                    </span>
-                    <h2 className="text-4xl md:text-5xl font-black font-heading text-slate-900 mb-6">
-                        What Parents &<br />
-                        <span className="text-gradient">Alumni Say</span>
+                    <div className="flex items-center justify-center gap-3 mb-8">
+                        <span className="h-[1px] w-8 bg-secondary/50" />
+                        <span className="text-[10px] font-black tracking-[0.4em] text-secondary uppercase">Institutional Voices</span>
+                        <span className="h-[1px] w-8 bg-secondary/50" />
+                    </div>
+                    <h2 className="text-5xl md:text-8xl font-black font-heading text-white mb-10 leading-[0.85] tracking-tighter">
+                        Elite
+                        <br />
+                        <span className="text-gradient-secondary">Narratives</span>
                     </h2>
-                    <p className="text-slate-600 text-lg">
-                        Hear from our community about their experiences at Bright Horizon.
+                    <p className="text-xl text-white/30 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Hear from the vanguard of our tri-campus network about their journey towards academic mastery.
                     </p>
                 </motion.div>
 
                 {/* Testimonials Slider */}
-                <div className="relative max-w-6xl mx-auto">
-                    {/* Navigation Buttons */}
-                    <button
-                        onClick={() => swiper?.slidePrev()}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 hidden lg:flex w-14 h-14 items-center justify-center bg-white rounded-full shadow-lg hover:bg-primary hover:text-white transition-all"
-                    >
-                        <ChevronLeft size={24} />
-                    </button>
-                    <button
-                        onClick={() => swiper?.slideNext()}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 hidden lg:flex w-14 h-14 items-center justify-center bg-white rounded-full shadow-lg hover:bg-primary hover:text-white transition-all"
-                    >
-                        <ChevronRight size={24} />
-                    </button>
+                <div className="relative max-w-[90rem] mx-auto px-4">
+                    {/* Navigation Buttons - HUD Style */}
+                    <div className="absolute -top-12 right-12 flex gap-4 z-20">
+                        <button
+                            onClick={() => swiper?.slidePrev()}
+                            className="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-3xl flex items-center justify-center text-white/40 hover:text-secondary hover:border-secondary transition-all"
+                        >
+                            <ChevronLeft size={24} />
+                        </button>
+                        <button
+                            onClick={() => swiper?.slideNext()}
+                            className="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-3xl flex items-center justify-center text-white/40 hover:text-secondary hover:border-secondary transition-all"
+                        >
+                            <ChevronRight size={24} />
+                        </button>
+                    </div>
 
                     <Swiper
-                        modules={[Autoplay, Pagination, Navigation]}
-                        spaceBetween={30}
+                        modules={[Autoplay, Navigation]}
+                        spaceBetween={40}
                         slidesPerView={1}
                         breakpoints={{
-                            768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 }
+                            1024: { slidesPerView: 3 },
+                            768: { slidesPerView: 2 }
                         }}
-                        autoplay={{ delay: 5000, disableOnInteraction: false }}
-                        pagination={{ clickable: true, dynamicBullets: true }}
+                        autoplay={{ delay: 8000, disableOnInteraction: false }}
                         onSwiper={setSwiper}
-                        className="pb-16 px-4"
+                        className="py-12"
                     >
                         {reviews.map((review, idx) => (
                             <SwiperSlide key={review._id}>
                                 <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: idx * 0.1 }}
                                     viewport={{ once: true }}
-                                    className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 h-full flex flex-col group"
+                                    className="bg-white/[0.01] backdrop-blur-3xl border border-white/5 p-12 rounded-[4rem] h-full flex flex-col group hover:bg-white/[0.03] transition-all duration-700"
                                 >
-                                    {/* Stars */}
-                                    <div className="flex items-center gap-1 text-amber-400 mb-6">
-                                        {[...Array(review.rating)].map((_, i) => (
-                                            <Star key={i} size={18} fill="currentColor" />
-                                        ))}
+                                    {/* Verification Header */}
+                                    <div className="flex items-center justify-between mb-10">
+                                        <div className="flex items-center gap-1 text-secondary/30">
+                                            {[...Array(review.rating)].map((_, i) => (
+                                                <Star key={i} size={14} fill="currentColor" stroke="none" className="group-hover:text-secondary transition-colors" />
+                                            ))}
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                            <span className="text-[8px] font-black text-white/20 tracking-[0.2em] uppercase">Identity Verified</span>
+                                        </div>
                                     </div>
 
-                                    {/* Quote Icon */}
-                                    <div className="text-primary/10 mb-4 group-hover:text-primary/20 transition-colors">
-                                        <Quote size={48} />
+                                    {/* Quote Protocol */}
+                                    <div className="relative mb-8">
+                                        <Quote size={60} className="absolute -top-10 -left-6 text-white/[0.03] group-hover:text-secondary/[0.05] transition-colors duration-700" />
+                                        <p className="text-white/40 group-hover:text-white/70 transition-colors leading-[1.8] text-lg font-medium italic relative z-10">
+                                            "{review.content}"
+                                        </p>
                                     </div>
 
-                                    {/* Content */}
-                                    <p className="text-slate-600 leading-relaxed mb-8 flex-1 italic">
-                                        "{review.content}"
-                                    </p>
-
-                                    {/* Author */}
-                                    <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
-                                        <div className="w-14 h-14 rounded-2xl overflow-hidden ring-2 ring-primary/10">
-                                            <img
-                                                src={review.image}
-                                                alt={review.name}
-                                                className="w-full h-full object-cover"
-                                            />
+                                    {/* Author Module */}
+                                    <div className="mt-auto pt-10 border-t border-white/10 flex items-center gap-6">
+                                        <div className="relative">
+                                            <div className="w-20 h-20 rounded-[1.8rem] overflow-hidden border-2 border-white/10 grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:border-secondary">
+                                                <img
+                                                    src={review.image}
+                                                    alt={review.name}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                            <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-xl bg-secondary flex items-center justify-center text-slate-950 shadow-glow-secondary transform group-hover:rotate-12 transition-transform">
+                                                <Quote size={14} />
+                                            </div>
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-slate-900">{review.name}</h4>
-                                            <p className="text-sm text-primary font-medium">{review.role}</p>
+                                            <h4 className="text-xl font-black text-white tracking-widest uppercase mb-1">{review.name}</h4>
+                                            <p className="text-[10px] text-secondary font-black tracking-[0.3em] uppercase">{review.role}</p>
                                         </div>
                                     </div>
                                 </motion.div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                </div>
+
+                {/* Tactical Indicator */}
+                <div className="mt-16 flex items-center justify-center gap-12 text-white/10 uppercase font-black text-[9px] tracking-[0.5em]">
+                    <span className="hover:text-secondary transition-colors cursor-default">4700+ Verified Trust Marks</span>
+                    <div className="h-4 w-px bg-white/5" />
+                    <span className="hover:text-secondary transition-colors cursor-default">Institutional Sentiment Analysis: 98.4% Positive</span>
                 </div>
             </div>
         </section>
