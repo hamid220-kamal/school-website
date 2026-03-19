@@ -9,19 +9,19 @@ export function TrustSection() {
             icon: Award,
             title: "CBSE Affiliated",
             subtitle: "Bright Horizon (North)",
-            color: "indigo"
+            color: "primary"
         },
         {
             icon: Award,
             title: "Cambridge International",
             subtitle: "Cherry Blossom (International)",
-            color: "emerald"
+            color: "secondary"
         },
         {
             icon: Award,
             title: "State Board Recognized",
             subtitle: "Lotus Veda (Public School)",
-            color: "orange"
+            color: "accent"
         }
     ];
 
@@ -77,17 +77,11 @@ export function TrustSection() {
         }
     ];
 
-    const colorClasses = {
-        indigo: "from-primary to-primary-dark",
-        emerald: "from-emerald-500 to-teal-600",
-        orange: "from-secondary to-secondary-dark"
-    };
-
     return (
-        <section className="py-32 bg-slate-950 relative overflow-hidden">
-            {/* Cinematic Background Accents */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.03),transparent)] pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_70%,rgba(251,191,36,0.03),transparent)] pointer-events-none" />
+        <section className="py-32 bg-white relative overflow-hidden">
+            {/* Soft Background Accents */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(29,112,214,0.03),transparent)] pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_70%,rgba(251,175,23,0.03),transparent)] pointer-events-none" />
             
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header */}
@@ -98,16 +92,16 @@ export function TrustSection() {
                     className="text-center mb-32"
                 >
                     <div className="flex items-center justify-center gap-3 mb-8">
-                        <span className="h-[1px] w-8 bg-secondary/50" />
-                        <span className="text-[10px] font-black tracking-[0.4em] text-secondary uppercase">Institutional Integrity</span>
-                        <span className="h-[1px] w-8 bg-secondary/50" />
+                        <span className="h-[1px] w-12 bg-primary/30" />
+                        <span className="text-[10px] font-black tracking-[0.4em] text-primary uppercase">Institutional Integrity</span>
+                        <span className="h-[1px] w-12 bg-primary/30" />
                     </div>
-                    <h2 className="text-5xl md:text-[8rem] font-black font-heading text-white mb-12 leading-[0.8] tracking-tighter">
+                    <h2 className="text-5xl md:text-[8rem] font-black font-heading text-slate-950 mb-12 leading-[0.8] tracking-tighter">
                         Bastion of
                         <br />
-                        <span className="text-gradient-secondary">Absolute Trust</span>
+                        <span className="text-gradient">Absolute Trust</span>
                     </h2>
-                    <p className="text-xl text-white/30 max-w-2xl mx-auto leading-relaxed font-medium">
+                    <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
                         Recognized by global governing bodies, we set the gold standard for student safety and academic privacy.
                     </p>
                 </motion.div>
@@ -123,28 +117,28 @@ export function TrustSection() {
                             transition={{ delay: idx * 0.1 }}
                             className="group relative"
                         >
-                            <div className="bg-white/[0.02] backdrop-blur-3xl border border-white/5 p-12 rounded-[3.5rem] hover:bg-white/[0.05] transition-all duration-700 h-full flex flex-col items-center text-center">
-                                <div className="w-24 h-24 rounded-[2rem] bg-white/5 flex items-center justify-center text-secondary mb-10 group-hover:scale-110 group-hover:bg-secondary group-hover:text-slate-900 transition-all duration-500 shadow-2xl">
+                            <div className="bg-slate-50 border border-slate-100 p-12 rounded-[3.5rem] hover:bg-white hover:shadow-2xl hover:shadow-primary/5 transition-all duration-700 h-full flex flex-col items-center text-center">
+                                <div className="w-24 h-24 rounded-[2rem] bg-white shadow-sm flex items-center justify-center text-primary mb-10 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                                     <affiliation.icon size={42} />
                                 </div>
-                                <h4 className="text-2xl font-black text-white mb-4 tracking-tighter">{affiliation.title}</h4>
-                                <p className="text-[10px] font-bold text-white/30 uppercase tracking-[0.3em]">{affiliation.subtitle}</p>
+                                <h4 className="text-2xl font-black text-slate-950 mb-4 tracking-tighter">{affiliation.title}</h4>
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">{affiliation.subtitle}</p>
                             </div>
                             {/* Decorative Glow */}
-                            <div className="absolute inset-x-10 bottom-0 h-px bg-gradient-to-r from-transparent via-secondary/50 to-transparent blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute inset-x-10 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
                         </motion.div>
                     ))}
                 </div>
 
                 {/* Affiliation Marquee - Moving Logos */}
-                <div className="relative w-screen -ml-[50vw] left-1/2 overflow-hidden py-24 mb-32 border-y border-white/5 bg-white/[0.01]">
-                    <div className="flex gap-20 animate-infinite-scroll-slow items-center whitespace-nowrap">
+                <div className="relative w-screen -ml-[50vw] left-1/2 overflow-hidden py-16 mb-32 border-y border-slate-100 bg-slate-50/50">
+                    <div className="flex gap-24 animate-infinite-scroll-slow items-center whitespace-nowrap">
                         {[...Array(2)].map((_, i) => (
                             <div key={i} className="flex gap-24 shrink-0 px-12">
                                 {certifications.map((cert, idx) => (
                                     <div key={idx} className="flex items-center gap-6">
-                                        <div className="w-2 h-2 rounded-full bg-secondary" />
-                                        <span className="text-white/40 text-[11px] font-black uppercase tracking-[0.4em] transition-colors hover:text-white cursor-default">
+                                        <div className="w-2 h-2 rounded-full bg-primary" />
+                                        <span className="text-slate-400 text-[11px] font-black uppercase tracking-[0.4em] transition-colors hover:text-slate-950 cursor-default">
                                             {cert}
                                         </span>
                                     </div>
@@ -156,13 +150,13 @@ export function TrustSection() {
 
                 {/* Infrastructure Grid - Tactical Design */}
                 <div className="max-w-7xl mx-auto">
-                    <div className="mb-16 flex items-center justify-between border-b border-white/5 pb-8">
-                        <h3 className="text-3xl font-black text-white tracking-tighter">
-                            World-Class <span className="text-secondary">Protocol</span>
+                    <div className="mb-16 flex items-center justify-between border-b border-slate-100 pb-8">
+                        <h3 className="text-3xl font-black text-slate-950 tracking-tighter">
+                            World-Class <span className="text-primary">Protocol</span>
                         </h3>
                         <div className="flex items-center gap-3">
-                            <Zap size={16} className="text-secondary animate-pulse" />
-                            <span className="text-[9px] font-black text-white/30 tracking-[0.3em] uppercase">Tactical Infrastructure Grid</span>
+                            <Zap size={16} className="text-primary animate-pulse" />
+                            <span className="text-[9px] font-black text-slate-400 tracking-[0.3em] uppercase">Tactical Infrastructure Grid</span>
                         </div>
                     </div>
                     
@@ -174,13 +168,13 @@ export function TrustSection() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.05 }}
-                                className="p-8 rounded-[2rem] bg-white/[0.01] border border-white/5 hover:border-white/10 hover:bg-white/[0.03] transition-all group"
+                                className="p-8 rounded-[2.5rem] bg-white border border-slate-100 hover:shadow-2xl hover:shadow-primary/5 transition-all group"
                             >
-                                <div className="p-4 inline-flex rounded-2xl bg-white/5 text-secondary mb-6 group-hover:scale-110 transition-transform">
-                                    <facility.icon size={24} />
+                                <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-primary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
+                                    <facility.icon size={22} />
                                 </div>
-                                <h4 className="text-lg font-black text-white mb-2 tracking-tight">{facility.title}</h4>
-                                <p className="text-xs text-white/30 leading-relaxed font-medium">{facility.description}</p>
+                                <h4 className="text-xl font-black text-slate-950 mb-3 tracking-tight">{facility.title}</h4>
+                                <p className="text-xs text-slate-400 leading-relaxed font-medium">{facility.description}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -195,16 +189,16 @@ export function TrustSection() {
                 >
                     <div className="inline-flex flex-col items-center gap-6">
                         <div className="relative">
-                            <div className="absolute inset-0 bg-secondary blur-3xl opacity-20 animate-pulse" />
-                            <div className="relative bg-slate-900 border border-white/10 px-12 py-8 rounded-[3rem] shadow-2xl">
-                                <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.5em] mb-4 block">Institutional Legacy</span>
-                                <div className="flex items-center gap-4 text-4xl font-black text-white tracking-tighter leading-none">
-                                    <CheckCircle2 size={32} className="text-secondary" />
+                            <div className="absolute inset-0 bg-primary/10 blur-3xl opacity-20 animate-pulse" />
+                            <div className="relative bg-white border border-slate-100 px-16 py-10 rounded-[3.5rem] shadow-[0_25px_80px_rgba(0,0,0,0.05)]">
+                                <span className="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em] mb-4 block">Institutional Legacy</span>
+                                <div className="flex items-center gap-5 text-4xl font-black text-slate-950 tracking-tighter leading-none italic">
+                                    <CheckCircle2 size={36} className="text-primary" />
                                     <span>Since 1989</span>
                                 </div>
                             </div>
                         </div>
-                        <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.3em]">Institutional Integrity System v2.0</p>
+                        <p className="text-[10px] font-black text-slate-300 uppercase tracking-[0.4em]">Institutional Integrity System v3.2</p>
                     </div>
                 </motion.div>
             </div>

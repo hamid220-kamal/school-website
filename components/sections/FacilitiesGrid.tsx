@@ -65,16 +65,16 @@ export function FacilitiesGrid() {
     ];
 
     return (
-        <section className="py-32 bg-slate-950 text-white relative overflow-hidden">
-            {/* Cinematic Background Accents */}
-            <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.05),transparent)] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_80%,rgba(251,191,36,0.05),transparent)] pointer-events-none" />
+        <section className="py-32 bg-white relative overflow-hidden">
+            {/* Soft Background Accents */}
+            <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(29,112,214,0.03),transparent)] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_80%,rgba(251,175,23,0.03),transparent)] pointer-events-none" />
             
             {/* Technical Grid Pattern */}
-            <div className="absolute inset-0 opacity-[0.03]"
+            <div className="absolute inset-0 opacity-[0.05]"
                 style={{
-                    backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                                      linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+                    backgroundImage: `linear-gradient(#0f172a 1px, transparent 1px),
+                                      linear-gradient(90deg, #0f172a 1px, transparent 1px)`,
                     backgroundSize: '100px 100px'
                 }}
             />
@@ -89,13 +89,13 @@ export function FacilitiesGrid() {
                         className="max-w-3xl"
                     >
                          <div className="flex items-center gap-3 mb-8">
-                            <div className="w-12 h-[1px] bg-secondary" />
-                            <span className="text-[10px] font-black tracking-[0.4em] text-secondary uppercase italic">Operational Excellence</span>
+                            <div className="w-12 h-[1px] bg-primary" />
+                            <span className="text-[10px] font-black tracking-[0.4em] text-primary uppercase italic">Operational Excellence</span>
                         </div>
-                        <h2 className="text-5xl md:text-8xl font-black font-heading leading-[0.85] tracking-tighter">
+                        <h2 className="text-5xl md:text-[8rem] font-black font-heading leading-[0.8] tracking-tighter text-slate-950">
                             World-Class
                             <br />
-                            <span className="text-gradient-secondary italic">Infrastructure</span>
+                            <span className="text-gradient italic">Infrastructure</span>
                         </h2>
                     </motion.div>
 
@@ -106,13 +106,13 @@ export function FacilitiesGrid() {
                     >
                         <Link
                             href="/facilities"
-                            className="group relative overflow-hidden px-12 py-6 rounded-full border border-white/10 bg-white/5 backdrop-blur-3xl transition-all duration-700 hover:border-secondary shadow-2xl"
+                            className="group relative overflow-hidden px-12 py-6 rounded-full border border-slate-200 bg-slate-50 transition-all duration-700 hover:border-primary shadow-sm hover:shadow-2xl hover:shadow-primary/5 shadow-primary/5 flex items-center gap-4"
                         >
-                            <span className="relative z-10 flex items-center gap-4 text-[10px] font-black tracking-[0.3em] uppercase">
+                            <span className="relative z-10 text-[10px] font-black tracking-[0.3em] uppercase text-slate-950 group-hover:text-primary transition-colors">
                                 Explored Protocol
-                                <ArrowRight size={16} className="text-secondary group-hover:translate-x-2 transition-transform duration-500" />
                             </span>
-                            <div className="absolute inset-0 bg-secondary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
+                            <ArrowRight size={18} className="text-primary group-hover:translate-x-2 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
                         </Link>
                     </motion.div>
                 </div>
@@ -122,53 +122,56 @@ export function FacilitiesGrid() {
                     {facilities.map((item, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.05 }}
                             viewport={{ once: true }}
-                            className="relative group h-[500px] overflow-hidden rounded-[3rem] cursor-pointer border border-white/5"
+                            className="relative group h-[520px] overflow-hidden rounded-[3.5rem] cursor-pointer border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)]"
                         >
-                            {/* Grayscale to Color Background */}
+                            {/* Grayscale to Color Background with High-End Scaling */}
                             <div
-                                className="absolute inset-0 bg-cover bg-center transition-all duration-1000 grayscale group-hover:grayscale-0 group-hover:scale-110 brightness-50 group-hover:brightness-90"
+                                className="absolute inset-0 bg-cover bg-center transition-all duration-[2000ms] grayscale group-hover:grayscale-0 group-hover:scale-110 brightness-[0.85] group-hover:brightness-100"
                                 style={{ backgroundImage: `url(${item.image})` }}
                             />
 
-                            {/* HUD-Style Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90 group-hover:opacity-40 transition-opacity duration-700" />
+                            {/* Refined Overlays */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-700" />
                             
-                            {/* Scanning Line Effect on Hover */}
-                            <div className="absolute inset-x-0 top-0 h-px bg-white/20 -translate-y-full group-hover:translate-y-[500px] transition-all duration-[2000ms] pointer-events-none" />
+                            {/* Scanning Pulse on Hover */}
+                            <div className="absolute inset-x-0 top-0 h-[2px] bg-white/20 -translate-y-full group-hover:translate-y-[520px] transition-all duration-[2500ms] pointer-events-none blur-sm" />
 
                             {/* Component Content */}
-                            <div className="absolute inset-0 p-10 flex flex-col justify-between">
+                            <div className="absolute inset-0 p-12 flex flex-col justify-between">
                                 {/* Technical Badge */}
                                 <div className="flex items-center justify-between">
-                                    <div className="w-14 h-14 rounded-2xl bg-white/5 backdrop-blur-2xl flex items-center justify-center border border-white/10 shadow-2xl group-hover:bg-secondary group-hover:text-slate-950 transition-all duration-700">
-                                        <item.icon size={26} />
+                                    <div className="w-16 h-16 rounded-2xl bg-white shadow-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-700 scale-90 group-hover:scale-100">
+                                        <item.icon size={28} />
                                     </div>
-                                    <span className="text-[9px] font-black tracking-[0.2em] text-white/20 uppercase group-hover:text-secondary/50 transition-colors">
-                                        Fac-ID: 00{idx + 1}
+                                    <span className="text-[10px] font-black tracking-[0.3em] text-white opacity-40 group-hover:text-secondary group-hover:opacity-100 transition-all">
+                                        FAC-ID: 00{idx + 1}
                                     </span>
                                 </div>
 
                                 {/* Text Module */}
-                                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <span className="text-[10px] font-black text-secondary uppercase tracking-[0.4em]">Protocol</span>
-                                        <div className="h-px flex-1 bg-white/5 group-hover:bg-secondary/20 transition-all" />
+                                <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-1000">
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <span className="text-[11px] font-black text-secondary uppercase tracking-[0.4em] italic shadow-secondary/50">Tactical</span>
+                                        <div className="h-px flex-1 bg-white/20 group-hover:bg-secondary/40 transition-all" />
                                     </div>
-                                    <h3 className="font-black text-3xl mb-3 tracking-tighter leading-tight">
+                                    <h3 className="font-black text-4xl mb-4 tracking-tighter leading-none text-white italic group-hover:text-secondary transition-colors">
                                         {item.title}
                                     </h3>
-                                    <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest leading-loose mb-6">
+                                    <p className="text-white/60 text-xs font-bold uppercase tracking-widest leading-loose mb-8">
                                         {item.desc}
                                     </p>
-                                    <div className="inline-flex items-center gap-4 text-[9px] font-black tracking-[0.4em] text-secondary opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-20px] group-hover:translate-x-0">
-                                        INITIALIZE ARCHIVE <ArrowRight size={14} />
+                                    <div className="inline-flex items-center gap-6 text-[11px] font-black tracking-[0.3em] text-white opacity-0 group-hover:opacity-100 transition-all duration-700 translate-x-[-30px] group-hover:translate-x-0">
+                                        INITIALIZE ARCHIVE <ArrowRight size={18} className="text-secondary" />
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Corner Tech Decor */}
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 backdrop-blur-3xl rounded-bl-[4rem] border-b border-l border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                         </motion.div>
                     ))}
                 </div>

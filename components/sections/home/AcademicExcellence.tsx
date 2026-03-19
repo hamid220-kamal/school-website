@@ -23,12 +23,12 @@ export function AcademicExcellence() {
     ];
 
     return (
-        <section className="py-32 bg-slate-950 relative overflow-hidden">
-            {/* Background Pattern - Technical/Data Feel */}
+        <section className="py-32 bg-white relative overflow-hidden">
+            {/* Background Pattern - Technical/Data Feel (Subtle for Light Mode) */}
             <div
-                className="absolute inset-0 opacity-5"
+                className="absolute inset-0 opacity-[0.03]"
                 style={{
-                    backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+                    backgroundImage: `radial-gradient(circle at 2px 2px, #0f172a 1px, transparent 0)`,
                     backgroundSize: '40px 40px'
                 }}
             />
@@ -42,16 +42,16 @@ export function AcademicExcellence() {
                     className="text-center mb-24"
                 >
                     <div className="flex items-center justify-center gap-3 mb-6">
-                        <span className="h-[1px] w-12 bg-gradient-to-r from-transparent to-secondary" />
-                        <span className="text-[10px] font-black tracking-[0.4em] text-secondary uppercase">Institutional Intelligence</span>
-                        <span className="h-[1px] w-12 bg-gradient-to-l from-transparent to-secondary" />
+                        <span className="h-[1px] w-12 bg-gradient-to-r from-transparent to-primary" />
+                        <span className="text-[10px] font-black tracking-[0.4em] text-primary uppercase">Institutional Intelligence</span>
+                        <span className="h-[1px] w-12 bg-gradient-to-l from-transparent to-primary" />
                     </div>
-                    <h2 className="text-5xl md:text-8xl font-black font-heading text-white mb-8 tracking-tighter leading-none">
+                    <h2 className="text-5xl md:text-[8rem] font-black font-heading text-slate-950 mb-8 tracking-tighter leading-[0.85]">
                         Our Impact in
                         <br />
-                        <span className="text-gradient-secondary">Numbers</span>
+                        <span className="text-gradient">Numbers</span>
                     </h2>
-                    <p className="text-lg text-white/40 max-w-2xl mx-auto leading-relaxed font-medium">
+                    <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
                         Real-time performance metrics across our global network of three campuses, benchmarked against international standards.
                     </p>
                 </motion.div>
@@ -67,10 +67,10 @@ export function AcademicExcellence() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="flex items-center justify-center gap-2 mt-20 opacity-40 hover:opacity-100 transition-opacity"
+                    className="flex items-center justify-center gap-2 mt-20 opacity-60 hover:opacity-100 transition-opacity"
                 >
                     <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-[9px] font-bold text-white uppercase tracking-widest">Data Verified for Academic Session 2026-27</span>
+                    <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Data Verified for Academic Session 2026-27</span>
                 </motion.div>
             </div>
         </section>
@@ -120,55 +120,55 @@ function StatDashboardCard({ stat, index }: { stat: Stat; index: number }) {
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             className="group"
         >
-            <div className="bg-white/[0.02] backdrop-blur-3xl border border-white/5 p-10 rounded-[2.5rem] hover:bg-white/[0.05] transition-all duration-500 relative overflow-hidden h-full">
-                {/* Visual Progress Ring Backdrop */}
-                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-48 h-48 rounded-full border border-white/[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-1000" />
+            <div className="bg-slate-50 border border-slate-200/50 p-12 rounded-[3.5rem] hover:bg-white hover:shadow-2xl hover:shadow-primary/5 transition-all duration-700 relative overflow-hidden h-full flex flex-col">
+                {/* Visual Background Decoration */}
+                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 rounded-full border border-slate-200/30 pointer-events-none group-hover:scale-110 transition-transform duration-1000" />
                 
                 <div className="flex flex-col h-full relative z-10">
-                    <div className="flex items-start justify-between mb-10">
-                        <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent border border-white/5">
-                            <stat.icon size={28} className="text-secondary" />
+                    <div className="flex items-start justify-between mb-16">
+                        <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center border border-slate-100 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                            <stat.icon size={32} className="group-hover:scale-110 transition-transform" />
                         </div>
                         <div className="flex flex-col items-end">
-                            <span className="text-[9px] font-black text-secondary tracking-widest uppercase">Verified Stat</span>
-                            <div className="h-[2px] w-4 bg-secondary mt-1" />
+                            <span className="text-[9px] font-black text-primary tracking-widest uppercase mb-1">Authentic Metric</span>
+                            <div className="h-[2px] w-6 bg-primary" />
                         </div>
                     </div>
 
                     <div className="mt-auto">
-                        <div className="flex items-baseline gap-1 mb-2">
-                            <span className="text-6xl md:text-7xl font-black text-white tracking-tighter">
+                        <div className="flex items-baseline gap-2 mb-4">
+                            <span className="text-7xl font-black text-slate-950 tracking-tighter">
                                 {count.toLocaleString()}
                             </span>
-                            <span className="text-2xl font-black text-secondary">
+                            <span className="text-2xl font-black text-primary">
                                 {stat.suffix}
                             </span>
                         </div>
                         
-                        <h3 className="text-white/40 text-xs font-black uppercase tracking-[0.2em] mb-4">
+                        <h3 className="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mb-6">
                             {stat.label}
                         </h3>
 
-                        {/* Visual Skill-Line/Progress */}
-                        <div className="w-full h-[1px] bg-white/5 overflow-hidden">
+                        {/* Visual Progress Track */}
+                        <div className="w-full h-[2px] bg-slate-200 overflow-hidden rounded-full">
                             <motion.div 
                                 initial={{ x: "-100%" }}
                                 animate={isVisible ? { x: 0 } : { x: "-100%" }}
                                 transition={{ duration: 2, ease: "easeOut" }}
-                                className="w-full h-full bg-gradient-to-r from-transparent via-secondary to-transparent"
+                                className="w-full h-full bg-gradient-to-r from-primary to-primary-light"
                             />
                         </div>
                     </div>
                 </div>
 
-                {/* Glowing Corner Background */}
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-[60px] group-hover:bg-primary/10 transition-all duration-700" />
+                {/* Subtle Glow Component */}
+                <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-primary/5 rounded-full blur-[80px] group-hover:bg-primary/10 transition-all duration-1000" />
             </div>
         </motion.div>
     );

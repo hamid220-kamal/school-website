@@ -29,8 +29,8 @@ export function BranchPreviewCards() {
             image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1200&auto=format&fit=crop",
             students: "2000+",
             established: "1989",
-            color: "indigo",
-            gradient: "from-indigo-500 to-purple-600"
+            color: "primary",
+            gradient: "from-primary-light to-primary"
         },
         {
             id: "south",
@@ -41,8 +41,8 @@ export function BranchPreviewCards() {
             image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
             students: "1500+",
             established: "2005",
-            color: "emerald",
-            gradient: "from-emerald-500 to-teal-600"
+            color: "secondary",
+            gradient: "from-secondary-light to-secondary"
         },
         {
             id: "east",
@@ -53,20 +53,19 @@ export function BranchPreviewCards() {
             image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop",
             students: "1200+",
             established: "2015",
-            color: "orange",
-            gradient: "from-orange-500 to-red-600"
+            color: "accent",
+            gradient: "from-emerald-400 to-emerald-600"
         }
     ];
 
     return (
-        <section className="py-32 bg-slate-950 relative overflow-hidden">
-            {/* Elite Background Accents */}
-            <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none" />
-            <div className="absolute inset-0 opacity-[0.02]"
+        <section className="py-32 bg-slate-50 relative overflow-hidden">
+            {/* Soft Background Pattern */}
+            <div className="absolute inset-0 opacity-[0.05]"
                 style={{
-                    backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                                     linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-                    backgroundSize: '60px 60px'
+                    backgroundImage: `linear-gradient(#0f172a 1px, transparent 1px),
+                                      linear-gradient(90deg, #0f172a 1px, transparent 1px)`,
+                    backgroundSize: '80px 80px'
                 }}
             />
 
@@ -79,16 +78,16 @@ export function BranchPreviewCards() {
                     className="text-center mb-24"
                 >
                     <div className="flex items-center justify-center gap-3 mb-8">
-                        <span className="h-[1px] w-8 bg-secondary/50" />
-                        <span className="text-[10px] font-black tracking-[0.4em] text-secondary uppercase">Institutional Network</span>
-                        <span className="h-[1px] w-8 bg-secondary/50" />
+                        <span className="h-[1px] w-12 bg-primary/30" />
+                        <span className="text-[10px] font-black tracking-[0.4em] text-primary uppercase">Institutional Network</span>
+                        <span className="h-[1px] w-12 bg-primary/30" />
                     </div>
-                    <h2 className="text-5xl md:text-8xl font-black font-heading text-white mb-8 tracking-tighter leading-[0.85]">
+                    <h2 className="text-5xl md:text-[8rem] font-black font-heading text-slate-950 mb-8 tracking-tighter leading-[0.85]">
                         State-of-the-Art
                         <br />
-                        <span className="text-secondary">Campuses</span>
+                        <span className="text-gradient">Campuses</span>
                     </h2>
-                    <p className="text-lg text-white/40 max-w-2xl mx-auto leading-relaxed font-medium">
+                    <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
                         Three specialized environments engineered for future-readiness, academic mastery, and global leadership.
                     </p>
                 </motion.div>
@@ -105,20 +104,20 @@ export function BranchPreviewCards() {
                         >
                             <Link
                                 href={branch.href}
-                                className="group block relative h-[560px] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_45px_100px_rgba(0,0,0,0.4)]"
+                                className="group block relative h-[580px] rounded-[3.5rem] overflow-hidden shadow-2xl shadow-primary/5 transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_45px_100px_rgba(0,0,0,0.1)]"
                             >
-                                {/* Background Image with Parallax-like Zoom */}
+                                {/* Background Image with Smooth Scaling */}
                                 <div className="absolute inset-0">
                                     <Image
                                         src={branch.image}
                                         alt={branch.name}
                                         fill
-                                        className="object-cover transition-transform duration-1000 scale-105 group-hover:scale-110 group-hover:rotate-1"
+                                        className="object-cover transition-transform duration-[2000ms] group-hover:scale-110"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     />
-                                    {/* Cinematic Overlays */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                                    <div className={`absolute inset-0 bg-gradient-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-700`} />
+                                    {/* Sophisticated Overlays */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                 </div>
  
                                 {/* Content Overlay */}
@@ -126,52 +125,52 @@ export function BranchPreviewCards() {
                                     {/* Top Metadata */}
                                     <div className="flex items-start justify-between">
                                         <div className="flex flex-col">
-                                            <span className="text-[8px] font-black tracking-[0.3em] text-white/50 mb-1">NETWORK EST.</span>
-                                            <span className="text-white font-black text-sm tracking-widest">{branch.established}</span>
+                                            <span className="text-[8px] font-black tracking-[0.4em] text-white/50 mb-1">NETWORK EST.</span>
+                                            <span className="text-white font-black text-xs tracking-widest">{branch.established}</span>
                                         </div>
-                                        <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 text-secondary">
+                                        <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-secondary flex items-center justify-center">
                                             <Sparkles size={20} className="animate-pulse" />
                                         </div>
                                     </div>
 
                                     {/* Footer Info */}
-                                    <div className="space-y-6">
+                                    <div className="space-y-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
                                         <div>
-                                            <h3 className="text-4xl font-black font-heading text-white mb-3 leading-none group-hover:text-secondary transition-colors duration-500">
+                                            <h3 className="text-4xl font-black font-heading text-white mb-3 tracking-tighter leading-none group-hover:text-secondary transition-colors duration-500">
                                                 {branch.name}
                                             </h3>
-                                            <p className="text-[10px] font-black text-white/40 tracking-[0.3em] uppercase max-w-[80%]">
+                                            <p className="text-[10px] font-black text-white/60 tracking-[0.3em] uppercase max-w-[90%] leading-relaxed">
                                                 {branch.tagline}
                                             </p>
                                         </div>
 
                                         {/* Quick Metrics */}
-                                        <div className="flex items-center gap-6 pt-6 border-t border-white/10">
+                                        <div className="flex items-center gap-6 pt-8 border-t border-white/10">
                                             <div className="flex flex-col">
-                                                <span className="text-[7px] font-black text-white/30 tracking-[0.2em] mb-1 uppercase text-left">Community</span>
-                                                <span className="text-white font-black text-[10px] uppercase text-left">{branch.students} Scholars</span>
+                                                <span className="text-[7px] font-black text-white/30 tracking-[0.2em] mb-1 uppercase">Community</span>
+                                                <span className="text-white font-black text-[10px] uppercase">{branch.students} Scholars</span>
                                             </div>
                                             <div className="w-[1px] h-6 bg-white/10" />
                                             <div className="flex flex-col">
-                                                <span className="text-[7px] font-black text-white/30 tracking-[0.2em] mb-1 uppercase text-left">Sector</span>
-                                                <span className="text-white font-black text-[10px] uppercase text-left">{branch.location.split(',')[1]}</span>
+                                                <span className="text-[7px] font-black text-white/30 tracking-[0.2em] mb-1 uppercase">Sector</span>
+                                                <span className="text-white font-black text-[10px] uppercase">{branch.location.split(',')[1]}</span>
                                             </div>
                                         </div>
 
-                                        {/* Action Hint */}
-                                        <div className="pt-6 flex items-center justify-between pointer-events-none group-hover:pt-8 transition-all duration-500">
-                                            <span className="text-[9px] font-black text-white/80 uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">
-                                                Enter Campus
+                                        {/* Action CTA */}
+                                        <div className="pt-8 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-700">
+                                            <span className="text-[9px] font-black text-white uppercase tracking-[0.3em] italic">
+                                                Explore Campus
                                             </span>
-                                            <div className="w-12 h-12 rounded-full bg-white text-slate-900 flex items-center justify-center scale-75 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 shadow-2xl">
-                                                <ArrowRight size={18} />
+                                            <div className="w-14 h-14 rounded-full bg-white text-primary flex items-center justify-center shadow-2xl shadow-white/20 transform rotate-[-45deg] group-hover:rotate-0 transition-transform duration-700">
+                                                <ArrowRight size={22} />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* Premium Border Accent */}
-                                <div className="absolute inset-0 rounded-[2.5rem] border border-white/5 pointer-events-none group-hover:border-white/20 transition-colors duration-500" />
+                                {/* Refined Border Glow */}
+                                <div className="absolute inset-0 rounded-[3.5rem] border border-white/10 group-hover:border-white/30 transition-colors duration-500" />
                             </Link>
                         </motion.div>
                     ))}
