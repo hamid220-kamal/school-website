@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronRight, Play, Sparkles, Award, Users } from "lucide-react";
+import { ChevronRight, Play, Sparkles, Award, Users, Volume2, VolumeX } from "lucide-react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
@@ -12,6 +13,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 
 export function HeroSlider() {
+    const [isMuted, setIsMuted] = useState(true);
     const slides = [
         {
             id: 1,
@@ -47,8 +49,39 @@ export function HeroSlider() {
 
     return (
         <section className="relative h-screen w-full overflow-hidden">
+            {/* Background Video Layer */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute inset-0 bg-slate-900/60 z-10" /> {/* Dimmer overlay for text readability */}
+                <iframe
+                    src={`https://www.youtube.com/embed/L7m92dMxUHM?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&playlist=L7m92dMxUHM&controls=0&modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1`}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-full min-w-full min-h-full pointer-events-none scale-125 lg:scale-110"
+                    allow="autoplay; encrypted-media"
+                    title="Background Video"
+                />
+            </div>
+
+            {/* Audio Toggle Control */}
+            <div className="absolute bottom-40 right-10 z-50">
+                <button
+                    onClick={() => setIsMuted(!isMuted)}
+                    className="p-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all group shadow-xl"
+                >
+                    {isMuted ? (
+                        <div className="flex items-center gap-2">
+                            <VolumeX size={18} className="group-hover:scale-110 transition-transform" />
+                            <span className="text-[10px] font-black uppercase tracking-widest hidden md:inline">Unmute Experience</span>
+                        </div>
+                    ) : (
+                        <div className="flex items-center gap-2 text-secondary">
+                            <Volume2 size={18} className="animate-pulse" />
+                            <span className="text-[10px] font-black uppercase tracking-widest hidden md:inline">Audio Live</span>
+                        </div>
+                    )}
+                </button>
+            </div>
+
             {/* Background Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/40 via-transparent to-slate-900 z-10" />
 
             <Swiper
                 modules={[Autoplay, EffectFade, Pagination]}
