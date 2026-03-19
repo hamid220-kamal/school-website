@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, GraduationCap, X, Phone, Mail, Sparkles, ArrowLeft, AlertTriangle } from "lucide-react";
+import { Menu, GraduationCap, X, Phone, Mail, Sparkles, ArrowLeft, AlertTriangle, Home, Book, MapPin, Search, PlusCircle, MoreHorizontal } from "lucide-react";
 import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -92,14 +92,14 @@ export function Header() {
 
             <header
                 className={cn(
-                    "fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-40 transition-all duration-700 rounded-[2rem]",
+                    "fixed left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-700 rounded-[2rem] hidden lg:block",
                     scrolled
-                        ? "bg-white/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 py-3"
-                        : "bg-black/20 backdrop-blur-xl border border-white/10 py-4",
+                        ? "bg-white/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 py-3 top-4"
+                        : "bg-black/20 backdrop-blur-xl border border-white/10 py-4 top-4",
                     emergencyNotice ? (scrolled ? "top-8" : "top-12") : "top-4"
                 )}
             >
-                {/* Top Bar - Hidden for cleaner look on premium schools */}
+                {/* Top Bar - Refined for professional look */}
                 {!scrolled && (
                     <div className="container mx-auto px-8 flex justify-between text-[10px] font-bold tracking-[0.2em] text-white/80 mb-3 transition-all duration-500">
                         <div className="flex gap-8">
@@ -110,9 +110,11 @@ export function Header() {
                                 <Mail size={10} /> info@brighthorizon.edu
                             </span>
                         </div>
-                        <div className="hidden lg:flex items-center gap-2 text-secondary/80">
-                            <Sparkles size={12} className="animate-pulse" />
-                            ADMISSIONS OPEN FOR 2026-27
+                        <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-2 text-secondary/80">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                ADMISSIONS OPEN 2026-27
+                            </div>
                         </div>
                     </div>
                 )}
@@ -126,7 +128,6 @@ export function Header() {
 
                     <nav className="hidden lg:flex items-center gap-6">
                         {navLinks.map((link) => {
-                            const LinkIcon = link.icon;
                             const isSpecial = link.special;
 
                             if (isSpecial) {
@@ -137,11 +138,11 @@ export function Header() {
                                         className={cn(
                                             "inline-flex items-center gap-2 px-6 py-2 rounded-full font-bold text-[10px] tracking-widest transition-all duration-500 shadow-lg hover:scale-105 ml-4",
                                             scrolled
-                                                ? "bg-slate-900 text-white"
+                                                ? "bg-primary text-white"
                                                 : "bg-white/10 backdrop-blur-md text-white border border-white/20"
                                         )}
                                     >
-                                        {LinkIcon && <LinkIcon size={14} />}
+                                        {link.icon && <link.icon size={14} />}
                                         {link.name}
                                     </Link>
                                 );
@@ -168,43 +169,75 @@ export function Header() {
                         })}
                     </nav>
 
-                    {/* Actions */}
                     <div className="flex-1 flex items-center justify-end gap-4">
                         <Link
                             href="/admissions"
                             className={cn(
-                                "hidden md:inline-flex items-center gap-2 px-8 py-3 rounded-full font-bold text-xs tracking-widest transition-all btn-premium",
+                                "hidden md:inline-flex items-center gap-2 px-8 py-3 rounded-full font-bold text-xs tracking-widest transition-all btn-premium shadow-glow",
                                 scrolled
-                                    ? "bg-gradient-primary text-white shadow-glow hover:shadow-lg"
-                                    : "bg-gradient-secondary text-white shadow-glow-secondary hover:shadow-lg"
+                                    ? "bg-primary text-white"
+                                    : "bg-secondary text-white"
                             )}
                         >
                             APPLY NOW
                         </Link>
-
-                        <button
-                            onClick={() => setIsMenuOpen(true)}
-                            className={cn(
-                                "lg:hidden p-3 rounded-xl transition-all",
-                                scrolled
-                                    ? "text-slate-900 hover:bg-slate-100"
-                                    : "text-white glass hover:bg-white/20"
-                            )}
-                        >
-                            <Menu size={24} />
-                        </button>
                     </div>
                 </div>
             </header>
+
+            {/* Mobile Top Bar (Emergency only or Logo) */}
+            <header className="lg:hidden fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-500">
+                <div className={cn(
+                    "flex items-center justify-between px-6 py-3 rounded-2xl backdrop-blur-xl border border-white/10",
+                    scrolled ? "bg-white/80 text-slate-900 border-slate-200" : "bg-black/20 text-white"
+                )}>
+                    <Logo className="scale-75 origin-left" scrolled={scrolled} />
+                    <button onClick={() => setIsMenuOpen(true)} className="p-2">
+                        <Search size={20} />
+                    </button>
+                </div>
+            </header>
+
+            {/* Mobile Bottom Navigation Dock */}
+            <nav className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-50 transition-all duration-500">
+                <div className="bg-black/80 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-2 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+                    <Link href="/" className="flex flex-col items-center justify-center w-14 h-14 text-white/60 hover:text-white transition-colors">
+                        <Home size={20} />
+                        <span className="text-[8px] font-bold mt-1 uppercase tracking-tighter">Home</span>
+                    </Link>
+                    <Link href="/campuses" className="flex flex-col items-center justify-center w-14 h-14 text-white/60 hover:text-white transition-colors">
+                        <MapPin size={20} />
+                        <span className="text-[8px] font-bold mt-1 uppercase tracking-tighter">Campus</span>
+                    </Link>
+                    
+                    {/* Primary Apply Button */}
+                    <Link href="/admissions" className="flex flex-col items-center justify-center w-16 h-16 bg-gradient-secondary rounded-full text-white shadow-glow-secondary -translate-y-4 hover:scale-110 transition-transform">
+                        <PlusCircle size={28} />
+                    </Link>
+
+                    <Link href="/academics" className="flex flex-col items-center justify-center w-14 h-14 text-white/60 hover:text-white transition-colors">
+                        <Book size={20} />
+                        <span className="text-[8px] font-bold mt-1 uppercase tracking-tighter">Study</span>
+                    </Link>
+                    <button 
+                        onClick={() => setIsMenuOpen(true)}
+                        className="flex flex-col items-center justify-center w-14 h-14 text-white/60 hover:text-white transition-colors"
+                    >
+                        <MoreHorizontal size={20} />
+                        <span className="text-[8px] font-bold mt-1 uppercase tracking-tighter">More</span>
+                    </button>
+                </div>
+            </nav>
 
             {/* Mobile Menu */}
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 bg-gradient-hero flex flex-col"
+                        initial={{ y: "100%" }}
+                        animate={{ y: 0 }}
+                        exit={{ y: "100%" }}
+                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                        className="fixed inset-0 z-[100] bg-gradient-hero flex flex-col"
                     >
                         {/* Close Button */}
                         <button
